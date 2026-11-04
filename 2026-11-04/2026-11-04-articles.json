@@ -6,166 +6,166 @@
       "title": "NVIDIA/auto-ontology",
       "url": "https://github.com/NVIDIA/auto-ontology",
       "excerpt": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
-      "meta": "Python · ★ 4,472 · 🍴 370 · 📈 2,053 stars today",
+      "meta": "Python · ★ 4,504 · 🍴 370 · 📈 2,053 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Auto Ontology is a Python framework for layering semantic, graph-based reasoning structures over existing data. Instead of letting a language model guess at relationships, it encodes entities and relations in an ontology that supports deterministic query generation and more reliable context retrieval. The stated goal is explainable AI: answers trace back to defined graph paths rather than opaque similarity matches. It targets developers building LLM applications over structured or enterprise data — retrieval-augmented pipelines, agents, and analytics tools — who need auditable, repeatable results from natural-language questions."
+      "summary": "Auto Ontology is a Python framework for layering semantic, graph-based reasoning over existing data. Instead of letting a model improvise queries, it encodes domain structure as an ontology, which then drives deterministic query generation and more reliable context retrieval for LLM applications. The result is output that is easier to trace and explain, since answers can be tied back to graph entities and relationships rather than free-form generation. It targets engineers and data teams building retrieval-augmented, agentic or analytics systems where correctness and auditability matter."
     },
     {
       "sourceId": "github-trending",
       "title": "max-sixty/worktrunk",
       "url": "https://github.com/max-sixty/worktrunk",
       "excerpt": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
-      "meta": "Rust · ★ 10,921 · 🍴 407 · 📈 524 stars today",
+      "meta": "Rust · ★ 10,934 · 🍴 407 · 📈 524 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Worktrunk is a command-line tool for managing Git worktrees, the feature that lets one repository have several checked-out branches in separate directories simultaneously. The project targets parallel AI-agent workflows: several coding agents working on isolated branches at once, each in its own directory, without stashing or cloning repeatedly. It wraps the verbose native worktree commands into shorter create, switch, list, and cleanup operations. Useful for developers running multiple Claude Code, Cursor, or similar agents concurrently and for anyone who prefers directory-level branch isolation over branch switching."
+      "summary": "Worktrunk is a command-line tool for managing Git worktrees, the mechanism that lets one repository hold several checked-out branches at once. It exists because parallel AI coding agents each need their own working directory, and doing that by hand with raw git worktree commands gets tedious quickly. The CLI wraps creation, navigation and cleanup of worktrees so multiple agents or tasks can run concurrently without stashing or overwriting each other's files. Aimed at developers running several agents or branches against one repository, and anyone who prefers isolated checkouts over constant branch switching."
     },
     {
       "sourceId": "github-trending",
       "title": "mattpocock/skills",
       "url": "https://github.com/mattpocock/skills",
       "excerpt": "Skills for Real Engineers. Straight from my .agents directory.",
-      "meta": "Shell · ★ 312,906 · 🍴 26,257 · 📈 1,376 stars today",
+      "meta": "Shell · ★ 312,942 · 🍴 26,262 · 📈 1,376 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A collection of agent skills published from the author's own .agents directory — reusable instruction files that coding agents load to gain task-specific procedures and conventions. Rather than a framework, it is a curated set of prompts and workflows shared by Matt Pocock, aimed at engineers who want their AI coding assistant to follow established practices instead of improvising. Typical use is dropping selected skill files into a project or agent configuration so tools such as Claude Code or similar assistants apply the author's preferred patterns for common development tasks. Keep only the skills you need."
+      "summary": "A collection of agent skill definitions taken directly from Matt Pocock's .agents directory and published as reusable building blocks for coding assistants. Skills are short instruction files that tell a general-purpose agent how to perform a specific, repeatable task well, and this repository gathers the ones the author uses day to day. Rather than prescribing a framework, it offers concrete, opinionated prompts that can be dropped into tools supporting the skills convention. Useful for developers configuring Claude Code-style agents who want proven starting points instead of writing task instructions from scratch."
     },
     {
       "sourceId": "github-trending",
       "title": "floci-io/floci",
       "url": "https://github.com/floci-io/floci",
       "excerpt": "Light, fluffy, and always free - The AWS Local Emulator alternative",
-      "meta": "Java · ★ 29,455 · 🍴 3,264 · 📈 1,082 stars today",
+      "meta": "Java · ★ 29,467 · 🍴 3,265 · 📈 1,082 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Floci is a local emulator for AWS services, positioned as a lighter, always-free alternative to existing local cloud emulators. It runs AWS APIs on a developer machine so application code and infrastructure tests can execute without real cloud accounts, credentials, or per-request billing. This suits backend and platform engineers who want fast offline iteration, deterministic integration tests, and CI pipelines that do not depend on live AWS. The project's emphasis is on a small footprint and no paid tier, contrasting with commercial emulator offerings."
+      "summary": "Floci is a local AWS emulator positioned as a lighter, always-free alternative to existing tools in that space. It runs AWS service APIs on a developer machine so application code, infrastructure tests and CI pipelines can exercise cloud behaviour without touching a real account, paying for resources, or waiting on network round trips. The project emphasises small footprint and no licence cost. Typical users are backend and platform engineers who want offline, deterministic test environments, and teams that find heavier emulators slow to start or tight in their free tier."
     },
     {
       "sourceId": "github-trending",
       "title": "thedotmack/claude-mem",
       "url": "https://github.com/thedotmack/claude-mem",
       "excerpt": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
-      "meta": "TypeScript · ★ 112,648 · 🍴 9,790 · 📈 1,165 stars today",
+      "meta": "TypeScript · ★ 112,662 · 🍴 9,791 · 📈 1,165 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "claude-mem gives AI coding agents persistent memory across sessions. It captures what an agent does during a session, compresses that record with AI, and injects the relevant parts back into later sessions, so work resumes with prior context instead of starting cold. It is built for use with Claude Code and compatible agents. Typical users are developers running long, multi-session projects where decisions, file changes, and debugging history would otherwise be lost when the context window resets or a new session begins."
+      "summary": "Claude Mem gives coding agents memory that survives across sessions. During a session it records what the agent does, compresses that record with an AI model into a compact summary, and injects the relevant parts back into the context of future sessions. The practical effect is fewer repeated explanations: conventions, decisions and prior work carry forward instead of being rediscovered each time. It works with Claude Code and comparable agent setups. Aimed at developers on long-lived agent-assisted projects where context loss between sessions is the main friction."
     },
     {
       "sourceId": "github-trending",
       "title": "vercel-labs/agent-desktop",
       "url": "https://github.com/vercel-labs/agent-desktop",
       "excerpt": "Computer use CLI for AI agents",
-      "meta": "Rust · ★ 14,640 · 🍴 1,009 · 📈 2,463 stars today",
+      "meta": "Rust · ★ 14,669 · 🍴 1,013 · 📈 2,463 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A command-line interface that lets AI agents perform computer use — driving a desktop environment rather than only reading and writing files. Exposed as CLI commands, desktop actions can be invoked by an agent or script without a bespoke integration layer. Vercel Labs publishes it as an experimental developer tool for people building or testing agents that must interact with graphical applications, browsers, and native UI. Typical uses include automating GUI-only workflows, end-to-end agent evaluation, and prototyping computer-use agents."
+      "summary": "Agent Desktop is a command-line interface from Vercel Labs that lets AI agents operate a computer the way a person would, taking screenshots, clicking and typing through a computer-use loop. Instead of requiring an API for every application, it exposes the desktop itself as the interface, so an agent can drive existing GUI software. It is intended for developers building or testing computer-use agents, and for automation tasks where no programmatic hook exists. As a Vercel Labs project it is experimental tooling rather than a settled product."
     },
     {
       "sourceId": "github-trending",
       "title": "github/spec-kit",
       "url": "https://github.com/github/spec-kit",
       "excerpt": "💫 Toolkit to help you get started with SDD or any other process!",
-      "meta": "Python · ★ 147,163 · 🍴 13,208 · 📈 810 stars today",
+      "meta": "Python · ★ 147,174 · 🍴 13,211 · 📈 810 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A GitHub toolkit for spec-driven development (SDD), an approach where a written specification is produced and refined before code generation, with AI coding agents implementing against that spec. The repository supplies templates, prompts, and process scaffolding to help teams adopt SDD or adapt it to their own workflow. It is aimed at developers and teams using AI assistants on non-trivial features who want requirements captured and reviewed up front, so agent output stays aligned with intent and remains traceable. Practical starting point rather than a runtime dependency."
+      "summary": "Spec Kit is a GitHub toolkit for getting started with Spec-Driven Development (SDD), a workflow in which a written specification is produced first and code is generated from it, rather than the reverse. It packages templates, prompts and structure for running that process with AI coding agents, and the maintainers note it can support other processes too. It suits teams and individual developers who want more predictable agent output, reviewable requirements, and a traceable link between intent and implementation, especially on larger features where ad-hoc prompting tends to drift."
     },
     {
       "sourceId": "github-trending",
       "title": "The-PR-Agent/pr-agent",
       "url": "https://github.com/The-PR-Agent/pr-agent",
       "excerpt": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
-      "meta": "Python · ★ 14,644 · 🍴 2,085 · 📈 279 stars today",
+      "meta": "Python · ★ 14,654 · 🍴 2,086 · 📈 279 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "PR Agent is an open-source AI pull-request reviewer: it inspects diffs and posts review comments covering bugs, style, and suggested improvements. The project describes itself as the original open-source PR reviewer and explicitly distances itself from the Qodo hosted free tier, so users should install and run this codebase rather than a commercial wrapper. It targets engineering teams that want automated first-pass review on GitHub pull requests, reducing reviewer load and catching obvious issues before human review, with the option to self-host and keep code inside their own infrastructure."
+      "summary": "PR Agent is an open-source automated reviewer for pull requests: it reads a proposed diff and posts review comments, aiming to catch problems before a human reviewer looks. The project stresses that it is the original open-source PR reviewer and is unaffiliated with the Qodo hosted free tier, a distinction worth noting since the name is shared. It is meant to be self-hosted and wired into a repository's CI or GitHub workflow, so teams can add a first-pass review step without sending code to a third-party service."
     },
     {
       "sourceId": "github-trending",
       "title": "harry0703/MoneyPrinterTurbo",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo",
       "excerpt": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
-      "meta": "Python · ★ 138,796 · 🍴 22,152 · 📈 615 stars today",
+      "meta": "Python · ★ 138,809 · 🍴 22,153 · 📈 615 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "MoneyPrinterTurbo generates short high-definition videos from a single topic or keyword using an automated AI workflow. The pipeline typically chains large language models for script and copy writing, text-to-speech for narration, and stock or generated footage assembly with subtitles, producing a publishable vertical video without manual editing. It targets content creators and marketers who need to produce short-form video at volume for platforms such as TikTok, Douyin, YouTube Shorts, and Reels. Documentation is provided primarily in Chinese, with an English description."
+      "summary": "MoneyPrinterTurbo turns a topic or keyword into a short HD video through an automated pipeline driven by large language models. The workflow covers the steps a human editor would otherwise do by hand: writing a script, sourcing or generating footage, producing voiceover and subtitles, then assembling the final cut. Input is deliberately minimal, so a subject alone yields a finished short-form video. It is aimed at content creators, marketers and channel operators producing high-volume short videos for platforms where output volume matters more than bespoke editing."
     },
     {
       "sourceId": "github-trending",
       "title": "garrytan/gstack",
       "url": "https://github.com/garrytan/gstack",
       "excerpt": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
-      "meta": "TypeScript · ★ 139,203 · 🍴 20,626 · 📈 285 stars today",
+      "meta": "TypeScript · ★ 139,216 · 🍴 20,627 · 📈 285 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A published copy of Garry Tan's Claude Code configuration: 23 opinionated tools and prompts that assign the coding agent distinct roles, including CEO, designer, engineering manager, release manager, documentation engineer, and QA. Rather than a single general assistant, the setup splits responsibilities so each task is approached with a role-specific checklist and standards. It is aimed at developers and founders who want a ready-made, structured agent workflow to copy into their own Claude Code environment instead of designing plugins and prompts from scratch."
+      "summary": "GStack packages Garry Tan's personal Claude Code configuration so others can run the same setup: 23 opinionated tools that each take on a role, including CEO, designer, engineering manager, release manager, documentation engineer and QA. Rather than one general-purpose agent, it is a division of labour, with separate prompts and commands covering strategy, design review, planning, shipping, docs and testing. It is aimed at founders and engineers who want a structured, opinionated starting point for agent-assisted software work instead of assembling their own prompt library from scratch."
     },
     {
       "sourceId": "github-trending",
       "title": "FareedKhan-dev/kimi-k3-in-c",
       "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
       "excerpt": "A 2.78-trillion-parameter Kimi K3 running inference on a single CPU in 8.24 GB of RAM. Portable C99: no BLAS, no framework, no GPU.",
-      "meta": "C · ★ 10,144 · 🍴 1,618 · 📈 351 stars today",
+      "meta": "C · ★ 10,159 · 🍴 1,619 · 📈 351 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "An experimental inference implementation in portable C99 for a 2.78-trillion-parameter Kimi K3 model, presented as running on a single CPU within 8.24 GB of RAM with no BLAS, no framework, and no GPU. The project explores minimal-dependency, low-memory model execution — presumably through aggressive quantization and memory-mapped weight streaming — and is written to compile anywhere a C compiler exists. It interests systems programmers and inference engineers studying constrained-hardware deployment and memory-efficient model loading, rather than users seeking production throughput."
+      "summary": "An implementation of Kimi K3 inference written in portable C99 and sized for hardware nobody would normally consider: a 2.78-trillion-parameter model running on a single CPU inside 8.24 GB of RAM. It uses no BLAS, no machine-learning framework and no GPU, so the code builds almost anywhere a C compiler exists. The project is chiefly a demonstration of how far memory mapping, quantisation and minimal dependencies can stretch, of interest to systems programmers, ML infrastructure engineers and students of efficient inference rather than to production deployments."
     },
     {
       "sourceId": "github-trending",
       "title": "JiaFeiMiao-K-Cat/DiscImageStudio",
       "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
       "excerpt": "",
-      "meta": "C# · ★ 6,337 · 🍴 226 · 📈 1,792 stars today",
+      "meta": "C# · ★ 6,355 · 🍴 227 · 📈 1,792 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "DiscImageStudio is a project whose name indicates a studio-style toolkit for optical disc images — creating, inspecting, converting, or working with formats such as ISO and related disc-image containers by analogy with existing disc-image utilities. No description is provided in the repository listing, so the specific feature set, supported formats, GUI versus CLI, and target platform cannot be confirmed from the available metadata. Prospective users should consult the repository's own documentation and source before relying on it for disc authoring, archival, or emulation workflows."
+      "summary": "DiscImageStudio is a repository whose name points to tooling for optical disc images, the .iso, .bin/.cue and related formats used to store CD, DVD and Blu-ray contents. Beyond that, the project ships no description, so its specific feature set, supported formats and target platform cannot be confirmed from the listing. Developers working on disc image extraction, conversion or archival would be the likely audience. Check the repository contents and README before relying on it for anything."
     },
     {
       "sourceId": "github-trending",
       "title": "MichaelCade/90DaysOfDevOps",
       "url": "https://github.com/MichaelCade/90DaysOfDevOps",
       "excerpt": "This repository started out as a learning in public project for myself and has now become a structured learning map for many in the community. We have 3 years under our belt covering all things DevOps, including Principles, Processes, Tooling and Use Cases surrounding this vast topic.",
-      "meta": "Shell · ★ 30,294 · 🍴 6,788 · 📈 156 stars today",
+      "meta": "Shell · ★ 30,302 · 🍴 6,789 · 📈 156 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "90DaysOfDevOps is a structured learning map for DevOps, started as a public learning project and now maintained as a community curriculum with several years of material. It covers the broad DevOps landscape — Linux, networking, containers, CI/CD, cloud, infrastructure as code, and observability — organised into daily topics with links and explanations. It suits people moving into DevOps or platform engineering, students preparing for certification paths, and teams looking for a shared onboarding syllabus. It is documentation and guidance, not runnable software."
+      "summary": "90DaysOfDevOps began as a public learning log and has grown into a structured study map for DevOps that the community follows. Three years of material are covered, spanning the breadth of the field: Linux and networking fundamentals, version control, containers, CI/CD, cloud platforms, infrastructure as code, observability and security. Because it is organised as a day-by-day plan rather than a reference manual, it suits career switchers, junior engineers and self-taught practitioners who want an ordered curriculum with concrete daily topics and pointers to further reading."
     },
     {
       "sourceId": "github-trending",
       "title": "D4Vinci/Scrapling",
       "url": "https://github.com/D4Vinci/Scrapling",
       "excerpt": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
-      "meta": "Python · ★ 96,228 · 🍴 10,085 · 📈 2,006 stars today",
+      "meta": "Python · ★ 96,253 · 🍴 10,085 · 📈 2,006 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Scrapling is a Python web scraping framework built to handle both a single request and full-scale crawls within one library. It combines an HTTP fetching layer with browser-based rendering, adaptive element selection that survives site markup changes, and concurrency for larger crawls, aiming to reduce the amount of custom glue code scrapers usually require. It targets data engineers, researchers, and automation developers who need resilient extraction pipelines for one-off pages or continuous large-scale collection, with an active community Discord for tips and support."
+      "summary": "Scrapling is a Python web scraping framework built to cover the whole range of extraction work, from a single HTTP request to a full-scale crawl. It handles the pieces that usually force teams to stitch several libraries together: fetching, parsing and keeping selectors working as pages change, with the same API scaling from a one-off request up to a larger crawl. It is aimed at data engineers, researchers and developers collecting web data who want one dependency instead of a bespoke stack of request clients, parsers and crawler scaffolding."
     },
     {
       "sourceId": "github-trending",
       "title": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "excerpt": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "meta": "Python · ★ 12,408 · 🍴 1,814 · 📈 121 stars today",
+      "meta": "Python · ★ 12,412 · 🍴 1,814 · 📈 121 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Horizon is a self-hosted, AI-powered news radar that collects news from configured sources and produces daily briefings in both English and Chinese. It uses language models to filter, cluster, and summarise items around topics you care about, returning a digest rather than a raw feed. It targets readers who want a personalised, low-noise daily summary of a technical or industry niche, and developers who prefer running the aggregation pipeline themselves instead of relying on a hosted newsletter service, keeping source selection and data under their control."
+      "summary": "Horizon is a self-hosted news radar that uses AI models to gather and summarise the stories a user cares about, then produces a daily briefing. It publishes those briefings in both English and Chinese, making it usable for bilingual readers or teams spanning both languages. Rather than a general news aggregator, it is meant to be configured around your own interests, so the output is a short personal digest instead of an endless feed. Aimed at people who want a curated morning summary without scrolling multiple sources."
     },
     {
       "sourceId": "github-trending",
       "title": "scenario-labs/skills",
       "url": "https://github.com/scenario-labs/skills",
       "excerpt": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
-      "meta": "Python · ★ 2,287 · 🍴 243 · 📈 224 stars today",
+      "meta": "Python · ★ 2,301 · 🍴 244 · 📈 224 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A set of agent skills that give AI assistants production access to generated media through the Scenario MCP server: images, video, audio, and 3D assets. The skills route each request to an appropriate model, surface pricing before any spend occurs, and maintain consistency of characters and brand assets across generations. They are intended for designers, game and marketing teams, and agent builders who want an assistant to produce usable visual assets on demand without manually picking models or managing API calls, while keeping cost and style under control."
+      "summary": "A set of agent skills from Scenario Labs that let an AI agent generate production-ready images, video, audio and 3D assets. The skills are opinionated about process: they select an appropriate model for the requested output, check price before spending, and preserve character and brand consistency across generations. They connect through the Scenario MCP server, with additional endpoints for the surrounding workflow. It is aimed at designers, marketers and product teams who want agents to produce usable media assets rather than one-off samples, with cost control built in."
     },
     {
       "sourceId": "hackernews",
       "title": "AI is forcing us to pay off 40 years of technical debt",
       "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-      "excerpt": "741 points · 457 comments",
+      "excerpt": "772 points · 474 comments",
       "publishedAt": "2026-11-04T11:52:17.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -174,8 +174,17 @@
       "sourceId": "hackernews",
       "title": "Progress on provable inference for large language models",
       "url": "https://www.anthropic.com/research/provable-inference",
-      "excerpt": "71 points · 24 comments",
+      "excerpt": "84 points · 29 comments",
       "publishedAt": "2026-11-04T17:17:46.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "A New Go API for JSON",
+      "url": "https://go.dev/blog/jsonv2",
+      "excerpt": "33 points · 6 comments",
+      "publishedAt": "2026-11-04T17:52:11.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -183,7 +192,7 @@
       "sourceId": "hackernews",
       "title": "Guerrilla bike lanes: San Francisco makes illicit infrastructure permanent (2016)",
       "url": "https://99percentinvisible.org/article/guerrilla-bike-lanes-san-francisco-makes-illicit-infrastructure-permanent/",
-      "excerpt": "158 points · 91 comments",
+      "excerpt": "173 points · 97 comments",
       "publishedAt": "2026-11-04T15:01:44.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -192,17 +201,8 @@
       "sourceId": "hackernews",
       "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
       "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
-      "excerpt": "479 points · 209 comments",
+      "excerpt": "488 points · 219 comments",
       "publishedAt": "2026-11-04T08:46:29.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "A New Go API for JSON",
-      "url": "https://go.dev/blog/jsonv2",
-      "excerpt": "15 points · 0 comments",
-      "publishedAt": "2026-11-04T17:52:11.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -219,8 +219,17 @@
       "sourceId": "hackernews",
       "title": "AMD expects to outsell Intel in Q4 for the first time in history",
       "url": "https://www.tomshardware.com/pc-components/cpus/amd-expects-to-outsell-intel-in-q4-for-the-first-time-in-history-usd17b-guidance-would-exceed-intels-projections",
-      "excerpt": "234 points · 73 comments",
+      "excerpt": "255 points · 88 comments",
       "publishedAt": "2026-11-04T15:38:34.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "BYD doubles its Brazil market share to 9.7% a year after opening its local plant",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-03/china-s-byd-doubles-market-share-in-brazil-with-new-plant-eyed",
+      "excerpt": "60 points · 32 comments",
+      "publishedAt": "2026-11-04T17:55:29.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -228,7 +237,7 @@
       "sourceId": "hackernews",
       "title": "North Korean fake job interview led to $6.3B Binance heist",
       "url": "https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398",
-      "excerpt": "387 points · 236 comments",
+      "excerpt": "406 points · 248 comments",
       "publishedAt": "2026-11-04T14:09:55.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -246,17 +255,17 @@
       "sourceId": "hackernews",
       "title": "Verification Is Not Knowledge: Science needs more than answers",
       "url": "https://blog.cosmos-institute.org/p/verification-is-not-knowledge",
-      "excerpt": "186 points · 105 comments",
+      "excerpt": "189 points · 107 comments",
       "publishedAt": "2026-11-04T09:01:58.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
     {
       "sourceId": "hackernews",
-      "title": "BYD doubles its Brazil market share to 9.7% a year after opening its local plant",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-03/china-s-byd-doubles-market-share-in-brazil-with-new-plant-eyed",
-      "excerpt": "38 points · 13 comments",
-      "publishedAt": "2026-11-04T17:55:29.000Z",
+      "title": "Evergreen: A Provably Safe Systems Language",
+      "url": "https://evergreenlang.net",
+      "excerpt": "67 points · 60 comments",
+      "publishedAt": "2026-11-04T15:25:04.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -264,8 +273,17 @@
       "sourceId": "hackernews",
       "title": "Kimi K3.1 Pro model weights are out",
       "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
-      "excerpt": "170 points · 46 comments",
+      "excerpt": "188 points · 49 comments",
       "publishedAt": "2026-11-04T15:30:30.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "Tencent Hy4",
+      "url": "https://hy.tencent.ai/research/hy4",
+      "excerpt": "70 points · 18 comments",
+      "publishedAt": "2026-11-04T14:11:26.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -273,7 +291,7 @@
       "sourceId": "hackernews",
       "title": "Incident with Pull Requests, Git Operations and Issues",
       "url": "https://www.githubstatus.com/incidents/smtdswd1h2w4",
-      "excerpt": "218 points · 112 comments",
+      "excerpt": "219 points · 113 comments",
       "publishedAt": "2026-11-04T10:00:06.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -291,17 +309,8 @@
       "sourceId": "hackernews",
       "title": "This Month in Ladybird – October 2026",
       "url": "https://ladybird.org/newsletter/2026-10-31/",
-      "excerpt": "25 points · 5 comments",
+      "excerpt": "40 points · 7 comments",
       "publishedAt": "2026-11-04T17:59:35.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "Tencent Hy4",
-      "url": "https://hy.tencent.ai/research/hy4",
-      "excerpt": "58 points · 13 comments",
-      "publishedAt": "2026-11-04T14:11:26.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -309,8 +318,17 @@
       "sourceId": "hackernews",
       "title": "Jelly Sheet",
       "url": "https://mrdoob.github.io/codevember-2026/01/",
-      "excerpt": "407 points · 105 comments",
+      "excerpt": "411 points · 106 comments",
       "publishedAt": "2026-11-04T03:40:50.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "Benchfmt.rs: Bringing Go's benchmarking and benchstat workflow to Rust",
+      "url": "https://www.bwplotka.dev/2026/rust-microbenchmarks-benchstat/",
+      "excerpt": "10 points · 2 comments",
+      "publishedAt": "2026-11-04T18:20:06.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -318,7 +336,7 @@
       "sourceId": "hackernews",
       "title": "Letting users trust their own MCP clients, without opening a phishing hole",
       "url": "https://streamvessel.com/blog/mcp-trusted-redirect-uris",
-      "excerpt": "24 points · 2 comments",
+      "excerpt": "26 points · 2 comments",
       "publishedAt": "2026-11-04T15:30:57.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -327,7 +345,7 @@
       "sourceId": "hackernews",
       "title": "Adding Window Functions to a Spreadsheet",
       "url": "https://www.getgrist.com/blog/running-totals-you-dont-have-to-chase/",
-      "excerpt": "30 points · 20 comments",
+      "excerpt": "31 points · 21 comments",
       "publishedAt": "2026-11-04T15:21:12.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -336,7 +354,7 @@
       "sourceId": "hackernews",
       "title": "Kitty 0.50",
       "url": "https://sw.kovidgoyal.net/kitty/changelog/#",
-      "excerpt": "316 points · 200 comments",
+      "excerpt": "320 points · 201 comments",
       "publishedAt": "2026-11-04T08:57:10.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -345,7 +363,7 @@
       "sourceId": "hackernews",
       "title": "Stringman, an $800 open-source room scale gripper robot",
       "url": "https://neufangled.com/",
-      "excerpt": "758 points · 228 comments",
+      "excerpt": "766 points · 228 comments",
       "publishedAt": "2026-11-03T16:47:29.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -354,7 +372,7 @@
       "sourceId": "hackernews",
       "title": "Debian apt security update (man-in-the-middle)",
       "url": "https://lists.debian.org/debian-security-announce/2026/msg00526.html?pow_referer=",
-      "excerpt": "97 points · 21 comments",
+      "excerpt": "101 points · 21 comments",
       "publishedAt": "2026-11-04T15:04:14.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -363,17 +381,8 @@
       "sourceId": "hackernews",
       "title": "Mocktastic: A Meshtastic Node on Arduino",
       "url": "https://github.com/Vapmuz/Mocktastic",
-      "excerpt": "22 points · 1 comments",
+      "excerpt": "24 points · 1 comments",
       "publishedAt": "2026-11-04T13:51:52.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "An end to buggy web apps",
-      "url": "https://replay.io/blog/an-end-to-buggy-web-apps",
-      "excerpt": "34 points · 29 comments",
-      "publishedAt": "2026-11-04T17:01:44.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -381,8 +390,17 @@
       "sourceId": "hackernews",
       "title": "The Internals of PostgreSQL",
       "url": "https://www.interdb.jp/pg/index.html",
-      "excerpt": "351 points · 30 comments",
+      "excerpt": "356 points · 31 comments",
       "publishedAt": "2026-11-03T21:51:06.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "Show HN: Codemap – one-page interactive map of any Go repository",
+      "url": "https://github.com/peterretief/codemap",
+      "excerpt": "31 points · 14 comments",
+      "publishedAt": "2026-11-04T15:18:24.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -390,26 +408,8 @@
       "sourceId": "hackernews",
       "title": "Pierre Computer is being acquired by OpenAI",
       "url": "https://twitter.com/pierrecomputer/status/2117999036175188183",
-      "excerpt": "68 points · 26 comments",
+      "excerpt": "71 points · 30 comments",
       "publishedAt": "2026-11-04T15:21:21.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "Evergreen: A Provably Safe Systems Language",
-      "url": "https://evergreenlang.net",
-      "excerpt": "64 points · 52 comments",
-      "publishedAt": "2026-11-04T15:25:04.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "The lost malloc()",
-      "url": "https://napcakes.nekoweb.org/posts/malloc/",
-      "excerpt": "131 points · 53 comments",
-      "publishedAt": "2026-11-04T07:37:30.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -424,10 +424,10 @@
     },
     {
       "sourceId": "hackernews",
-      "title": "Synaptics Appears to Use Legal Threats to Block Open-Source DisplayLink Driver",
-      "url": "https://www.phoronix.com/news/Synaptics-Blocks-Vino-Driver",
-      "excerpt": "162 points · 67 comments",
-      "publishedAt": "2026-11-04T11:14:12.000Z",
+      "title": "The lost malloc()",
+      "url": "https://napcakes.nekoweb.org/posts/malloc/",
+      "excerpt": "134 points · 53 comments",
+      "publishedAt": "2026-11-04T07:37:30.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -980,7 +980,7 @@
       "meta": "👍 83",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Route Anything argues that rather than relying on one model to master every capability, progress toward AGI is better served by orchestrating a heterogeneous ecosystem of specialized models that understand, generate, reason and act across domains and modalities. The study examines model and policy routing jointly: which model should serve a request, and what routing policy should govern that choice. The abstract frames routing as a systems-level problem for general-purpose AI. Specific routing architectures, training objectives and quantitative results are not available in the truncated excerpt."
+      "summary": "Argues that AGI is better pursued by orchestrating a heterogeneous ecosystem of specialized models than by scaling one monolithic model. The paper studies both model routing and policy routing for general-purpose AI systems, examining how a controller should dispatch queries across specialized components and how routing policies should be learned or designed. The contribution is a systematic study of routing as an architectural principle, characterizing trade-offs between specialization and coordination and outlining design guidance for building general-purpose systems from composed expert models."
     },
     {
       "sourceId": "huggingface-papers",
@@ -991,7 +991,7 @@
       "meta": "👍 67",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Psychotherapy clients may feel distress before they can describe it coherently, and their expression shifts with emotion, perceived safety and trust. LLM-based client simulators typically start from clinically organized case descriptions, which pushes simulated clients toward explaining themselves rather than expressing themselves, a mismatch for self-opaque clients. The paper proposes simulating person-specific expression for such clients so that simulator output reflects individual, emotionally conditioned language. Modeling details and evaluation results are not visible in the truncated abstract."
+      "summary": "Psychotherapy clients often feel distress before they can articulate it, and their expression shifts with emotion, perceived safety, and trust. Existing LLM-based client simulators rely on clinically organized case descriptions, which push responses toward tidy explanation rather than person-specific, self-opaque expression. The work proposes simulating person-specific expression for such clients, aiming to make simulated clients behave more realistically during training and practice interactions. The contribution is a simulation approach that better captures emotionally conditioned, partially opaque client speech, addressing a gap in how LLM simulators represent clinical interaction."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1002,7 +1002,7 @@
       "meta": "👍 64",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Large reasoning models pay for long chain-of-thought even after enough information has been gathered, because they keep deliberating. Existing reasoning compression methods mainly operate on entire reasoning trajectories. This work proposes local preference learning, which applies compression preference at the local level so that reasoning is shortened at the points where further deliberation adds little. The goal is lower inference cost while retaining accuracy on challenging tasks. Quantitative compression and accuracy gains are not reported in the available excerpt."
+      "summary": "Large reasoning models achieve strong results but pay for long chain-of-thought that keeps deliberating after sufficient information is already available. Existing reasoning compression methods mostly operate on reasoning trajectories. This work proposes local preference learning for reasoning compression, framed as 'think less, locally' — instead of globally shortening traces, it targets the specific local steps where over-deliberation occurs, using preference learning to prefer stopping or shortening at those points. The approach aims to cut inference cost while retaining the accuracy that long CoT provides on challenging tasks."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1013,7 +1013,7 @@
       "meta": "👍 49",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "This report distills observations from successive generations of Kling video models, arguing that as generation moves from isolated clips to coherent short-form audiovisual sequences, the bottleneck shifts from rendering quality to semantic control. The authors summarize insights on multimodal understanding gained across model iterations, and discuss how stronger understanding of prompts, entities and temporal structure enables finer control over generated video. Concrete benchmark numbers and architectural details are not reported in the available excerpt."
+      "summary": "A report summarizing observations and insights on multimodal understanding accumulated across successive generations of Kling video generation models. The authors argue that as video generation moves from isolated clips to coherent short-form audiovisual sequences, the bottleneck shifts from rendering quality to semantic control. Drawing on development experience, the report distills what video generation reveals about multimodal understanding — how models must represent prompts, entities, motion, and narrative structure to support controllable generation. The contribution is an experience-based analysis rather than a new model, offering directions for semantic controllability in video generation."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1024,7 +1024,7 @@
       "meta": "👍 48",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Learning a universal action representation from video requires modeling dynamics that are consistent across executions of the same action yet invariant to embodiment and appearance. Existing latent action models infer actions from visual transitions, but their representations are limited. DreamX frames the video diffusion model itself as a universal latent action learner, exploiting the generative model's internal representations to extract action latents. The truncated excerpt does not describe the extraction procedure or report quantitative downstream results."
+      "summary": "Learning universal action representations from video requires modeling dynamics consistent across executions of the same action yet invariant to embodiment and appearance. Existing latent action models infer actions from visual transitions but produce representations that fall short in these respects. DreamX proposes using a video diffusion model as a universal latent action learner, leveraging the generative model's internal representations of how scenes evolve to extract action abstractions. The approach aims to yield latent actions that transfer across embodiments and appearances, improving downstream use of video pretraining for action understanding and control."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1035,7 +1035,7 @@
       "meta": "👍 43",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "General-purpose robot policies must work across robots, tasks and environments, yet the variation that makes physical trials informative also makes them hard to reproduce. RoboColosseum is a distributed evaluation framework combining unified policy serving with standardized protocols, targeting physical-intelligence evaluation at scale in the wild. The framework aims to make cross-robot, cross-task assessment reproducible and comparable rather than tied to a single lab setup. Benchmark coverage and measured policy results are not included in the truncated abstract."
+      "summary": "General-purpose robot policies must work across robots, tasks, and environments, but the variation that makes physical trials informative also makes them hard to reproduce. RoboColosseum is introduced as a distributed evaluation framework combining unified policy serving with standardized protocols, enabling large-scale in-the-wild evaluation of physical intelligence across heterogeneous hardware and settings. The contribution is infrastructure for scalable, reproducible real-world robot evaluation, addressing the reproducibility gap that current benchmarking practice leaves open for cross-embodiment, cross-environment physical trials."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1046,7 +1046,7 @@
       "meta": "👍 42",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Composed Image Retrieval (CIR) retrieves a target image given a reference image and a modification text. Recent MLLM-based approaches have made significant progress, but the authors argue the MLLM's compositional understanding remains underutilized. They propose factorized MLLM embeddings for CIR, decomposing the multimodal representation so that reference-image content and modification semantics are exploited more effectively during retrieval. The excerpt does not specify the factorization design or report retrieval benchmark numbers."
+      "summary": "Composed Image Retrieval (CIR) retrieves a target image from a reference image plus modification text. Recent MLLM-based methods improve results, but the authors argue the MLLM's compositional understanding remains underutilized. They propose factorized MLLM embeddings for CIR, decomposing the representation so that reference-image content and textual modification are encoded and combined in a more structured, factorized manner rather than as a single fused embedding. This better exploits the model's compositional ability, improving retrieval accuracy on standard CIR benchmarks over prior MLLM-based approaches."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1057,7 +1057,7 @@
       "meta": "👍 41",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Research taste, the judgment of what to read, which problems to pursue and which methods to try, increasingly shapes the work of AI scientists, yet it is far less understood than their ability to execute research. IdeaTaste is a benchmark that scores an LLM by how closely its research judgments align with those of human researchers, probing preferences over papers, problems and methods. The benchmark targets taste rather than execution skill. Task design, baselines and quantitative findings are not described in the available excerpt."
+      "summary": "Research taste — judgment about what to read and which problems and methods to pursue — increasingly shapes AI scientists' work, yet is far less studied than their execution ability. IdeaTaste is introduced as a benchmark that scores an LLM by how closely its research choices resemble those of human researchers, probing whether models share human taste in idea selection and problem prioritization. The contribution is a measurement framework for taste rather than capability, offering evidence on whether current LLMs align with human judgment and surfacing a gap relevant to autonomous research agents."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1068,7 +1068,7 @@
       "meta": "👍 38",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Axion 1.0 is a fully open agent foundation model that pairs broad agentic capability with a deliberately simple training recipe: two lightweight supervised fine-tuning stages followed by reinforcement learning, with no dedicated mid-training stage. The release emphasizes openness of the pipeline alongside strong agentic performance. The abstract positions the model as simplifying agent training without sacrificing generality. Parameter scale, data composition and benchmark numbers are not given in the truncated excerpt."
+      "summary": "Introduces Axion 1.0, a fully open agent foundation model combining broad agentic capability with a deliberately simple training recipe. Training uses only three stages: two lightweight supervised fine-tuning stages followed by reinforcement learning, with no dedicated mid-training or elaborate staged pipelines. The work argues that competitive agentic performance does not require complex multi-phase recipes, and releases the model and recipe openly. The contribution is an open agent foundation model plus a simplification argument for how agentic capabilities are most efficiently acquired."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1079,7 +1079,7 @@
       "meta": "👍 33",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "LLMs are deployed as long-horizon agents that compose diverse tools across MCP services into executable workflows, so scalable tool-rich environments are needed. Existing MCP environment-scaling methods are data-centric: they synthesize a database and scenario first, then derive tools and tasks, which constrains tool interaction. ToolSpace instead proposes tool-centric environment synthesis, building environments around tools for long-horizon agents. The synthesis pipeline details and evaluation results are not available in the excerpt."
+      "summary": "LLMs are deployed as long-horizon agents composing tools across MCP services into executable workflows. Existing MCP environment-scaling methods are data-centric: they synthesize a database and scenario first, then derive tools and tasks, which constrains tool interaction structure. ToolSpace instead scales environments in a tool-centric way, synthesizing environments around tools so that tool interaction graphs become richer and support longer-horizon tasks. The contribution is a synthesis framework yielding more diverse, complex tool-use environments for training long-horizon agents."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1090,7 +1090,7 @@
       "meta": "👍 26",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Unified Multimodal Models (UMMs) integrate visual understanding, generation and editing in one framework, but existing datasets and benchmarks are dominated by single-turn tasks; even recent multi-turn sets contain turns that can be solved independently. YANAMI introduces a large-scale multimodal dataset and benchmark for multiturn stateful interaction, where later turns genuinely depend on earlier state. The resource is intended to stress state tracking and cross-turn consistency in UMMs. Dataset scale and baseline results are not reported in the truncated abstract."
+      "summary": "Unified Multimodal Models (UMMs) combine visual understanding, generation, and editing, but existing datasets and benchmarks are dominated by single-turn tasks; even in recent multi-turn datasets, many turns can be solved independently. YANAMI is introduced as a large-scale multimodal dataset and benchmark for multiturn stateful interaction, where later turns genuinely depend on prior state established in earlier ones. The contribution targets evaluation and training of state tracking across turns in unified models, exposing weaknesses that independent-turn benchmarks overlook."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1101,7 +1101,7 @@
       "meta": "👍 23",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Multimodal learning is constrained by scarce, costly high-quality instruction data, while raw videos offer an abundant, dynamic source of visual knowledge that is difficult to convert into precise instructions. VidUEU-Agent is a data-curation agent that transforms raw videos into instruction data covering multimodal understanding, editing and unified tasks, bridging raw video and usable supervision. The excerpt does not detail the agent architecture, the scale of the curated data, or measured improvements on downstream tasks."
+      "summary": "Multimodal learning is constrained by scarce and costly high-quality instruction data, while raw videos offer abundant dynamic visual knowledge that is hard to convert into precise instructions. VidUEU-Agent is a data-curation agent that transforms raw videos into instruction data for multimodal understanding, editing, and unified tasks. The agent automates the pipeline of segmenting, captioning, and constructing instruction-answer pairs, bridging raw video to usable supervision. The contribution is an agentic curation system that lowers annotation cost and expands coverage across understanding, editing, and unified task settings."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1112,7 +1112,7 @@
       "meta": "👍 23",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "LLM-based multi-agent systems (MAS) solve complex tasks through collaboration among specialized agents. Existing methods improve MAS by refining individual agents' prompts, skills and execution strategies from task feedback, but improving individual agents does not necessarily produce a better collective. EvoTeam instead evolves the team itself, adapting multi-agent collaboration structure through evolution. The excerpt does not describe the evolutionary operators, the search space of team configurations, or benchmark comparisons against prior MAS optimization methods."
+      "summary": "LLM-based multi-agent systems rely on collaboration among specialized agents, and existing methods improve them by refining individual agents' prompts, skills, and execution strategies from task feedback. The authors argue that improving individual agents does not necessarily improve the team. EvoTeam instead evolves the team composition and collaboration structure itself, adapting which agents exist and how they coordinate in response to task performance. The contribution shifts optimization from the agent level to the team level, aiming for better collective problem solving on complex tasks."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1123,7 +1123,7 @@
       "meta": "👍 19",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "GUI web agents need realistic, interactive environments that stay stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions and limited coverage of authenticated workflows, while existing synthetic training environments often lack realism. WebHarbor docks real websites to construct evolving GUI agent environments, aiming to combine realism with reproducibility and broader workflow coverage. The excerpt does not describe the docking mechanism, environment scale, or agent performance results obtained with the resulting environments."
+      "summary": "GUI web agents need realistic, interactive environments that stay stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions, and limited coverage of authenticated workflows, while synthetic environments are often unrealistic. WebHarbor 'docks' real websites into controllable environments, preserving realistic structure and authenticated workflows while freezing content for stability. The contribution is an environment construction approach supporting both reproducible evaluation and evolving training of GUI web agents at realistic complexity."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1134,7 +1134,7 @@
       "meta": "👍 16",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Harness optimization can substantially improve LLM agents without modifying model weights, but existing methods primarily optimize response quality. Extending them to joint quality-cost optimization introduces a challenge: applying deployment preference during intermediate updates can prematurely prune promising candidates. ParetoSaddler proposes Pareto-guided optimization of agent harnesses, keeping quality and cost trade-offs explicit so configurations can be selected for a given deployment budget. Details of the search procedure and measured quality-cost gains are not reported in the truncated abstract."
+      "summary": "Harness optimization improves LLM agents without modifying model weights, but existing methods optimize only response quality. Jointly optimizing quality and cost is difficult: applying deployment preference during intermediate updates can prematurely prune candidates that later prove valuable. ParetoSaddler addresses this with Pareto-guided optimization of agent harnesses, maintaining a Pareto front over quality and cost rather than collapsing to a single scalarized objective early. The contribution is a method that yields harnesses tuned to varied quality-cost trade-offs, letting practitioners select operating points suited to deployment budgets."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1145,7 +1145,7 @@
       "meta": "👍 15",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Molecular discovery requires navigating vast combinatorial search spaces while balancing competing biological objectives. AI agents can automate expert-defined molecular design protocols, but automation alone does not address how to optimize workflows for new tasks or improve them across development cycles. MoLRSI is a recursive self-improving AI agent for molecular discovery that iteratively refines its own design workflows. The excerpt does not detail the self-improvement mechanism, the objectives evaluated, or hit rates against baselines."
+      "summary": "Molecular discovery requires navigating vast combinatorial search spaces while balancing competing biological objectives. AI agents can automate expert-defined molecular design protocols, but automation alone does not address how to optimize workflows for new tasks or improve them across iterations. MoLRSI is a recursive self-improving agent for molecular discovery that refines its own design workflows based on results rather than following a fixed protocol. The contribution is a self-improvement loop for molecular design agents, aiming at better multi-objective optimization than static automated pipelines."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1156,7 +1156,7 @@
       "meta": "👍 15",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Speculative decoding accelerates memory-bound LLM decoding with a lightweight drafter, and parallel drafters extend the speedup by drafting a whole block in one forward pass. However, it remains unclear whether released systems attain the full speedup that parallel drafting permits. SpecPilot addresses this through autonomous algorithm discovery and systems optimization for speculative decoding, searching drafting algorithms together with system-level implementation choices. Specific discovered designs, speedups and baseline comparisons are not reported in the truncated abstract."
+      "summary": "Speculative decoding accelerates memory-bound LLM decoding with a lightweight drafter, and parallel drafters extend this by drafting an entire block in one forward pass. It remains unclear whether released systems attain the speedup that parallel drafting permits. SpecPilot performs autonomous algorithm discovery and systems optimization for speculative decoding, searching over drafting and verification strategies and their system-level implementation. The contribution is an automated search framework that closes the gap between theoretical and achieved speedups, yielding optimized speculative decoding configurations."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1167,7 +1167,7 @@
       "meta": "👍 11",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Coding agents rely on automated approvers to decide whether a proposed shell command may run. Existing approvers, from rule-based checkers to guardrail models and deployed permission classifiers, base decisions on the text of the request and command, yet a command's behavior depends on its execution context and consequences. The paper proposes consequence-aware approval for autonomous coding agents, grounding approval decisions in predicted effects rather than surface text. The excerpt does not describe the model or report approval accuracy and safety numbers."
+      "summary": "Coding agents rely on automated approvers to decide whether a proposed shell command may run. Existing approvers — rule-based checkers, guardrail models, and deployed permission classifiers — judge from the request and command text alone, yet a command's behavior depends on context and consequences. The paper proposes consequence-aware approval, reasoning about what a command would actually do in its environment before approving. The contribution reframes command approval around predicted effects rather than surface text, aiming to reduce both unsafe approvals and unnecessary blocking in autonomous coding agents."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1178,7 +1178,7 @@
       "meta": "👍 11",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Effective computer-use agents (CUAs) should combine visual GUI interaction with code and terminal execution within a single policy. Mage-VL-Cowork is a 4B hybrid CUA trained from a general multimodally aligned checkpoint through an end-to-end progressive five-stage curriculum built on evolved harnesses, presented as a full training recipe. The work targets hybrid action spaces spanning GUI operations and shell or code execution. Benchmark results and data composition are not included in the truncated abstract."
+      "summary": "Computer-use agents should combine visual GUI interaction with code and terminal execution in a single policy. Mage-VL-Cowork is a 4B hybrid CUA trained from a general multimodally aligned checkpoint through an end-to-end progressive five-stage curriculum, learning hybrid computer use from evolved harnesses. The work presents a full training recipe rather than only a model, covering data and curriculum design that build GUI and code/terminal skills together. The contribution is an openly described recipe and a compact 4B hybrid agent demonstrating that small models can acquire combined GUI and terminal competence."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1189,7 +1189,7 @@
       "meta": "👍 9",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "In-image machine translation (IIMT) replaces text in an image with its translation while preserving surrounding visual context. Task-specific models achieve convincing performance but require massive paired before-and-after training images. As text-to-image models mature, FlowTranslator proposes training-free IIMT with flow-based editing, using flow-model editing to substitute translated text without task-specific supervision. The excerpt does not detail the editing pipeline, how text regions and style are preserved, or reported translation quality metrics."
+      "summary": "In-image machine translation (IIMT) replaces text inside an image with its translation while preserving surrounding visual context. Task-specific models work well but need massive paired before/after training images. FlowTranslator is a training-free approach built on advanced text-to-image models, using flow-based editing to remove original text and render the translated text in place with matching style. The contribution removes the paired-data requirement entirely, leveraging pretrained generative models' editing capabilities for IIMT and avoiding task-specific supervised training."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1923,6 +1923,15 @@
     },
     {
       "sourceId": "mit-tech-review-ai",
+      "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
+      "url": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput/",
+      "excerpt": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech’s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position. Democrat James Talarico won the US Senate seat against Ken Paxton. Gina Hinojosa won the race for governor aga",
+      "publishedAt": "2026-11-04T18:50:55.000Z",
+      "category": "tech",
+      "source": "MIT Tech Review AI"
+    },
+    {
+      "sourceId": "mit-tech-review-ai",
       "title": "Securing the agentic enterprise with data lineage",
       "url": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/",
       "excerpt": "A sales representative asks an AI agent for customer pricing, and the agent pulls data from multiple sources: restricted pricing systems, internal communications, and archived quotes. The output looks accurate to the agent, so a second agent uses the data to draft the proposal for the sales rep. No ",
@@ -2003,15 +2012,6 @@
       "source": "MIT Tech Review AI"
     },
     {
-      "sourceId": "mit-tech-review-ai",
-      "title": "Industrial Intelligence: The next growth opportunity for manufacturing",
-      "url": "https://www.technologyreview.com/2026/10/27/1147142/industrial-intelligence-the-next-growth-opportunity-for-manufacturing/",
-      "excerpt": "Every manufacturer has its own industrial intelligence. Some is documented, and some resides in the knowledge of experienced workers. Consider an experienced operator preparing to restart a line after a changeover. The machine settings matter, but so does knowing how a particular material behaves, w",
-      "publishedAt": "2026-10-27T11:19:18.000Z",
-      "category": "tech",
-      "source": "MIT Tech Review AI"
-    },
-    {
       "sourceId": "attentionvc-ai",
       "title": "How to Use Grok Bot to Build a Team of AI Trading Agents",
       "url": "https://x.com/RohOnChain/status/2117625737792585969",
@@ -2020,7 +2020,7 @@
       "category": "tech",
       "meta": "@RohOnChain · 84.8K 粉丝 · 405.8K 阅 · 525 赞 · 72 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Step-by-step framework for assembling a 24/7 'AI trading team' on top of Grok Bot: agents that scan the market, propose strategies, backtest them and place trades without human intervention. Framed as a reproducible build guide rather than a results report — the opening contains no performance numbers or live P&L audit, so treat it as an architecture and prompting walkthrough for autonomous trading agents, not validated alpha."
+      "summary": "A step-by-step framework for assembling a 24/7 AI trading team with Grok Bot: agents scan the market, propose strategies, backtest them, and execute trades autonomously. The post promises an exact build breakdown rather than theory, aimed at readers who want a repeatable agent workflow from research to execution. It is framed as a bookmarkable tutorial, though the preview does not specify model configuration, data sources, or risk controls."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2031,7 +2031,7 @@
       "category": "tech",
       "meta": "@Teamily_AI · 9.4K 粉丝 · 257.8K 阅 · 534 赞 · 53 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Open letter from the Teamily AI team to customers, ecosystem partners and investors, arguing the next phase is an 'agentic internet' built around team agents rather than single personal assistants. Written as a company update, it frames multi-agent collaboration as the product direction and thanks early users for growth. Mostly vision and positioning: the preview carries no metrics, benchmarks or shipped-feature detail."
+      "summary": "An open letter from Teamily AI to customers, ecosystem partners, and investors, framed around the shift from personal agents to 'team agents' and an emerging agentic internet. The company cites rapid growth over recent months and uses the letter to outline its product and ecosystem direction. It reads as a strategic vision and stakeholder update rather than a technical tutorial; the preview gives no specific metrics, tools, or launch details."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2042,7 +2042,7 @@
       "category": "tech",
       "meta": "@OpenProtocolFND · 29.1K 粉丝 · 133.0K 阅 · 550 赞 · 46 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Short thesis post arguing that as the internet becomes agentic, access to it is handed out free while ownership of the underlying rails is quietly consolidated. The framing — the web shifting from a place you visit to a system that acts for you — sets up a pitch for owning infrastructure instead of renting it. A manifesto-style take from OpenProtocol, light on technical specifics in the opening."
+      "summary": "A thesis post arguing that as the internet becomes agentic, access is being handed out freely while ownership of the underlying rails is quietly concentrated. The author frames the shift as the internet moving from a place people visit to a system that acts on their behalf, and positions 'owning the rails' as the central question. It is advocacy and commentary rather than a tutorial, with no specific tools, metrics, or implementation details in the preview."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2053,7 +2053,7 @@
       "category": "tech",
       "meta": "@HeyElsaAI · 80.6K 粉丝 · 107.7K 阅 · 500 赞 · 39 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Part one of a HeyElsa report introducing 'Infero', built around the claim that three companies effectively own how the world thinks, with a promised way out. The opening sets up a plain-language primer on what an AI model actually is, so it reads as narrative research and positioning rather than a technical benchmark. Dated October 2026; no concrete numbers or product specs appear in the preview."
+      "summary": "A HeyElsa report titled 'Rented Brains' introducing Infero, opening with the claim that three companies own how the world thinks and promising 'the way out.' The preview is structured as Part one: how we got here, suggesting a narrative on AI concentration before a product or protocol pitch. It is a report and announcement rather than a technical walkthrough; no model names, benchmarks, or concrete mechanics appear in the preview."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2064,7 +2064,7 @@
       "category": "tech",
       "meta": "@JoshARosen · 3.6K 粉丝 · 32.1K 阅 · 522 赞 · 39 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Argument that agents need explicit state machines as deterministic scaffolding: without them you are at the mercy of model nondeterminism, letting the model decide which actions to take and when. The post pushes controlled state transitions and guardrails over free-form agent loops, positioning structure as the fix for unreliable autonomous behavior. A conceptual, architectural take for people shipping agents rather than a tool tutorial."
+      "summary": "An argument for wrapping LLM agents in explicit state machines instead of letting models decide actions and timing ad hoc. The author warns that without deterministic scaffolding, builders are 'completely at the mercy' of model nondeterminism, and frames state machines as the control layer for reliable agent behavior. It reads as a design-pattern take, likely with implementation guidance, rather than a product launch; the preview does not name specific frameworks or benchmarks."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2075,7 +2075,7 @@
       "category": "tech",
       "meta": "@addyosmani · 476.7K 粉丝 · 29.5K 阅 · 680 赞 · 71 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Essay on how critical thinking changes once agents do the work. Addy Osmani revisits the classic definition — approach new information with humble curiosity and healthy skepticism, weigh different views, form your own opinion — and argues it still holds but needs updating when a model hands you polished answers. The angle is judgment and evaluation rather than tooling; no specific tools or metrics appear in the preview."
+      "summary": "A short essay on how critical thinking must adapt when agents do the work. Addy Osmani revisits the classic definition: approaching new information with humble curiosity and healthy skepticism, weighing different views, and forming your own opinion. He suggests it remains true but needs updating for agent-mediated workflows. The angle is educational and opinion-driven, aimed at developers and knowledge workers delegating tasks to AI; the preview does not include tools, metrics, or a step-by-step method."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2086,7 +2086,43 @@
       "category": "tech",
       "meta": "@Louisfabulous2 · 2.5K 粉丝 · 4.1K 阅 · 584 赞 · 38 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Explainer on Primus zkTLS, pitched as a way to make web data verifiable for AI agents. The motivating scenario: an agent checking Binance for an asset's current price, where intelligence alone does not establish trust once money is involved. zkTLS is presented as cryptographic proof that fetched data is authentic, aimed at agent payment and trading use cases. Educational framing from an ecosystem advocate, not an independent benchmark."
+      "summary": "An explainer on using Primus zkTLS to make web data verifiable for AI agents, motivated by trust gaps when agents handle money. The example: an agent checking Binance for an asset's current price, where the user needs proof the data was fetched authentically rather than trusting the agent's report. It positions zkTLS as infrastructure for verifiable data provenance in agent workflows. The preview is conceptual and does not include benchmarks, integration steps, or performance numbers."
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Wall Street Reckoning Looms as Democrats Take Over Congress",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/wall-street-s-reckoning-looms-as-democrats-take-over-congress",
+      "excerpt": "For nearly two years, Wall Street firms and startups have enjoyed a sweeping deregulatory agenda from President Donald Trump that relaxed post-financial crisis rules and boosted nascent industries.",
+      "publishedAt": "2026-11-04T14:32:23.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Tech Megacaps Power S&P 500 Higher as Election Uncertainty Eases",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/us-equity-futures-inch-higher-as-investors-await-midterm-results",
+      "excerpt": "Technology megacaps rallied, leading the broader stock market higher, as Democrats swept to power in Congress and President Donald Trump said he would accept the midterm results, easing uncertainty and prompting investors to buy the recent dip.",
+      "publishedAt": "2026-11-04T00:01:14.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Wall Street Girding for US Debt Ceiling Showdown in 2027",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/wall-street-girding-for-us-debt-ceiling-showdown-in-2027",
+      "excerpt": "Wall Street strategists are warning that the return of divided government could disrupt the bond market next year by setting the stage for a bruising fight over the debt ceiling.",
+      "publishedAt": "2026-11-04T18:50:46.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Dollar Slides Toward Worst Day in Two Months After US Midterms",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/franc-yen-emerge-as-fx-winners-as-us-midterms-weaken-dollar",
+      "excerpt": "The dollar sank the most in two months as Democrats’ sweeping victory in the midterm elections fueled concern about potential political gridlock and raised the prospect of diminished spending on AI by US tech giants.",
+      "publishedAt": "2026-11-04T03:11:23.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2198,15 +2234,6 @@
     },
     {
       "sourceId": "bloomberg-markets",
-      "title": "Tech Megacaps Lead S&P 500 Higher as Midterm Uncertainty Eases",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-04/us-equity-futures-inch-higher-as-investors-await-midterm-results",
-      "excerpt": "Technology megacaps rallied, leading the broader stock market higher, as Democrats swept to power in Congress and President Donald Trump said he would accept the midterm results, easing uncertainty and prompting investors to buy the recent dip.",
-      "publishedAt": "2026-11-04T00:01:14.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
       "title": "Renewable Stocks Surge After Democrats Sweep Congress",
       "url": "https://www.bloomberg.com/news/articles/2026-11-04/global-solar-stocks-jump-as-democrats-hold-early-us-midterm-lead",
       "excerpt": "Renewable energy stocks rallied around the world after the Democrats won control of both chambers of Congress in the US midterm elections, an outcome seen as supporting more favorable policy for the industry.",
@@ -2238,33 +2265,6 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-04/hyperscalers-lead-credit-market-gains-amid-broad-risk-on-rally",
       "excerpt": "Credit markets are starting to price in winners and losers from an expected slowdown in data center development after a Democratic sweep in the US midterm elections this week.",
       "publishedAt": "2026-11-04T13:27:18.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Prediction Markets Won Big Last Night",
-      "url": "https://www.bloomberg.com/news/newsletters/2026-11-04/prediction-markets-won-big-last-night",
-      "excerpt": "Some thoughts on then midterm elections.",
-      "publishedAt": "2026-11-04T15:43:01.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Hudson River Trading Joins Wall Street’s Prediction Market Shift",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-04/hudson-river-trading-joins-wall-street-s-prediction-market-shift",
-      "excerpt": "Hudson River Trading, one of Wall Street’s biggest market makers, has begun trading on Kalshi, joining a growing roster of institutional firms seeking opportunities in the booming prediction-market industry.",
-      "publishedAt": "2026-11-04T15:36:21.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "US Service Sector Grows at the Slowest Pace in Three Months",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-04/us-service-sector-grows-at-the-slowest-pace-in-three-months",
-      "excerpt": "The US service sector expanded in October at the slowest pace in three months amid continuing cost pressures.",
-      "publishedAt": "2026-11-04T15:00:00.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -3296,19 +3296,19 @@
     },
     {
       "sourceId": "reddit-stocks",
-      "title": "NBIS vs IREN - a comparison with counter intuitive conclusion",
-      "url": "https://www.reddit.com/r/stocks/comments/1xnt7s0/nbis_vs_iren_a_comparison_with_counter_intuitive/",
-      "excerpt": "Disclaimer : I redacted my post partially with AI as English isn't my main language. I own every argument stated in this post and used my own way of calculating the future share prices. Please feel free to criticize my method. I was a NBIS shareholder for a long time : bought at 90, sold at 250/280.",
-      "publishedAt": "2026-11-04T16:50:33.000Z",
+      "title": "AMD stock jumps 7% on earnings as data center revenue nearly doubles",
+      "url": "https://www.reddit.com/r/stocks/comments/1xn5v2j/amd_stock_jumps_7_on_earnings_as_data_center/",
+      "excerpt": "Advanced Micro Devices reported third-quarter earnings on Tuesday that beat Wall Street’s expectations, with revenue jump 45% and data center sales nearly doubling from a year earlier. The stock jumped 7% in extended trading. Here’s how the chipmaker did versus LSEG consensus estimates for the quart",
+      "publishedAt": "2026-11-03T21:32:24.000Z",
       "category": "tech",
       "source": "r/stocks"
     },
     {
       "sourceId": "reddit-stocks",
-      "title": "AMD stock jumps 7% on earnings as data center revenue nearly doubles",
-      "url": "https://www.reddit.com/r/stocks/comments/1xn5v2j/amd_stock_jumps_7_on_earnings_as_data_center/",
-      "excerpt": "Advanced Micro Devices reported third-quarter earnings on Tuesday that beat Wall Street’s expectations, with revenue jump 45% and data center sales nearly doubling from a year earlier. The stock jumped 7% in extended trading. Here’s how the chipmaker did versus LSEG consensus estimates for the quart",
-      "publishedAt": "2026-11-03T21:32:24.000Z",
+      "title": "NBIS vs IREN - a comparison with counter intuitive conclusion",
+      "url": "https://www.reddit.com/r/stocks/comments/1xnt7s0/nbis_vs_iren_a_comparison_with_counter_intuitive/",
+      "excerpt": "Disclaimer : I redacted my post partially with AI as English isn't my main language. I own every argument stated in this post and used my own way of calculating the future share prices. Please feel free to criticize my method. I was a NBIS shareholder for a long time : bought at 90, sold at 250/280.",
+      "publishedAt": "2026-11-04T16:50:33.000Z",
       "category": "tech",
       "source": "r/stocks"
     },
@@ -4046,7 +4046,7 @@
       "title": "For Israelis, U.S. Midterms Show How Far Their Star Has Fallen in America",
       "url": "https://www.nytimes.com/2026/11/04/world/middleeast/israel-trump-midterm-elections.html",
       "excerpt": "Israel once had bipartisan support in the United States, but a strong showing for Democrats, some of whom are deeply critical of the war in Gaza, has left the country with fewer friends in Congress.",
-      "publishedAt": "2026-11-04T18:31:04.000Z",
+      "publishedAt": "2026-11-04T18:46:33.000Z",
       "category": "politics",
       "source": "NYT World"
     },
@@ -4277,6 +4277,15 @@
     },
     {
       "sourceId": "aljazeera",
+      "title": "Key moments as Democrats sweep to victories in US midterms",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/11/4/key-moments-as-democrats-sweep-to-victories-in-us-midterms?traffic_source=rss",
+      "excerpt": "Democrats have been celebrating across the US after a series of victories saw them take control of both chambers.",
+      "publishedAt": "2026-11-04T18:13:01.000Z",
+      "category": "politics",
+      "source": "Al Jazeera"
+    },
+    {
+      "sourceId": "aljazeera",
       "title": "Danish students join European protest wave against education funding cuts",
       "url": "https://www.aljazeera.com/news/2026/11/4/danish-students-join-european-protest-wave-against-education-funding-cuts?traffic_source=rss",
       "excerpt": "Danish government proposes scrapping allowance scheme for students from wealthier families.",
@@ -4385,7 +4394,7 @@
     },
     {
       "sourceId": "aljazeera",
-      "title": "Iranian leaders welcome US midterms, but Trump may still attack",
+      "title": "Iranian leaders welcome US midterm results, but Trump may still attack",
       "url": "https://www.aljazeera.com/news/2026/11/4/iranian-leaders-welcome-us-midterms-but-trump-may-still-attack?traffic_source=rss",
       "excerpt": "Tehran views midterm results as a rejection of Trump's 'war on Iran', signalling US frustration with foreign policy.",
       "publishedAt": "2026-11-04T15:13:00.000Z",
@@ -4488,15 +4497,6 @@
       "url": "https://www.aljazeera.com/news/2026/11/4/iran-hails-us-voters-rejecting-war-while-khamenei-warns-hostility-wont-end?traffic_source=rss",
       "excerpt": "Iranian supreme leader says US policy won't change amid Tehran 'Fight Against Global Arrogance' day rallies",
       "publishedAt": "2026-11-04T13:26:44.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "Why are Europe’s governments struggling to respond to growing protests?",
-      "url": "https://www.aljazeera.com/news/2026/11/4/why-are-europes-governments-struggling-to-respond-to-growing-protests?traffic_source=rss",
-      "excerpt": "Protests intensify as governments prioritise security measures over addressing underlying social and economic concerns.",
-      "publishedAt": "2026-11-04T13:03:07.000Z",
       "category": "politics",
       "source": "Al Jazeera"
     },
