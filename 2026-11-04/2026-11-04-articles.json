@@ -6,150 +6,150 @@
       "title": "NVIDIA/auto-ontology",
       "url": "https://github.com/NVIDIA/auto-ontology",
       "excerpt": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
-      "meta": "Python · ★ 4,430 · 🍴 365 · 📈 2,053 stars today",
+      "meta": "Python · ★ 4,438 · 🍴 365 · 📈 2,053 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Auto Ontology is a Python framework for constructing semantic, graph-based reasoning layers on top of existing data. Rather than letting a language model guess at relationships, it encodes domain structure as an ontology so queries can be generated deterministically, retrieval returns grounded context, and model outputs become traceable to defined entities and relations. It targets teams building LLM applications that need explainability and repeatable results, such as enterprise knowledge assistants, RAG pipelines over structured datasets, and agentic systems where hallucination or non-deterministic querying is a blocking concern."
+      "summary": "Auto Ontology is a Python framework for constructing semantic, graph-based reasoning layers on top of existing data. Rather than relying on free-form text retrieval alone, it models domain entities and relationships so that queries can be generated deterministically and context returned to a model is structured and traceable. The stated benefits are more reliable query generation, improved context retrieval for LLM applications, and explainable answers, since results map back to graph paths. It targets engineers building retrieval-augmented and agentic systems who need auditable reasoning over enterprise or domain data rather than opaque vector search."
     },
     {
       "sourceId": "github-trending",
       "title": "max-sixty/worktrunk",
       "url": "https://github.com/max-sixty/worktrunk",
       "excerpt": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
-      "meta": "Rust · ★ 10,903 · 🍴 405 · 📈 524 stars today",
+      "meta": "Rust · ★ 10,907 · 🍴 405 · 📈 524 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Worktrunk is a command-line tool for managing Git worktrees, aimed at developers running several AI coding agents in parallel. Multiple agents working in one checkout collide over branches, index state, and uncommitted changes; worktrees isolate each task in its own directory, and this CLI wraps the create, switch, list, and cleanup steps that make that practical. Typical users are engineers orchestrating concurrent Claude Code, Codex, or similar agent sessions, or anyone who wants lightweight parallel branches without cloning the repository repeatedly."
+      "summary": "Worktrunk is a command-line tool for managing Git worktrees, aimed at developers who run several AI coding agents in parallel on the same repository. Instead of stashing changes or juggling clones, each agent or task gets its own checked-out worktree, keeping branches isolated and avoiding conflicts in the working directory. The CLI wraps the verbose native worktree commands with shorter create, switch, and cleanup operations. Typical users are engineers orchestrating multiple concurrent agent sessions, reviewing agent output side by side, or running parallel experiments without disturbing their main checkout."
     },
     {
       "sourceId": "github-trending",
       "title": "mattpocock/skills",
       "url": "https://github.com/mattpocock/skills",
       "excerpt": "Skills for Real Engineers. Straight from my .agents directory.",
-      "meta": "Shell · ★ 312,841 · 🍴 26,251 · 📈 1,376 stars today",
+      "meta": "Shell · ★ 312,852 · 🍴 26,251 · 📈 1,376 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A collection of agent skills extracted from the author's own .agents directory and published for other engineers to reuse. Skills are reusable instruction packages that coding agents load to follow a specific procedure for a task, so this repository effectively distributes the author's working conventions rather than a runtime library. It suits developers using skill-capable agents such as Claude Code who want proven, opinionated prompts and workflows for everyday engineering work instead of writing them from scratch. Installation and usage details live in the repository itself."
+      "summary": "A collection of reusable agent skills extracted from the author's own .agents directory, published for other developers to copy or adapt. Skills are the instruction and tool-definition files that tell coding agents how to perform specific tasks consistently, so sharing them spreads working patterns rather than ad hoc prompts. The repository is aimed at practising engineers who want practical, battle-tested configurations for their agent tooling instead of building prompts from scratch. It is a reference library: browse the directory, take the skills relevant to your workflow, and drop them into your own setup."
     },
     {
       "sourceId": "github-trending",
       "title": "floci-io/floci",
       "url": "https://github.com/floci-io/floci",
       "excerpt": "Light, fluffy, and always free - The AWS Local Emulator alternative",
-      "meta": "Java · ★ 29,442 · 🍴 3,261 · 📈 1,082 stars today",
+      "meta": "Java · ★ 29,444 · 🍴 3,262 · 📈 1,082 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Floci is positioned as a lightweight, free alternative to existing AWS local emulators, letting developers run AWS-like services on their own machine instead of against a real account. The project targets the common friction of cloud emulators: heavy container footprints, slow startup, and paid tiers. It is intended for local development and testing workflows where engineers need to exercise AWS APIs offline or in CI without incurring cost. Specific supported services, language, and installation steps are documented in the repository."
+      "summary": "Floci is a lightweight, free local emulator for AWS services, positioned as an alternative to existing emulators such as LocalStack. It lets developers run AWS APIs on their own machine so applications can be developed and tested without provisioning real cloud resources or paying for them. The emphasis on being light and always free suggests a small footprint and no paid tier gating core functionality. It suits backend and platform engineers who want offline or CI-friendly testing of code that depends on AWS services, and teams wanting to avoid cloud spend during development."
     },
     {
       "sourceId": "github-trending",
       "title": "thedotmack/claude-mem",
       "url": "https://github.com/thedotmack/claude-mem",
       "excerpt": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
-      "meta": "TypeScript · ★ 112,627 · 🍴 9,788 · 📈 1,165 stars today",
+      "meta": "TypeScript · ★ 112,629 · 🍴 9,788 · 📈 1,165 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Claude-mem gives coding agents persistent memory across sessions. It records what an agent does during a session, compresses that activity with an AI model, and injects the relevant parts back into later sessions, so work continues without re-explaining project context. The tool is built for agent workflows such as Claude Code, where each run otherwise starts cold. Developers use it on long-running or multi-day projects where prior decisions, file changes, and debugging history need to survive restarts. Setup and supported clients are covered in the repository documentation."
+      "summary": "Claude-mem gives AI coding agents persistent memory across sessions. It captures what an agent does during a working session, compresses that activity with an AI model, and injects the relevant parts back into later sessions, so context is not lost every time a conversation restarts. The project is described as working with Claude-based agents. It targets developers who use agents for ongoing projects and are tired of re-explaining codebase conventions, prior decisions, and unfinished work. Typical use is long-running feature development, where continuity between sessions matters more than any single prompt."
     },
     {
       "sourceId": "github-trending",
       "title": "vercel-labs/agent-desktop",
       "url": "https://github.com/vercel-labs/agent-desktop",
       "excerpt": "Computer use CLI for AI agents",
-      "meta": "Rust · ★ 14,579 · 🍴 1,003 · 📈 2,463 stars today",
+      "meta": "Rust · ★ 14,581 · 🍴 1,004 · 📈 2,463 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A command-line interface from Vercel Labs that gives AI agents computer-use capabilities, letting a model observe and drive a desktop environment rather than only calling APIs. Computer use is useful when a task has no programmatic interface: navigating a GUI, filling web forms, operating legacy applications, or verifying what a rendered interface actually shows. It targets developers and agent builders who want to script or benchmark these interactions, and it fits into agent frameworks as an execution layer. Supported platforms and command syntax are documented in the repository."
+      "summary": "Agent-desktop is a command-line interface from Vercel Labs that lets AI agents perform computer use: observing and interacting with a desktop environment rather than only calling APIs. It provides the plumbing for agents to take screenshots, move the cursor, click, and type, so tasks that exist only behind a GUI become automatable. It is aimed at developers building or experimenting with agents that must operate legacy applications, browser interfaces, or desktop software lacking an API. Typical uses include scripted UI workflows, testing, and research on agentic computer control."
     },
     {
       "sourceId": "github-trending",
       "title": "github/spec-kit",
       "url": "https://github.com/github/spec-kit",
       "excerpt": "💫 Toolkit to help you get started with SDD or any other process!",
-      "meta": "Python · ★ 147,147 · 🍴 13,208 · 📈 810 stars today",
+      "meta": "Python · ★ 147,150 · 🍴 13,208 · 📈 810 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Spec Kit is a GitHub toolkit for getting started with spec-driven development, an approach where a written specification is authored first and then used to drive implementation, often with AI coding agents generating code from it. The repository packages templates, prompts, and workflow scaffolding so a team can adopt SDD, or adapt the same structure to another process, without inventing conventions from scratch. It is aimed at developers and teams using agentic coding tools who want requirements and design decisions captured before code is produced."
+      "summary": "Spec Kit is a GitHub toolkit for getting started with Spec-Driven Development (SDD), an approach in which a written specification is produced first and implementation follows from it, with AI coding agents doing much of the work. The toolkit supplies templates, prompts, and process scaffolding so a team can adopt SDD or adapt it to an existing workflow, keeping requirements, plans, and tasks as versioned artifacts in the repository. It targets software teams and individual developers using agentic coding tools who want more predictable results, clearer review points, and traceability from specification to code."
     },
     {
       "sourceId": "github-trending",
       "title": "The-PR-Agent/pr-agent",
       "url": "https://github.com/The-PR-Agent/pr-agent",
       "excerpt": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
-      "meta": "Python · ★ 14,631 · 🍴 2,077 · 📈 279 stars today",
+      "meta": "Python · ★ 14,633 · 🍴 2,078 · 📈 279 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "PR-Agent is an open-source automated pull request reviewer. It reads a proposed diff and posts review comments, aiming to catch issues and summarize changes before a human reviewer spends time on them. The project identifies itself as the original open-source PR Agent and explicitly distinguishes itself from the Qodo hosted free tier, a distinction that matters to teams comparing self-hosted versus vendor-run review bots. It is used by engineering teams that want automated first-pass review inside their existing Git and CI workflow, including self-hosted deployments."
+      "summary": "PR-Agent is an open-source pull request reviewer that runs automatically on new or updated PRs. It analyses the diff and posts review comments, summaries, and suggestions, reducing the manual effort of first-pass code review. The maintainers stress that this is the original open-source project and not the Qodo free tier, a distinction relevant to teams evaluating hosted versus self-run options. It is aimed at engineering teams that want automated review feedback inside their existing Git workflow, whether self-hosted or integrated through CI, and at developers wanting to inspect or extend the review logic themselves."
     },
     {
       "sourceId": "github-trending",
       "title": "harry0703/MoneyPrinterTurbo",
       "url": "https://github.com/harry0703/MoneyPrinterTurbo",
       "excerpt": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
-      "meta": "Python · ★ 138,784 · 🍴 22,150 · 📈 615 stars today",
+      "meta": "Python · ★ 138,785 · 🍴 22,150 · 📈 615 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "MoneyPrinterTurbo generates high-definition short videos from a single topic or keyword using an automated AI workflow. The pipeline assembles the pieces a short-form video needs, such as script text, voiceover, visuals, and subtitles, then renders a finished clip with minimal manual editing. It targets content creators and marketers producing short video at volume for platforms like TikTok, YouTube Shorts, and Xiaohongshu, as well as developers who want a self-hosted, scriptable alternative to subscription video generators. Configuration and supported model providers are documented in the repository."
+      "summary": "MoneyPrinterTurbo generates short high-definition videos from a single topic or keyword using an automated AI workflow. Given a subject, it assembles the pieces of a short-form video, typically script text, voiceover, background footage, and subtitles, then renders the result without manual editing. Multiple large language model and text-to-speech backends are supported, and the project ships with a web interface for configuration. It is aimed at content creators and marketers producing material for short-video platforms at volume, and at developers who want a self-hosted pipeline they can modify or extend."
     },
     {
       "sourceId": "github-trending",
       "title": "garrytan/gstack",
       "url": "https://github.com/garrytan/gstack",
       "excerpt": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
-      "meta": "TypeScript · ★ 139,184 · 🍴 20,622 · 📈 285 stars today",
+      "meta": "TypeScript · ★ 139,188 · 🍴 20,622 · 📈 285 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Gstack packages Garry Tan's personal Claude Code configuration: 23 opinionated tools and prompts that each take on a role, including CEO, designer, engineering manager, release manager, documentation engineer, and QA. The idea is to reproduce a full product-development cadence inside an agent session, where different role definitions review plans, scope work, and check output instead of one generic assistant doing everything. It suits founders, solo developers, and small teams using Claude Code who want a structured, opinionated starting point rather than assembling their own agent roles."
+      "summary": "GStack packages Garry Tan's personal Claude Code configuration: 23 opinionated tools and prompts that emulate roles such as CEO, Designer, Engineering Manager, Release Manager, Documentation Engineer, and QA. Each tool encodes a specific review or planning lens, so a solo developer or small team can run structured passes over product direction, design, engineering execution, and release readiness using an AI coding agent. It targets founders and engineers who want a ready-made, opinionated workflow rather than assembling their own prompts, and who value replicating a known operator's setup directly."
     },
     {
       "sourceId": "github-trending",
       "title": "FareedKhan-dev/kimi-k3-in-c",
       "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
       "excerpt": "A 2.78-trillion-parameter Kimi K3 running inference on a single CPU in 8.24 GB of RAM. Portable C99: no BLAS, no framework, no GPU.",
-      "meta": "C · ★ 10,126 · 🍴 1,615 · 📈 351 stars today",
+      "meta": "C · ★ 10,130 · 🍴 1,615 · 📈 351 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "An experimental inference implementation of a 2.78-trillion-parameter Kimi K3 model running on a single CPU within 8.24 GB of RAM, written in portable C99 with no BLAS, no machine-learning framework, and no GPU. The constraint-driven design makes it a study in memory layout, quantization, and out-of-core weight handling rather than a production serving stack. It interests systems programmers, students, and researchers who want to understand how large models are executed close to the metal, and it serves as a reference for educational or embedded experiments on commodity hardware."
+      "summary": "An experimental implementation that runs inference for a Kimi K3 model reported at 2.78 trillion parameters on a single CPU within 8.24 GB of RAM. The code is portable C99 with no BLAS, no machine-learning framework, and no GPU dependency, making it buildable on minimal systems. Such figures imply aggressive quantisation and out-of-core streaming of weights rather than holding the model in memory, so throughput is expected to be modest. It is aimed at systems programmers and students interested in how large-model inference works at the metal level, and at hardware-constrained experimentation."
     },
     {
       "sourceId": "github-trending",
       "title": "JiaFeiMiao-K-Cat/DiscImageStudio",
       "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
       "excerpt": "",
-      "meta": "C# · ★ 6,305 · 🍴 222 · 📈 1,792 stars today",
+      "meta": "C# · ★ 6,308 · 🍴 222 · 📈 1,792 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A GitHub repository named DiscImageStudio; no public description is provided, so its exact scope cannot be stated with confidence. The name indicates tooling around disc images, the files that capture the contents of optical or other media for backup, emulation, or archival use, and a studio framing suggests an authoring or inspection interface rather than a bare command-line utility. Prospective users should consult the repository's source, releases, and documentation to confirm supported formats and features before relying on it."
+      "summary": "DiscImageStudio is a repository whose name points to tooling for working with disc images, most likely creating, inspecting, or converting optical media images. No description is supplied, so supported formats, target platforms, and the exact workflow cannot be confirmed from the listing alone; the README and source tree are the reliable source. It would be of interest to users archiving optical discs, authoring ISO images, or examining disc structures, and to developers looking for a self-hosted utility rather than a commercial disc authoring suite. Evaluate scope before relying on it."
     },
     {
       "sourceId": "github-trending",
       "title": "MichaelCade/90DaysOfDevOps",
       "url": "https://github.com/MichaelCade/90DaysOfDevOps",
       "excerpt": "This repository started out as a learning in public project for myself and has now become a structured learning map for many in the community. We have 3 years under our belt covering all things DevOps, including Principles, Processes, Tooling and Use Cases surrounding this vast topic.",
-      "meta": "Shell · ★ 30,280 · 🍴 6,786 · 📈 156 stars today",
+      "meta": "Shell · ★ 30,281 · 🍴 6,786 · 📈 156 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "90DaysOfDevOps began as a learning-in-public project and has grown into a structured learning map used across the community, now with three years of material covering DevOps topics. It organizes study into daily chunks spanning areas such as Linux, containers, cloud, infrastructure as code, CI/CD, and observability, with links and explanations rather than a single tool. It suits people moving into platform or DevOps roles, self-taught engineers filling gaps, and teams looking for a shared curriculum. The repository is documentation and curriculum, not runnable software."
+      "summary": "90DaysOfDevOps is a structured learning plan covering DevOps and cloud-native practice, organised into daily topics across roughly three months. What began as the author's public learning log has grown over several annual editions into a community reference, with each day pointing to a subject area, explanation, and linked resources spanning Linux, containers, CI/CD, infrastructure as code, cloud platforms, and observability. It suits people moving into DevOps, students preparing for certification, and practising engineers filling gaps, who follow along day by day or use the index as a study map."
     },
     {
       "sourceId": "github-trending",
       "title": "D4Vinci/Scrapling",
       "url": "https://github.com/D4Vinci/Scrapling",
       "excerpt": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
-      "meta": "Python · ★ 96,184 · 🍴 10,080 · 📈 2,006 stars today",
+      "meta": "Python · ★ 96,194 · 🍴 10,081 · 📈 2,006 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Scrapling is a Python web scraping framework built to cover the whole range of extraction work, from a single request for one page to a full-scale crawl. It handles the recurring friction of scraping: adaptive element selection that survives site markup changes, stealth behavior against bot detection, and performance-conscious parsing. It is used by data engineers, researchers, and developers collecting web data for datasets, monitoring, or price and content aggregation, and it scales from quick scripts to maintained crawling infrastructure. The repository documents installation, selectors, and crawling modes."
+      "summary": "Scrapling is a Python web scraping framework designed to cover the whole range of scraping work, from fetching a single page to running a full-scale crawl. It provides the parsing and extraction layer together with networking, so selectors survive changes in page structure and the same code scales from a quick script to a multi-page job. The project maintains an active community channel with tips and examples. It is aimed at data engineers, researchers, and developers who collect web data regularly and want one library instead of stitching together HTTP clients, parsers, and crawlers."
     },
     {
       "sourceId": "github-trending",
       "title": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "excerpt": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "meta": "Python · ★ 12,396 · 🍴 1,811 · 📈 121 stars today",
+      "meta": "Python · ★ 12,397 · 🍴 1,811 · 📈 121 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "Horizon is a self-hosted, AI-powered news radar that produces daily briefings in both English and Chinese. Instead of scrolling feeds, users define the topics and sources they care about and the system aggregates and summarizes them into a digest. It suits people who track a specific field, such as researchers, investors, or developers following a technology niche, and who want a personal briefing rather than an algorithmic feed. Because it runs as your own instance, subscription sources and topic weighting stay under your control. Setup details are in the repository."
+      "summary": "Horizon is a self-hosted news radar that uses AI to aggregate and summarise the stories you care about, delivering a daily briefing. Rather than browsing many feeds, you configure topics or sources and receive a curated digest, with output available in both English and Chinese. It is intended for readers who want a low-noise overview of a field, and for developers who prefer running their own pipeline over subscribing to a commercial newsletter. The project is suited to anyone tracking fast-moving technical or industry news who wants summarisation and bilingual delivery in one tool."
     },
     {
       "sourceId": "github-trending",
@@ -159,13 +159,13 @@
       "meta": "Python · ★ 2,272 · 🍴 240 · 📈 224 stars today",
       "category": "tech",
       "source": "GitHub Trending",
-      "summary": "A set of agent skills that connect AI agents to Scenario's MCP server so they can produce production-ready images, video, audio, and 3D assets. The skills encode the decisions an asset pipeline usually requires: selecting the appropriate model for a request, checking cost before spending, and keeping characters and brands visually consistent across generated outputs. It targets designers, marketers, and game or product teams that generate media through agents and need repeatable results rather than one-off prompts. Model coverage, MCP configuration, and usage examples are documented in the repository."
+      "summary": "A set of agent skills that give AI agents access to production-ready image, video, audio, and 3D generation through the Scenario MCP server. The skills choose an appropriate model for a given request, quote the cost before spending, and preserve character and brand consistency across generated assets, which addresses the usual failure modes of ad hoc generation: wrong model, surprise billing, and visual drift between outputs. It is aimed at developers and creative teams wiring generative media into agent workflows, such as producing campaign assets, game content, or iterative design variants from a single conversational interface."
     },
     {
       "sourceId": "hackernews",
       "title": "AI is forcing us to pay off 40 years of technical debt",
       "url": "https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
-      "excerpt": "691 points · 438 comments",
+      "excerpt": "698 points · 440 comments",
       "publishedAt": "2026-11-04T11:52:17.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -174,7 +174,7 @@
       "sourceId": "hackernews",
       "title": "Progress on provable inference for large language models",
       "url": "https://www.anthropic.com/research/provable-inference",
-      "excerpt": "41 points · 16 comments",
+      "excerpt": "47 points · 17 comments",
       "publishedAt": "2026-11-04T17:17:46.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -183,7 +183,7 @@
       "sourceId": "hackernews",
       "title": "Guerrilla bike lanes: San Francisco makes illicit infrastructure permanent (2016)",
       "url": "https://99percentinvisible.org/article/guerrilla-bike-lanes-san-francisco-makes-illicit-infrastructure-permanent/",
-      "excerpt": "134 points · 58 comments",
+      "excerpt": "139 points · 64 comments",
       "publishedAt": "2026-11-04T15:01:44.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -192,8 +192,17 @@
       "sourceId": "hackernews",
       "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
       "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
-      "excerpt": "451 points · 197 comments",
+      "excerpt": "453 points · 198 comments",
       "publishedAt": "2026-11-04T08:46:29.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
+      "url": "https://news.ycombinator.com/item?id=50368804",
+      "excerpt": "Hi HN! I&#x27;m Luke from Kino (https:&#x2F;&#x2F;kino.ai). Kino lets you make great videos with your agents and your teammates. Storage of footage and assets, a rich video editor, and review links for teammates are all bundled into one. Your colleagues and Codex &#x2F; Claude Code can work on the s",
+      "publishedAt": "2026-11-04T17:31:53.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -201,17 +210,8 @@
       "sourceId": "hackernews",
       "title": "AMD expects to outsell Intel in Q4 for the first time in history",
       "url": "https://www.tomshardware.com/pc-components/cpus/amd-expects-to-outsell-intel-in-q4-for-the-first-time-in-history-usd17b-guidance-would-exceed-intels-projections",
-      "excerpt": "174 points · 52 comments",
+      "excerpt": "183 points · 57 comments",
       "publishedAt": "2026-11-04T15:38:34.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "North Korean fake job interview led to $6.3B Binance heist",
-      "url": "https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398",
-      "excerpt": "357 points · 215 comments",
-      "publishedAt": "2026-11-04T14:09:55.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -219,8 +219,17 @@
       "sourceId": "hackernews",
       "title": "An end to buggy web apps",
       "url": "https://replay.io/blog/an-end-to-buggy-web-apps",
-      "excerpt": "26 points · 20 comments",
+      "excerpt": "27 points · 22 comments",
       "publishedAt": "2026-11-04T17:01:44.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "North Korean fake job interview led to $6.3B Binance heist",
+      "url": "https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398",
+      "excerpt": "359 points · 220 comments",
+      "publishedAt": "2026-11-04T14:09:55.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -237,17 +246,8 @@
       "sourceId": "hackernews",
       "title": "Verification Is Not Knowledge: Science needs more than answers",
       "url": "https://blog.cosmos-institute.org/p/verification-is-not-knowledge",
-      "excerpt": "180 points · 103 comments",
+      "excerpt": "181 points · 103 comments",
       "publishedAt": "2026-11-04T09:01:58.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
-      "url": "https://news.ycombinator.com/item?id=50368804",
-      "excerpt": "Hi HN! I&#x27;m Luke from Kino (https:&#x2F;&#x2F;kino.ai). Kino lets you make great videos with your agents and your teammates. Storage of footage and assets, a rich video editor, and review links for teammates are all bundled into one. Your colleagues and Codex &#x2F; Claude Code can work on the s",
-      "publishedAt": "2026-11-04T17:31:53.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -255,7 +255,7 @@
       "sourceId": "hackernews",
       "title": "Kimi K3.1 Pro model weights are out",
       "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
-      "excerpt": "138 points · 22 comments",
+      "excerpt": "143 points · 24 comments",
       "publishedAt": "2026-11-04T15:30:30.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -264,7 +264,7 @@
       "sourceId": "hackernews",
       "title": "Incident with Pull Requests, Git Operations and Issues",
       "url": "https://www.githubstatus.com/incidents/smtdswd1h2w4",
-      "excerpt": "209 points · 109 comments",
+      "excerpt": "210 points · 109 comments",
       "publishedAt": "2026-11-04T10:00:06.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -280,19 +280,19 @@
     },
     {
       "sourceId": "hackernews",
-      "title": "Letting users trust their own MCP clients, without opening a phishing hole",
-      "url": "https://streamvessel.com/blog/mcp-trusted-redirect-uris",
-      "excerpt": "22 points · 2 comments",
-      "publishedAt": "2026-11-04T15:30:57.000Z",
+      "title": "Tencent Hy4",
+      "url": "https://hy.tencent.ai/research/hy4",
+      "excerpt": "42 points · 1 comments",
+      "publishedAt": "2026-11-04T14:11:26.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
     {
       "sourceId": "hackernews",
-      "title": "Tencent Hy4",
-      "url": "https://hy.tencent.ai/research/hy4",
-      "excerpt": "36 points · 1 comments",
-      "publishedAt": "2026-11-04T14:11:26.000Z",
+      "title": "Letting users trust their own MCP clients, without opening a phishing hole",
+      "url": "https://streamvessel.com/blog/mcp-trusted-redirect-uris",
+      "excerpt": "23 points · 2 comments",
+      "publishedAt": "2026-11-04T15:30:57.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -300,17 +300,8 @@
       "sourceId": "hackernews",
       "title": "Jelly Sheet",
       "url": "https://mrdoob.github.io/codevember-2026/01/",
-      "excerpt": "398 points · 104 comments",
+      "excerpt": "399 points · 104 comments",
       "publishedAt": "2026-11-04T03:40:50.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "Show HN: Codemap – one-page interactive map of any Go repository",
-      "url": "https://github.com/peterretief/codemap",
-      "excerpt": "28 points · 12 comments",
-      "publishedAt": "2026-11-04T15:18:24.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -318,8 +309,17 @@
       "sourceId": "hackernews",
       "title": "Adding Window Functions to a Spreadsheet",
       "url": "https://www.getgrist.com/blog/running-totals-you-dont-have-to-chase/",
-      "excerpt": "28 points · 19 comments",
+      "excerpt": "29 points · 19 comments",
       "publishedAt": "2026-11-04T15:21:12.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "Evergreen: A Provably Safe Systems Language",
+      "url": "https://evergreenlang.net",
+      "excerpt": "63 points · 48 comments",
+      "publishedAt": "2026-11-04T15:25:04.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -334,18 +334,9 @@
     },
     {
       "sourceId": "hackernews",
-      "title": "Evergreen: A Provably Safe Systems Language",
-      "url": "https://evergreenlang.net",
-      "excerpt": "59 points · 46 comments",
-      "publishedAt": "2026-11-04T15:25:04.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
       "title": "Kitty 0.50",
       "url": "https://sw.kovidgoyal.net/kitty/changelog/#",
-      "excerpt": "306 points · 196 comments",
+      "excerpt": "306 points · 197 comments",
       "publishedAt": "2026-11-04T08:57:10.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -354,7 +345,7 @@
       "sourceId": "hackernews",
       "title": "Stringman, an $800 open-source room scale gripper robot",
       "url": "https://neufangled.com/",
-      "excerpt": "746 points · 228 comments",
+      "excerpt": "749 points · 228 comments",
       "publishedAt": "2026-11-03T16:47:29.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -381,7 +372,7 @@
       "sourceId": "hackernews",
       "title": "Pierre Computer is being acquired by OpenAI",
       "url": "https://twitter.com/pierrecomputer/status/2117999036175188183",
-      "excerpt": "54 points · 23 comments",
+      "excerpt": "57 points · 23 comments",
       "publishedAt": "2026-11-04T15:21:21.000Z",
       "category": "tech",
       "source": "Hacker News"
@@ -390,17 +381,8 @@
       "sourceId": "hackernews",
       "title": "The lost malloc()",
       "url": "https://napcakes.nekoweb.org/posts/malloc/",
-      "excerpt": "128 points · 48 comments",
+      "excerpt": "128 points · 49 comments",
       "publishedAt": "2026-11-04T07:37:30.000Z",
-      "category": "tech",
-      "source": "Hacker News"
-    },
-    {
-      "sourceId": "hackernews",
-      "title": "Synaptics Appears to Use Legal Threats to Block Open-Source DisplayLink Driver",
-      "url": "https://www.phoronix.com/news/Synaptics-Blocks-Vino-Driver",
-      "excerpt": "149 points · 59 comments",
-      "publishedAt": "2026-11-04T11:14:12.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -415,6 +397,15 @@
     },
     {
       "sourceId": "hackernews",
+      "title": "Synaptics Appears to Use Legal Threats to Block Open-Source DisplayLink Driver",
+      "url": "https://www.phoronix.com/news/Synaptics-Blocks-Vino-Driver",
+      "excerpt": "149 points · 61 comments",
+      "publishedAt": "2026-11-04T11:14:12.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
       "title": "Giant canyon on Mars is still tectonically active",
       "url": "https://lamont.columbia.edu/news/giant-canyon-mars-still-tectonically-active-today",
       "excerpt": "134 points · 35 comments",
@@ -424,10 +415,19 @@
     },
     {
       "sourceId": "hackernews",
-      "title": "Show HN: Uncracked City, detective game where you question LLM suspects that lie",
-      "url": "https://uncracked.city",
-      "excerpt": "To give you some context on the project. I&#x27;m a solo founder and I use AI heavily in my work. The idea came from wanting players to discover cities. Each city has its own history, so every case is set in a real city with real public places. The crime and the people are on other hand invented. Th",
-      "publishedAt": "2026-11-03T21:20:03.000Z",
+      "title": "Show HN: Codemap – one-page interactive map of any Go repository",
+      "url": "https://github.com/peterretief/codemap",
+      "excerpt": "28 points · 12 comments",
+      "publishedAt": "2026-11-04T15:18:24.000Z",
+      "category": "tech",
+      "source": "Hacker News"
+    },
+    {
+      "sourceId": "hackernews",
+      "title": "This Month in Ladybird – October 2026",
+      "url": "https://ladybird.org/newsletter/2026-10-31/",
+      "excerpt": "4 points · 0 comments",
+      "publishedAt": "2026-11-04T17:59:35.000Z",
       "category": "tech",
       "source": "Hacker News"
     },
@@ -700,6 +700,276 @@
       "publishedAt": "2026-10-26T14:30:00.000Z",
       "category": "tech",
       "source": "OpenAI News"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Agentic cheminformatics with Google Antigravity",
+      "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+      "excerpt": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+      "publishedAt": "2026-11-03T17:01:49.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Speeding up planning decisions with AI",
+      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+      "excerpt": "Google DeepMind and UK government work together to reduce planning assessment times",
+      "publishedAt": "2026-10-30T14:18:30.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini 4 Carbon: Our next frontier model",
+      "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "excerpt": "",
+      "publishedAt": "2026-10-28T17:00:58.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Genie 4: A new generation of world simulation",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "excerpt": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation.",
+      "publishedAt": "2026-10-27T16:01:38.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Beyond tree cover: mapping the world’s forest types",
+      "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+      "excerpt": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types.",
+      "publishedAt": "2026-10-22T14:30:24.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
+      "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+      "excerpt": "Accelerating the search for novel antimicrobial peptides using Google Antigravity for Science.",
+      "publishedAt": "2026-10-15T16:08:03.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+      "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+      "excerpt": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress.",
+      "publishedAt": "2026-10-14T02:00:14.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Developing Gemini 4 Argon responsibly and safely",
+      "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+      "excerpt": "",
+      "publishedAt": "2026-10-13T19:43:07.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini 4 Argon for Robotics",
+      "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+      "excerpt": "",
+      "publishedAt": "2026-10-13T16:01:58.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+      "excerpt": "",
+      "publishedAt": "2026-10-13T16:01:52.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+      "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+      "excerpt": "",
+      "publishedAt": "2026-10-06T19:57:04.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+      "excerpt": "",
+      "publishedAt": "2026-09-30T20:01:45.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing SynthID Bio",
+      "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+      "excerpt": "Proof of concept for watermarking AI-generated proteins while preserving biological function.",
+      "publishedAt": "2026-09-30T15:03:07.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing Gemini 3.8 Live with Live Avatar",
+      "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+      "excerpt": "",
+      "publishedAt": "2026-09-24T16:20:39.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Advancing Private AI Compute with secure, server-side memory",
+      "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+      "excerpt": "Introducing private, server-side memory to Private AI Compute for personal AI.",
+      "publishedAt": "2026-09-23T16:00:57.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini 3.8 text-to-speech says hello",
+      "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
+      "excerpt": "",
+      "publishedAt": "2026-09-23T15:25:14.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+      "excerpt": "",
+      "publishedAt": "2026-09-15T17:05:57.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "excerpt": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+      "publishedAt": "2026-09-08T14:00:15.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+      "url": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+      "excerpt": "",
+      "publishedAt": "2026-09-03T15:02:08.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "url": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+      "excerpt": "",
+      "publishedAt": "2026-09-02T16:24:24.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+      "excerpt": "",
+      "publishedAt": "2026-09-02T16:18:31.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing agentic video understanding with Gemini",
+      "url": "https://deepmind.google/blog/introducing-agentic-video-in-gemini/",
+      "excerpt": "",
+      "publishedAt": "2026-09-01T17:08:51.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini Omni 1.1 Flash lets you build with more control",
+      "url": "https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/",
+      "excerpt": "",
+      "publishedAt": "2026-08-27T16:11:32.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Piloting the world's first double-blind AI evaluations",
+      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+      "excerpt": "Piloting the world's first double-blind AI evaluations",
+      "publishedAt": "2026-08-27T12:59:16.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Intelligent transcription with Gemini 3.5 Transcribe",
+      "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+      "excerpt": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe.",
+      "publishedAt": "2026-08-26T17:01:00.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games",
+      "url": "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/",
+      "excerpt": "Google DeepMind partners with game studios to prototype breakthrough AI gameplay.",
+      "publishedAt": "2026-08-21T11:59:48.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Introducing Gemini 3.7 Flash",
+      "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash/",
+      "excerpt": "",
+      "publishedAt": "2026-08-13T17:04:18.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Putting sign language AI into users’ hands",
+      "url": "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/",
+      "excerpt": "Introducing sign-language-to-text (SL2T), our breakthrough model powering new sign language features for Deaf and hard of hearing users.",
+      "publishedAt": "2026-08-12T14:01:59.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
+      "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+      "excerpt": "",
+      "publishedAt": "2026-08-06T15:06:15.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
+    },
+    {
+      "sourceId": "deepmind-blog",
+      "title": "Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+      "excerpt": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.",
+      "publishedAt": "2026-07-30T15:00:59.000Z",
+      "category": "tech",
+      "source": "DeepMind Blog"
     },
     {
       "sourceId": "huggingface-blog",
@@ -980,7 +1250,7 @@
       "meta": "👍 94",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Argues that progress toward general-purpose AI is better served by orchestrating a heterogeneous ecosystem of specialized models than by scaling a single monolithic model. The paper studies model and policy routing — deciding which model or skill to invoke for a given query or subtask — and analyzes routing policies across domains and modalities. It frames routing as a policy-learning problem over diverse expert backends, examining when learned routers beat fixed or heuristic dispatch. The work contributes an empirical study and design guidance for building general-purpose systems out of routed specialists rather than one generalist."
+      "summary": "Addresses general-purpose AI by orchestrating a heterogeneous ecosystem of specialized models rather than relying on one model for every capability. The work studies routing at both the model and policy levels, aiming to select appropriate models or behaviors across domains and modalities. It frames routing as a central mechanism for composing understanding, generation, reasoning, and action. The contribution is an analysis and framework for general-purpose model and policy routing; the excerpt does not report specific benchmark numbers."
     },
     {
       "sourceId": "huggingface-papers",
@@ -991,7 +1261,7 @@
       "meta": "👍 66",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Notes that psychotherapy clients often cannot coherently articulate distress, and that their expression shifts with emotion, perceived safety, and trust — yet LLM-based client simulators typically rely on clinically organized case descriptions that push responses toward tidy explanation. The paper proposes simulating person-specific, self-opaque expression, where the simulated client's language reflects emotional state and relational context rather than structured clinical summary. It targets therapist-training and simulation use cases, contributing a modeling approach and evaluation aimed at more realistic, less over-explained client utterances in multi-turn therapy dialogues."
+      "summary": "Targets LLM-based psychotherapy client simulators that rely on clinically organized case descriptions, which can produce overly coherent explanations rather than the partial, emotion-dependent expression of self-opaque clients. The work models person-specific expression that shifts with emotion, perceived safety, and trust, aiming to preserve clients' difficulty in verbally articulating distress. It contributes a simulation approach for more realistic therapeutic dialogue; the excerpt does not provide quantitative results or full training details."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1002,7 +1272,7 @@
       "meta": "👍 64",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Large reasoning models keep deliberating after sufficient information is already available, inflating inference cost through long chain-of-thought. Existing compression methods mostly act on whole reasoning trajectories. This paper proposes local preference learning, which applies preference optimization at the local level of individual reasoning steps so the model learns where deliberation is redundant rather than being uniformly shortened. The approach targets selective truncation of unnecessary thinking while preserving accuracy on challenging tasks, offering a finer-grained alternative to trajectory-level compression for reducing reasoning token budgets."
+      "summary": "Proposes local preference learning for reasoning compression in large reasoning models. Rather than only editing full reasoning trajectories, it targets local deliberation decisions so models stop continuing chain-of-thought after sufficient information has been obtained. The approach aims to reduce inference cost while preserving accuracy on challenging tasks. The contribution is a local preference-learning formulation for compression; the excerpt omits specific benchmark gains."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1013,7 +1283,7 @@
       "meta": "👍 48",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "A report distilling observations from successive generations of Kling video models, arguing that as generation moves from isolated clips to coherent short-form audiovisual sequences, the bottleneck shifts from rendering fidelity to semantic control. The authors summarize insights on multimodal understanding gained while building these generators, connecting video synthesis capability to how well the underlying model comprehends prompts, entities, and temporal structure. Rather than proposing a new benchmark, the paper offers an industrial perspective on what limits current video generation systems and why semantic understanding, not pixel quality, is becoming the binding constraint."
+      "summary": "Reports observations from successive generations of Kling video models, arguing that video generation's bottleneck is shifting from visual rendering to semantic control over coherent short-form audiovisual sequences. The report distills insights on multimodal understanding gained from building and evaluating Kling, linking progress in generation to better semantic alignment and control. It contributes a qualitative and system-level perspective rather than a new benchmark; the excerpt does not list quantitative results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1024,7 +1294,18 @@
       "meta": "👍 47",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Learning universal action representations from video requires capturing dynamics consistent across executions of the same action while invariant to embodiment and appearance. Existing latent action models infer actions from visual transitions but produce representations that entangle appearance with motion. DreamX casts a video diffusion model as the latent action learner, exploiting its learned dynamics prior to derive action latents that transfer across embodiments and visual variation. The work targets downstream uses such as robot policy learning and controllable generation, arguing that generative video models provide a stronger substrate for universal latent actions than transition-based inference alone."
+      "summary": "Proposes DreamX, a video diffusion model used as a universal latent action learner. The goal is an action representation that captures dynamics consistent across different executions of the same action while remaining invariant to embodiment and appearance changes. Unlike prior latent action models that infer actions from visual transitions but may entangle appearance, DreamX leverages video diffusion to learn such representations. The contribution is a universal latent-action framework; the excerpt does not provide quantitative results."
+    },
+    {
+      "sourceId": "huggingface-papers",
+      "title": "Factorized MLLM Embeddings for Composed Image Retrieval",
+      "url": "https://huggingface.co/papers/2611.05193",
+      "excerpt": "Composed Image Retrieval (CIR) aims to retrieve a target image given a reference image and a modification text. Although recent approaches leveraging Multimodal Large Language Models (MLLMs) have shown significant progress, we argue that the MLLM's compositional understanding remains underutilized. ",
+      "publishedAt": "2026-11-03T00:00:00.000Z",
+      "meta": "👍 42",
+      "category": "tech",
+      "source": "HuggingFace Trending Papers",
+      "summary": "Introduces factorized MLLM embeddings for composed image retrieval, where a target image is retrieved from a reference image plus modification text. The method argues that MLLM compositional understanding is underused and factorizes embeddings to better isolate reference-image content from textual modification semantics. This aims to improve multimodal composition for retrieval. The contribution is the factorized embedding approach for composed image retrieval; the excerpt does not report benchmark numbers."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1035,18 +1316,7 @@
       "meta": "👍 42",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "General-purpose robot policies must generalize across robots, tasks, and environments, but the same variation that makes physical trials informative makes them hard to reproduce. RoboColosseum is a distributed evaluation framework combining unified policy serving with standardized protocols, so heterogeneous policies can be evaluated at scale across real-world setups. The framework targets reproducibility and comparability in embodied evaluation, addressing the fragmentation where each lab uses its own hardware and protocol. It is positioned as infrastructure for measuring physical intelligence in-the-wild rather than as a new policy architecture."
-    },
-    {
-      "sourceId": "huggingface-papers",
-      "title": "Factorized MLLM Embeddings for Composed Image Retrieval",
-      "url": "https://huggingface.co/papers/2611.05193",
-      "excerpt": "Composed Image Retrieval (CIR) aims to retrieve a target image given a reference image and a modification text. Although recent approaches leveraging Multimodal Large Language Models (MLLMs) have shown significant progress, we argue that the MLLM's compositional understanding remains underutilized. ",
-      "publishedAt": "2026-11-03T00:00:00.000Z",
-      "meta": "👍 41",
-      "category": "tech",
-      "source": "HuggingFace Trending Papers",
-      "summary": "Composed Image Retrieval (CIR) retrieves a target image from a reference image plus a modification text; recent MLLM-based methods improve results but, the authors argue, leave the MLLM's compositional understanding underused, typically by pooling a single fused embedding. The paper proposes factorized MLLM embeddings that keep distinct components of the query representation separate, capturing fine-grained attribute and relation changes rather than collapsing them. This factorization is used for retrieval matching, aiming to better exploit the compositional reasoning already present in multimodal LLMs and improve retrieval accuracy on standard CIR benchmarks."
+      "summary": "Introduces RoboColosseum, a distributed evaluation framework for physical intelligence that tests general-purpose robot policies across robots, tasks, and environments in the wild. It combines unified policy serving with standardized protocols to make variable real-world trials reproducible and comparable at scale. The contribution targets evaluation infrastructure for cross-embodiment generalization rather than a new policy. The excerpt does not provide quantitative results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1057,7 +1327,7 @@
       "meta": "👍 41",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Research taste — judgment about what to read, which problems to pursue, and which methods to try — increasingly shapes AI scientist systems, yet is far less studied than execution ability. IdeaTaste is a benchmark that scores an LLM by how closely its research judgments align with those of human researchers, probing preferences over papers, problems, and approaches rather than task success. The work measures whether current models exhibit taste resembling expert researchers and analyzes where their judgments diverge, contributing an evaluation axis for AI-scientist research beyond benchmark problem-solving performance."
+      "summary": "Introduces IdeaTaste, a benchmark for whether LLMs share human researchers' research taste: judgment about what to read, which problems to pursue, and which methods to try. Rather than measuring execution ability, it scores models by how closely their research choices align with those of human researchers. The work aims to quantify a previously understudied aspect of AI scientist capability. The contribution is the benchmark and evaluation framing; the excerpt does not report specific model scores."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1068,7 +1338,7 @@
       "meta": "👍 38",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Axion 1.0 is a fully open agent foundation model combining broad agentic capability with a deliberately simple training recipe: two lightweight supervised fine-tuning stages followed by reinforcement learning, with no dedicated mid-training stage. The authors argue that elaborate multi-stage pipelines are unnecessary for strong agent behavior, and that careful SFT data plus RL suffices. The release includes the model and recipe, positioning simplicity and openness as the contribution and offering a reproducible baseline for agent foundation model training."
+      "summary": "Presents Axion 1.0, a fully open agent foundation model designed to combine broad agentic capability with a simple training recipe. It is trained in only three stages: two lightweight supervised fine-tuning stages followed by reinforcement learning, avoiding dedicated intermediate training stages. The release aims to provide an open, reproducible alternative for agent foundation models. The excerpt emphasizes simplification and openness; specific benchmark results are not included."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1079,18 +1349,7 @@
       "meta": "👍 33",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "LLM agents increasingly compose tools across MCP services into long executable workflows, but existing MCP environment-scaling methods are data-centric: they synthesize a database and scenario first, then derive tools and tasks, which limits tool interdependence and horizon length. ToolSpace instead scales environment synthesis from the tool side, building tool-centric environments whose interfaces and dependencies are designed up front, then generating long-horizon tasks over them. This yields richer cross-tool composition for training and evaluating long-horizon agents on realistic multi-service workflows."
-    },
-    {
-      "sourceId": "huggingface-papers",
-      "title": "Order-Only On-Policy Distillation",
-      "url": "https://huggingface.co/papers/2611.02112",
-      "excerpt": "On-policy distillation (OPD) trains a student on its own generations by matching the teacher's token probabilities. These probabilities entangle two kinds of information: which tokens the teacher prefers, and how confident it is. The latter reflects the teacher's own capacity and calibration, which ",
-      "publishedAt": "2026-11-01T00:00:00.000Z",
-      "meta": "👍 30",
-      "category": "tech",
-      "source": "HuggingFace Trending Papers",
-      "summary": "On-policy distillation (OPD) trains a student on its own generations by matching teacher token probabilities, but those probabilities entangle which tokens the teacher prefers with how confident it is — the latter reflecting the teacher's own capacity and calibration, which may not be worth transferring. Order-Only On-Policy Distillation discards the confidence signal and distills only the teacher's ranking over tokens, using order-based objectives on the student's own rollouts. The method aims to preserve the teacher's preferences while avoiding inherited miscalibration, offering a cleaner distillation target for on-policy settings."
+      "summary": "Targets long-horizon LLM agents that compose tools across MCP services into executable workflows. Existing MCP environment-scaling methods are data-centric, first synthesizing a database and scenario and then deriving tools and tasks, which can limit tool interaction complexity. ToolSpace proposes tool-centric environment synthesis to scale training environments around tool use. The contribution is a synthesis framework for more realistic long-horizon agent training; the excerpt does not report quantitative gains."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1101,7 +1360,7 @@
       "meta": "👍 26",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Unified Multimodal Models combine visual understanding, generation, and editing, but existing datasets and benchmarks are dominated by single-turn tasks; even recent multi-turn sets contain many turns solvable independently. YANAMI is a large-scale multimodal dataset and benchmark built around multiturn stateful interaction, where later turns depend on state established earlier. It targets evaluation of whether unified models maintain and update state across interleaved understanding and editing turns, providing a controlled testbed for statefulness that current single-turn and loosely coupled multi-turn evaluations do not measure."
+      "summary": "Introduces YANAMI, a large-scale multimodal dataset and benchmark for multiturn stateful interaction with unified multimodal models. Existing datasets and benchmarks are dominated by single-turn tasks, and even recent multiturn data often contain turns that can be solved independently. YANAMI targets interactions where earlier turns change the state needed for later understanding, generation, or editing. The contribution is the dataset and benchmark for evaluating stateful multiturn behavior; the excerpt does not provide scale or results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1112,7 +1371,7 @@
       "meta": "👍 23",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Multimodal instruction data is scarce and expensive to annotate, while raw videos are abundant but hard to convert into precise instructions. VidUEU-Agent is a data-curation agent that transforms raw video into instruction data spanning multimodal understanding, editing, and unified tasks. The agent automates segmentation, captioning, and instruction construction, replacing manual pipelines with an LLM-driven curation loop that targets data quality and task diversity. The contribution is the curation agent and the resulting instruction corpus, aimed at relieving the data bottleneck for unified multimodal training."
+      "summary": "Addresses the scarcity and high annotation cost of high-quality instruction data for multimodal learning by turning raw videos into precise supervision. VidUEU-Agent is a data-curation agent for multimodal understanding, editing, and unified tasks, intended to bridge raw video content and instruction data. The approach automates curation rather than manual annotation. The contribution is the agent-based data pipeline; the excerpt does not report dataset size or benchmark results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1123,7 +1382,7 @@
       "meta": "👍 23",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "LLM-based multi-agent systems rely on collaboration among specialized agents, and existing methods improve them by refining individual agents' prompts, skills, and execution strategies from task feedback. The authors argue that improving individual agents does not necessarily improve team-level performance. EvoTeam instead evolves the team composition and collaboration structure, adapting which agents are grouped and how they coordinate based on task outcomes. The approach targets team-level optimization for complex tasks, contributing a collaboration-centric alternative to per-agent refinement in multi-agent system design."
+      "summary": "Proposes EvoTeam for LLM-based multi-agent collaboration through evolving teams. Existing methods improve prompts, skills, and execution strategies of individual agents from task feedback, but better individual agents do not necessarily yield better team composition or coordination. EvoTeam instead evolves team structures in response to task feedback. The contribution is a team-level optimization approach for multi-agent systems; the excerpt does not provide quantitative results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1134,7 +1393,7 @@
       "meta": "👍 19",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "GUI web agents need realistic, interactive environments that stay stable during both evaluation and training. Live websites drift in content, impose access restrictions, and cover authenticated workflows poorly, while synthetic environments often lack realism. WebHarbor docks real websites into a controlled environment, preserving their structure and interactivity while freezing content for reproducibility and supporting evolving task suites. The framework aims to give web agents training and evaluation grounds that combine the realism of live sites with the stability of sandboxes, addressing a central infrastructure gap in GUI agent research."
+      "summary": "Introduces WebHarbor, which docks real websites to create evolving GUI agent environments for training and evaluation. Live-web evaluation is unstable due to changing content, access restrictions, and limited coverage of authenticated workflows, while synthetic environments often lack realism. WebHarbor aims to preserve realistic web interaction while providing controllable, reproducible environments. The contribution is environment infrastructure for GUI web agents; the excerpt does not provide benchmark results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1145,7 +1404,7 @@
       "meta": "👍 16",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Harness optimization improves LLM agents without touching model weights, but existing methods optimize only response quality. Extending to joint quality-cost optimization is tricky: imposing deployment preference during intermediate updates can prematurely prune configurations that later prove valuable. ParetoSaddler applies Pareto-guided optimization to agent harnesses, maintaining a frontier of quality-cost trade-offs instead of committing to a single scalarized objective, and selecting among harnesses according to deployment preference at the end. The method targets agent pipelines where both accuracy and inference cost matter."
+      "summary": "Targets optimization of LLM agent harnesses for both response quality and inference cost without changing model weights. Existing harness-optimization methods focus mainly on quality; extending them to joint quality-cost optimization is difficult because applying deployment preferences during intermediate updates can prematurely prune useful configurations. ParetoSaddler uses Pareto-guided optimization to navigate this trade-off. The contribution is a multi-objective harness optimization method; the excerpt does not report quantitative results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1156,7 +1415,7 @@
       "meta": "👍 15",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Molecular discovery requires navigating vast combinatorial search spaces while balancing competing biological objectives, and AI agents can automate expert-defined design protocols but do not by themselves improve those protocols for new tasks. MoLRSI is a recursive self-improving agent that revises its own molecular design workflows across iterations, using feedback from prior runs to refine strategies rather than only executing a fixed protocol. The approach targets multi-objective molecular optimization, contributing a self-improvement loop for scientific discovery agents that adapts workflow design as tasks change."
+      "summary": "Introduces MoLRSI, a recursive self-improving AI agent for molecular discovery. Molecular design requires navigating vast combinatorial spaces while balancing competing biological objectives; while AI agents can automate expert-defined protocols, automation alone does not optimize workflows for new tasks or improve over repeated development. MoLRSI adds recursive self-improvement to adapt and refine its discovery workflow. The contribution is the self-improving agent framework; the excerpt does not report experimental metrics."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1167,7 +1426,7 @@
       "meta": "👍 15",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Speculative decoding accelerates memory-bound LLM decoding with a lightweight drafter, and parallel drafters extend this by proposing a whole block in one forward pass. It is unclear whether released systems realize the full speedup parallel drafting permits. SpecPilot autonomously discovers algorithms and performs systems optimization for speculative decoding, searching over drafting and verification strategies and their implementation rather than assuming a fixed design. The work targets closing the gap between theoretical and realized speedups, contributing an automated search procedure for speculative decoding pipelines and system-level tuning."
+      "summary": "Presents SpecPilot, an autonomous approach to algorithm discovery and systems optimization for speculative decoding. Speculative decoding accelerates memory-bound LLM decoding with a lightweight drafter, and parallel drafters can draft a whole block in one forward pass, but released systems may not realize the full available speedup. SpecPilot searches for algorithms and system configurations to close this gap. The contribution is automated optimization for speculative decoding; the excerpt does not report speedup numbers."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1178,7 +1437,7 @@
       "meta": "👍 11",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Coding agents rely on automated approvers to decide whether a proposed shell command may run; existing approvers, from rule checkers to guardrail models and deployed permission classifiers, judge only the request and command text. Yet a command's behavior depends on context — filesystem state, environment, and prior actions. This paper proposes consequence-aware approval, predicting the actual effects of executing a command rather than classifying its surface form, and evaluates approvers on whether they correctly anticipate harmful outcomes. The contribution reframes approval as consequence prediction for safer autonomous coding agents."
+      "summary": "Targets automated approvers that decide whether a coding agent's proposed shell command may execute. Existing approvers, from rule-based checkers to guardrail models and permission classifiers, judge the request and command text, but a command's behavior also depends on execution context and consequences. The work proposes consequence-aware approval for autonomous coding agents. The contribution is a safety and approval framework that reasons about likely effects rather than text alone; the excerpt does not report quantitative results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1189,7 +1448,7 @@
       "meta": "👍 11",
       "category": "tech",
       "source": "HuggingFace Trending Papers",
-      "summary": "Computer-use agents should combine visual GUI interaction with code and terminal execution in a single policy. Mage-VL-Cowork is a 4B hybrid computer-use agent trained from a general multimodally aligned checkpoint through an end-to-end progressive five-stage curriculum, with harnesses evolved to supply training signal for hybrid behavior. The recipe covers the full pipeline — data, curriculum, and training — rather than only the final model. The work contributes an open training recipe for hybrid GUI-plus-code agents at small scale, targeting practical deployment of multimodal computer-use policies."
+      "summary": "Presents Mage-VL-Cowork, a 4B hybrid computer-use agent that combines visual GUI interaction with code and terminal execution in a single policy. It is trained from a general multimodally aligned checkpoint through an end-to-end progressive five-stage curriculum, using evolved harnesses. The work offers a full training recipe for hybrid computer use rather than only inference-time scaffolding. The contribution is the model and recipe; the excerpt does not report benchmark scores."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1199,7 +1458,8 @@
       "publishedAt": "2026-11-03T00:00:00.000Z",
       "meta": "👍 9",
       "category": "tech",
-      "source": "HuggingFace Trending Papers"
+      "source": "HuggingFace Trending Papers",
+      "summary": "Introduces FlowTranslator, a training-free method for in-image machine translation, which replaces text in an image with its translation while preserving surrounding visual context. Existing task-specific models perform well but require massive paired before-and-after training images. FlowTranslator instead uses flow-based editing with advanced text-to-image models, avoiding task-specific paired supervision. The contribution is a training-free in-image translation pipeline; the excerpt does not provide quantitative results."
     },
     {
       "sourceId": "huggingface-papers",
@@ -1287,6 +1547,16 @@
       "url": "https://huggingface.co/papers/2610.00854",
       "excerpt": "A robot generalist must interpret a scene, act on it, and satisfy every condition of a task. How far do frontier vision-language models (VLMs) meet these demands? We introduce Embodied Agent Arena, evaluating ten VLM agents across Geometry, Spatial Reasoning, Affordance, Task Planning, and Manipulat",
       "publishedAt": "2026-10-23T00:00:00.000Z",
+      "meta": "👍 3",
+      "category": "tech",
+      "source": "HuggingFace Trending Papers"
+    },
+    {
+      "sourceId": "huggingface-papers",
+      "title": "SeMo3D: Unifying 3D Generation, Editing, and Completion via Selective Modeling",
+      "url": "https://huggingface.co/papers/2611.02568",
+      "excerpt": "3D generation, editing, and completion are typically treated as regenerating the complete 3D asset under task-specific constraints, even when only a local region needs modification. This leads to task isolation, inconsistency in content that should remain unchanged, and dependence on task-specific p",
+      "publishedAt": "2026-11-02T00:00:00.000Z",
       "meta": "👍 3",
       "category": "tech",
       "source": "HuggingFace Trending Papers"
@@ -2020,7 +2290,7 @@
       "category": "tech",
       "meta": "@RohOnChain · 84.8K 粉丝 · 405.8K 阅 · 525 赞 · 72 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "A step-by-step thread on assembling a 24/7 autonomous crypto trading operation with Grok Bot, where agents research the market, propose strategies, backtest them, and execute trades without manual input. The author frames it as a reproducible framework rather than a single prompt, walking through the components needed for a self-directing trading team. Value is in the workflow structure for people already using Grok's agent tooling; no performance numbers or verified returns are cited in the opening."
+      "summary": "A step-by-step breakdown for assembling a 24/7 AI trading team using Grok Bot, pitched as an 'exact framework' rather than theory. The agents are meant to research markets, surface candidate strategies, run backtests and execute trades autonomously. The post is a bookmark-style thread aimed at traders who want an always-on, self-directed pipeline instead of manual screening. No performance figures or verified results are given in the opening, so the value is in the build recipe rather than proven returns."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2031,7 +2301,7 @@
       "category": "tech",
       "meta": "@Teamily_AI · 9.4K 粉丝 · 257.8K 阅 · 534 赞 · 53 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "An open letter to Teamily AI customers, ecosystem partners, and investors that doubles as a positioning statement: the company argues the next phase is an 'agentic internet' built around team agents rather than single personal assistants. Framed as a progress update after rapid growth over recent months, the letter signals a shift in product direction toward multi-agent collaboration. It is corporate vision communication rather than a technical tutorial, with no benchmarks, pricing, or architecture details in the opening lines."
+      "summary": "An open letter from Teamily AI to customers, ecosystem partners and investors, framing a shift from single personal agents to 'team agents' operating on what it calls the agentic internet. Written after a period of rapid company growth, the letter positions multi-agent collaboration as the next interface layer rather than an add-on feature. It reads as a strategic vision statement from a vendor, laying out direction and positioning rather than releasing benchmarks or technical detail."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2042,7 +2312,7 @@
       "category": "tech",
       "meta": "@OpenProtocolFND · 29.1K 粉丝 · 133.0K 阅 · 550 赞 · 46 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "A short thesis post arguing that as the internet becomes agentic, access is being given away free while ownership of the underlying rails is quietly concentrated. The framing moves from the web as a place people visit to a system that acts on their behalf, and asks who ends up controlling that action layer. It reads as positioning for an open ownership protocol rather than a how-to, with no tools, numbers, or implementation guidance in the preview."
+      "summary": "A thesis post arguing the internet is shifting from a place people visit to a system that acts on their behalf, with access handed out free while ownership concentrates quietly. The 'Own the Rails' framing pushes readers toward controlling the underlying infrastructure and protocols agents depend on, not just building on top of them. It is positioning and narrative rather than a technical tutorial, aimed at people thinking about who captures value as agentic traffic replaces human clicks."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2053,7 +2323,7 @@
       "category": "tech",
       "meta": "@HeyElsaAI · 80.6K 粉丝 · 107.7K 阅 · 500 赞 · 39 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Part one of a HeyElsa research report introducing Infero, opening with the claim that three companies effectively own how the world thinks and promising a way out. The excerpt argues AI models should be understood without jargon, positioning the report as an explainer on concentration of model power plus a product reveal. It is narrative and thesis-driven in the opening, with no tools, benchmarks, or concrete technical detail surfaced yet."
+      "summary": "A HeyElsa report titled 'Rented Brains' introducing something called Infero, dated October 2026, opening with the claim that three companies own how the world thinks — followed by a promised way out. Part one walks through how the industry arrived here, explaining AI models in deliberately plain language without jargon. It is a narrative and product-positioning piece about concentration of model power and decentralization as the counterweight, rather than a technical tutorial or benchmark comparison."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2064,18 +2334,7 @@
       "category": "tech",
       "meta": "@JoshARosen · 3.6K 粉丝 · 32.1K 阅 · 522 赞 · 39 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "A design argument for wrapping agents in explicit state machines so behaviour is deterministic instead of left to model whim. The author's framing question: without a state machine you are at the mercy of model nondeterminism, with models deciding which actions to take and when. The post targets engineers building production agents and treats scaffolding, not prompting, as the control point. Conceptual positioning rather than a code walkthrough in the opening lines."
-    },
-    {
-      "sourceId": "attentionvc-ai",
-      "title": "Build the design system and skills your agent can follow",
-      "url": "https://x.com/_heyrico/status/2116953958279479760",
-      "excerpt": "I asked Claude Code to build a screen from my design. It came back very fast, clean, and completely wrong. At glance, everything looked fine. But when you look into the details, a lot of things were",
-      "publishedAt": "2026-11-01T18:02:09.000Z",
-      "category": "tech",
-      "meta": "@_heyrico · 27.3K 粉丝 · 29.9K 阅 · 504 赞 · 16 转",
-      "source": "X 推文 (AttentionVC)",
-      "summary": "A gotcha-driven post about agent output that looks right and is subtly wrong: Claude Code reproduced a design from a screenshot quickly and cleanly, but the details diverged. The fix proposed is to build a design system plus reusable skills the agent can follow, so generated screens match real tokens and components instead of approximating them. Aimed at frontend and design-engineering workflows using Claude Code, it is a practical caution about visual plausibility passing as correctness."
+      "summary": "An argument for wrapping agents in explicit state machines so their behaviour is deterministic and auditable. The premise: without scaffolding, you are at the mercy of model nondeterminism, letting the model decide which actions to take and when, which is unacceptable for anything consequential. The post frames state machines as the control layer that constrains agent transitions, an established software-engineering pattern now applied to LLM agents. Positioned as architecture guidance rather than a tool release or benchmark."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2086,7 +2345,7 @@
       "category": "tech",
       "meta": "@addyosmani · 476.7K 粉丝 · 29.5K 阅 · 680 赞 · 71 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "Addy Osmani revisits critical thinking in the age of agents that do the work: the original definition, approaching new information with humble curiosity and healthy skepticism, taking in different views and forming your own. He argues that stance still holds but needs updating when agents produce plausible output at volume. The angle is editorial and reflective rather than instructional, aimed at developers reviewing AI-generated work, with no tools or metrics in the opening lines."
+      "summary": "Addy Osmani revisits critical thinking in an era where agents do more of the work. The original definition — approach new information with humble curiosity plus healthy skepticism, weigh different views, form your own opinion — still holds, but the post argues it needs updating when outputs arrive pre-synthesized and confident. The angle is editorial rather than technical: how to keep judgement and verification habits intact as generation gets cheaper, and why reviewing agent output uncritically is the failure mode to watch."
     },
     {
       "sourceId": "attentionvc-ai",
@@ -2097,7 +2356,16 @@
       "category": "tech",
       "meta": "@Louisfabulous2 · 2.5K 粉丝 · 4.1K 阅 · 584 赞 · 38 转",
       "source": "X 推文 (AttentionVC)",
-      "summary": "An explainer on Primus zkTLS and why AI agents need verifiable web data, not just capability, especially once money is at stake. The motivating example is an agent reading an asset price from Binance: without cryptographic proof of what the source actually returned, the agent's decision and any payment built on it are unverifiable. The post targets agent builders working on trading or financial automation, framing zero-knowledge proofs of TLS sessions as the trust layer for agent-to-web data."
+      "summary": "An explainer on how Primus zkTLS makes web data verifiable for AI agents, built around the gap between capability and trust once money is at stake. The motivating example: an agent checking Binance for an asset's current price — the agent reports a number, but nothing proves the source wasn't spoofed or altered. zkTLS is presented as the mechanism that lets an agent prove what a website actually returned, aimed at on-chain and financial use cases needing verifiable data provenance."
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "DeSantis Calls GOP Midterm Wipeout ‘Extinction Level Event’",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/desantis-calls-gop-s-midterm-wipeout-extinction-level-event",
+      "excerpt": "Florida Governor Ron DeSantis said the blue wave that swept over just about every corner of the US on Election Day — except his state — was akin to a “meteor strike” for the Republican Party.",
+      "publishedAt": "2026-11-04T16:02:09.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -2146,6 +2414,15 @@
     },
     {
       "sourceId": "bloomberg-markets",
+      "title": "Citadel Securities’ Rubner Says Stocks Are Set Up for Year-End Gains After Vote",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-04/citadel-securities-rubner-says-stocks-are-set-up-for-year-end-gains-after-vote",
+      "excerpt": "US stocks are primed for a year-end rebound as the midterm election removes a source of uncertainty, corporate earnings remain resilient and lackluster investor positioning leaves room for renewed buying, according to Citadel Securities’ Scott Rubner.",
+      "publishedAt": "2026-11-04T15:45:38.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets"
+    },
+    {
+      "sourceId": "bloomberg-markets",
       "title": "Stocks, Bonds Climb After US Election as Oil Sinks: Markets Wrap",
       "url": "https://www.bloomberg.com/news/articles/2026-11-03/stock-market-today-dow-s-p-live-updates",
       "excerpt": "A Democratic sweep of Congress that highlighted opposition of the Iran war extended this week’s plunge in oil prices, helping drive stocks and bonds to big post-election gains.",
@@ -2168,15 +2445,6 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-04/us-equity-futures-inch-higher-as-investors-await-midterm-results",
       "excerpt": "Technology megacaps rallied, leading the broader stock market higher, as Democrats swept to power in Congress and President Donald Trump said he would accept the midterm results, easing uncertainty and prompting investors to buy the recent dip.",
       "publishedAt": "2026-11-04T00:01:14.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "DeSantis Calls GOP Midterm Wipeout ‘Extinction Level Event’",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-04/desantis-calls-gop-s-midterm-wipeout-extinction-level-event",
-      "excerpt": "Florida Governor Ron DeSantis said the blue wave that swept over just about every corner of the US on Election Day — except his state — was akin to a “meteor strike” for the Republican Party.",
-      "publishedAt": "2026-11-04T16:02:09.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -2267,15 +2535,6 @@
       "url": "https://www.bloomberg.com/news/articles/2026-11-04/stock-market-gains-are-weakest-after-midterm-results-like-these",
       "excerpt": "While US midterm election results historically bode well for stocks regardless of which party wins, some Wall Street strategists are warning clients to temper their bullishness this time around.",
       "publishedAt": "2026-11-04T13:50:25.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Dollar Dips Most in Two Months as US Vote Spurs Policy Risks",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-04/franc-yen-emerge-as-fx-winners-as-us-midterms-weaken-dollar",
-      "excerpt": "The dollar sank the most in two months as Democrats’ sweeping victory in the midterm elections fueled concern about political gridlock and tougher tech regulation that could curb international demand for US assets.",
-      "publishedAt": "2026-11-04T03:11:23.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -3325,19 +3584,19 @@
     },
     {
       "sourceId": "reddit-stocks",
-      "title": "Kenvue buy out - explanation please",
-      "url": "https://www.reddit.com/r/stocks/comments/1xnt2zu/kenvue_buy_out_explanation_please/",
-      "excerpt": "Very new to stocks, so some advice would be appreciated . I brought Kenvue shares when the whole Tylenol backlash was going on. Which I've been pleased about because it had gone up nicely. But today I have just found out with the Kimberly-Clark buyout that my shares will automatically sold for a fra",
-      "publishedAt": "2026-11-04T16:45:46.000Z",
+      "title": "NBIS vs IREN - a comparison with counter intuitive conclusion",
+      "url": "https://www.reddit.com/r/stocks/comments/1xnt7s0/nbis_vs_iren_a_comparison_with_counter_intuitive/",
+      "excerpt": "Disclaimer : I redacted my post partially with AI as English isn't my main language. I own every argument stated in this post and used my own way of calculating the future share prices. Please feel free to criticize my method. I was a NBIS shareholder for a long time : bought at 90, sold at 250/280.",
+      "publishedAt": "2026-11-04T16:50:33.000Z",
       "category": "tech",
       "source": "r/stocks"
     },
     {
       "sourceId": "reddit-stocks",
-      "title": "NBIS vs IREN - a comparison with counter intuitive conclusion",
-      "url": "https://www.reddit.com/r/stocks/comments/1xnt7s0/nbis_vs_iren_a_comparison_with_counter_intuitive/",
-      "excerpt": "Disclaimer : I redacted my post partially with AI as English isn't my main language. I own every argument stated in this post and used my own way of calculating the future share prices. Please feel free to criticize my method. I was a NBIS shareholder for a long time : bought at 90, sold at 250/280.",
-      "publishedAt": "2026-11-04T16:50:33.000Z",
+      "title": "Kenvue buy out - explanation please",
+      "url": "https://www.reddit.com/r/stocks/comments/1xnt2zu/kenvue_buy_out_explanation_please/",
+      "excerpt": "Very new to stocks, so some advice would be appreciated . I brought Kenvue shares when the whole Tylenol backlash was going on. Which I've been pleased about because it had gone up nicely. But today I have just found out with the Kimberly-Clark buyout that my shares will automatically sold for a fra",
+      "publishedAt": "2026-11-04T16:45:46.000Z",
       "category": "tech",
       "source": "r/stocks"
     },
@@ -3463,7 +3722,7 @@
       "title": "US midterm results a 'victory' for Canadians hopeful of tariff relief",
       "url": "https://www.bbc.co.uk/news/articles/cqev3mw3e0kdo?at_medium=RSS&at_campaign=rss",
       "excerpt": "With Canada-US trade talks back on, Tuesday’s midterm Democratic wave puts pressure on the White House to come to a deal.",
-      "publishedAt": "2026-11-04T17:02:44.000Z",
+      "publishedAt": "2026-11-04T18:01:31.000Z",
       "category": "politics",
       "source": "BBC World"
     },
