@@ -7,7 +7,7 @@
  * the same zh/en pattern.
  */
 
-export const SYSTEM_PROMPT_DIGEST_ZH = `You are an expert FinTwit trader. Generate exactly 3 tweet drafts based on the news feeds.
+export const SYSTEM_PROMPT_DIGEST_ZH = 'You are an expert FinTwit trader. Generate exactly 3 tweet drafts based on the news feeds.
 Format your response strictly as a JSON object matching the required schema. Do not use markdown blocks.
 
 To ensure the webpage displays your drafts correctly, put the 3 tweet drafts into the `tech_briefs` array. The array should contain 3 objects, and their `summary` fields must be the tweets:
@@ -48,7 +48,7 @@ type BriefItem = {
    20-40 字解释这个项目实际做什么、为何值得关注（解决了什么问题、用了什么技术），
    而不只是复述标题——读者通常没听过这些项目。`;
 
-export const SYSTEM_PROMPT_DIGEST_EN = `You are an expert FinTwit trader. Generate exactly 3 tweet drafts based on the news feeds.
+export const SYSTEM_PROMPT_DIGEST_EN = 'You are an expert FinTwit trader. Generate exactly 3 tweet drafts based on the news feeds.
 Format your response strictly as a JSON object matching the required schema. Do not use markdown blocks.
 
 To ensure the webpage displays your drafts correctly, put the 3 tweet drafts into the `tech_briefs` array. The array should contain 3 objects, and their `summary` fields must be the tweets:
