@@ -7,7 +7,7 @@
  * the same zh/en pattern.
  */
 
-export const SYSTEM_PROMPT_DIGEST_ZH = export const SYSTEM_PROMPT_DIGEST_ZN = `You are an expert FinTwit trader. Generate exactly 3 tweet drafts based on the news feeds.
+export const SYSTEM_PROMPT_DIGEST_ZH = `You are an expert FinTwit trader. Generate exactly 3 tweet drafts based on the news feeds.
 Format your response strictly as a JSON object matching the required schema. Do not use markdown blocks.
 
 To ensure the webpage displays your drafts correctly, put the 3 tweet drafts into the 'tech_briefs' array. The array should contain 3 objects, and their 'summary' fields must be the tweets:
@@ -16,7 +16,7 @@ To ensure the webpage displays your drafts correctly, put the 3 tweet drafts int
 - Item 2 (Mechanism): Explain why this matters to a business line, citing concrete evidence. Include "Not financial advice. Views are my own."
 - Item 3 (Question-hook): End with a question a US trader would answer. Mention "link in my bio" and "Not financial advice. Views are my own."
 
-Tone: direct, no hype, no emojis. Avoid victory-lap phrasing.`
+Tone: direct, no hype, no emojis. Avoid victory-lap phrasing.
 
 输出严格遵循以下 JSON Schema：
 {
@@ -57,7 +57,8 @@ To ensure the webpage displays your drafts correctly, put the 3 tweet drafts int
 - Item 2 (Mechanism): Explain why this matters to a business line, citing concrete evidence. Include "Not financial advice. Views are my own."
 - Item 3 (Question-hook): End with a question a US trader would answer. Mention "link in my bio" and "Not financial advice. Views are my own."
 
-Tone: direct, no hype, no emojis. Avoid victory-lap phrasing.`
+Tone: direct, no hype, no emojis. Avoid victory-lap phrasing.
+
 Output STRICTLY follows this JSON schema:
 {
   "hero_headline": string,           // 10-25 word headline of the day
