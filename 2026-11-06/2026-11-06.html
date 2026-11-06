@@ -1,0 +1,2311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Brief · 2026-11-06</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --bg-elevated: #ffffff;
+    --fg: #18181b;
+    --fg-soft: #3f3f46;
+    --muted: #71717a;
+    --rule: #e4e4e7;
+    --card: #f4f4f5;
+    --link: #1d4ed8;
+    --accent: #18181b;
+    --accent-fg: #fafaf9;
+    --rank-high-bg: #fee2e2;
+    --rank-high-fg: #991b1b;
+    --rank-mid-bg: #fef3c7;
+    --rank-mid-fg: #92400e;
+    --rank-low-bg: #e0e7ff;
+    --rank-low-fg: #3730a3;
+    --hero-grad-from: #fafaf9;
+    --hero-grad-to: #f4f4f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #18181b;
+      --fg: #fafafa;
+      --fg-soft: #d4d4d8;
+      --muted: #a1a1aa;
+      --rule: #27272a;
+      --card: #18181b;
+      --link: #93c5fd;
+      --accent: #fafafa;
+      --accent-fg: #0a0a0a;
+      --rank-high-bg: rgba(239,68,68,0.18);
+      --rank-high-fg: #fca5a5;
+      --rank-mid-bg: rgba(245,158,11,0.18);
+      --rank-mid-fg: #fcd34d;
+      --rank-low-bg: rgba(99,102,241,0.18);
+      --rank-low-fg: #a5b4fc;
+      --hero-grad-from: #18181b;
+      --hero-grad-to: #0a0a0a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  /* ===== header ===== */
+  header.report-header { margin-bottom: 1.25rem; }
+  .eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  h1.report-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0.4rem 0 1.2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .archive-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rule);
+    padding-bottom: 1px;
+  }
+  .archive-link:hover { color: var(--accent); border-bottom-style: solid; }
+  .hero-card {
+    background: linear-gradient(135deg, var(--hero-grad-from) 0%, var(--hero-grad-to) 100%);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.4rem;
+    border-radius: 0.6rem;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .hero-headline {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.35rem 0 0;
+    line-height: 1.45;
+    color: var(--fg);
+  }
+  .overview-card {
+    margin: 0.7rem 0 0;
+    padding: 0.7rem 1.1rem;
+    background: var(--card);
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--muted);
+  }
+  .overview-card .eyebrow { display: block; margin-bottom: 0.3rem; }
+  .overview-text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--fg-soft);
+  }
+
+  /* ===== primary tabs ===== */
+  .tabs {
+    display: flex;
+    gap: 0.25rem;
+    margin: 1.25rem 0 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .tab {
+    background: none;
+    border: none;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    font-family: inherit;
+    transition: color 0.15s;
+  }
+  .tab:hover { color: var(--fg); }
+  .tab.active {
+    color: var(--fg);
+    border-bottom-color: var(--accent);
+  }
+  .tab .count {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-left: 0.4rem;
+    font-weight: 400;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ===== digest (AI 简报) — compact ===== */
+  .digest-category { margin-bottom: 1.1rem; }
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    margin: 0 0 0.55rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+  .category-count {
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--card);
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+  }
+  .brief-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  @media (min-width: 720px) {
+    .brief-list { grid-template-columns: 1fr 1fr; }
+  }
+  .brief {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.95rem;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .brief:hover {
+    border-color: var(--muted);
+    transform: translateY(-1px);
+  }
+  .brief-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+  .brief-source {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  .brief-rank {
+    font-size: 0.7rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .brief-rank.high { background: var(--rank-high-bg); color: var(--rank-high-fg); }
+  .brief-rank.mid  { background: var(--rank-mid-bg);  color: var(--rank-mid-fg); }
+  .brief-rank.low  { background: var(--rank-low-bg);  color: var(--rank-low-fg); }
+  .brief-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem;
+    line-height: 1.35;
+  }
+  .brief-title a { color: var(--fg); text-decoration: none; }
+  .brief-title a:hover { color: var(--link); text-decoration: underline; }
+  .brief-summary {
+    margin: 0;
+    color: var(--fg-soft);
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .editor-card {
+    background: var(--card);
+    border-left: 3px solid var(--muted);
+    border-radius: 0.5rem;
+    padding: 1rem 1.3rem;
+    margin: 1.5rem 0 1.2rem;
+  }
+  .editor-card .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .editor-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--fg);
+  }
+  .keywords { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; }
+  .keyword {
+    background: var(--card);
+    color: var(--fg-soft);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  /* ===== L2 sub-tabs ===== */
+  .sub-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1rem 0;
+  }
+  .sub-tab {
+    background: var(--card);
+    border: 1px solid transparent;
+    padding: 0.5rem 1.05rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--fg-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .sub-tab:hover { border-color: var(--muted); color: var(--fg); }
+  .sub-tab.active {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  .sub-tab .count {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 0.4rem;
+    font-weight: 400;
+  }
+  .sub-content { display: none; }
+  .sub-content.active { display: block; }
+
+  /* ===== L3 source-tabs ===== */
+  .source-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.9rem 0 1.3rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .source-tab {
+    background: none;
+    border: 1px solid var(--rule);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.83rem;
+    color: var(--fg-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .source-tab:hover { border-color: var(--muted); color: var(--fg); }
+  .source-tab.active {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+  .source-tab .count {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 0.3rem;
+  }
+  .source-content { display: none; }
+  .source-content.active { display: block; }
+
+  /* ===== article cards in raw panels ===== */
+  .article {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .article:first-child { padding-top: 0; }
+  .article:last-child { border-bottom: none; }
+  .article-title {
+    font-size: 1rem;
+    margin: 0 0 0.3rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .article-title a { color: var(--fg); text-decoration: none; }
+  .article-title a:hover { color: var(--link); text-decoration: underline; }
+  .article-meta { color: var(--muted); font-size: 0.76rem; margin: 0 0 0.35rem; }
+  .article-stats {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin: 0 0 0.4rem;
+    font-feature-settings: "tnum";
+  }
+  .article-excerpt {
+    margin: 0;
+    color: var(--fg-soft);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .article-summary {
+    margin: 0.55rem 0 0;
+    padding: 0.6rem 0.85rem;
+    background: var(--card);
+    border-left: 2px solid var(--link);
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--fg);
+  }
+  .summary-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--link);
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+  }
+
+  /* ===== trading panel ===== */
+  .crypto-widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+    margin: 0.4rem 0 1.2rem;
+  }
+  @media (min-width: 720px) {
+    .crypto-widgets { grid-template-columns: repeat(4, 1fr); }
+  }
+  .crypto-widget {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    text-align: center;
+  }
+  .widget-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+  }
+  .widget-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--fg);
+    line-height: 1.1;
+  }
+  .widget-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .widget-sub.positive { color: #16a34a; }
+  .widget-sub.negative { color: #dc2626; }
+  @media (prefers-color-scheme: dark) {
+    .widget-sub.positive { color: #4ade80; }
+    .widget-sub.negative { color: #fca5a5; }
+  }
+  .crypto-widget.fg-fear-extreme { border-left: 4px solid #b91c1c; }
+  .crypto-widget.fg-fear-extreme .widget-value { color: #b91c1c; }
+  .crypto-widget.fg-fear { border-left: 4px solid #d97706; }
+  .crypto-widget.fg-fear .widget-value { color: #d97706; }
+  .crypto-widget.fg-neutral { border-left: 4px solid var(--muted); }
+  .crypto-widget.fg-greed { border-left: 4px solid #65a30d; }
+  .crypto-widget.fg-greed .widget-value { color: #65a30d; }
+  .crypto-widget.fg-greed-extreme { border-left: 4px solid #16a34a; }
+  .crypto-widget.fg-greed-extreme .widget-value { color: #16a34a; }
+  @media (prefers-color-scheme: dark) {
+    .crypto-widget.fg-fear-extreme .widget-value,
+    .crypto-widget.fg-fear .widget-value { color: #fca5a5; }
+    .crypto-widget.fg-greed .widget-value,
+    .crypto-widget.fg-greed-extreme .widget-value { color: #4ade80; }
+  }
+
+  .trading-overview-card {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.3rem;
+    background: var(--card);
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--accent);
+  }
+  .trading-overview-card .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .trading-overview-text { font-size: 0.92rem; line-height: 1.75; color: var(--fg-soft); margin: 0; }
+
+  .trading-section-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--fg);
+    letter-spacing: 0.05em;
+  }
+
+  /* picks (Sonnet's watchlist) */
+  .trading-picks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  @media (min-width: 720px) {
+    .trading-picks { grid-template-columns: 1fr 1fr; }
+  }
+  .trading-pick {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--muted);
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+  }
+  .trading-pick.stance-bull { border-left-color: #16a34a; }
+  .trading-pick.stance-bear { border-left-color: #dc2626; }
+  .trading-pick.stance-neutral { border-left-color: var(--muted); }
+  .pick-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.45rem;
+  }
+  .pick-symbol-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .pick-symbol { font-weight: 700; font-size: 1rem; color: var(--fg); }
+  .pick-name { color: var(--muted); font-size: 0.82rem; }
+  .pick-stance {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pick-stance-bull { background: rgba(22,163,74,0.12); color: #16a34a; }
+  .pick-stance-bear { background: rgba(220,38,38,0.12); color: #dc2626; }
+  .pick-stance-neutral { background: var(--card); color: var(--muted); }
+  .pick-rationale { margin: 0; font-size: 0.88rem; line-height: 1.65; color: var(--fg-soft); }
+
+  /* asset-group tabs */
+  .trading-group-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.6rem 0 1.2rem;
+  }
+  .trading-group-tab {
+    background: var(--card);
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--fg-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .trading-group-tab:hover { border-color: var(--muted); color: var(--fg); }
+  .trading-group-tab.active {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  .trading-group-tab .count {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 0.4rem;
+    font-weight: 400;
+  }
+  .trading-group-content { display: none; }
+  .trading-group-content.active { display: block; }
+
+  /* ticker cards */
+  .ticker-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.55rem;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .ticker-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.65rem;
+  }
+  .ticker-id { min-width: 0; }
+  .ticker-symbol { margin: 0; font-size: 1rem; font-weight: 700; font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+  .ticker-name { margin: 0.15rem 0 0; font-size: 0.82rem; color: var(--muted); }
+  .ticker-price-block { text-align: right; flex-shrink: 0; }
+  .ticker-price { display: block; font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ticker-pct { display: inline-block; font-size: 0.82rem; font-weight: 500; margin-top: 0.15rem; font-variant-numeric: tabular-nums; }
+  .ticker-pct.positive, .positive { color: #16a34a; }
+  .ticker-pct.negative, .negative { color: #dc2626; }
+
+  .ticker-indicators {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.35rem 0.9rem;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--fg-soft);
+  }
+  @media (min-width: 720px) {
+    .ticker-indicators { grid-template-columns: repeat(3, 1fr); }
+  }
+  .ticker-indicators > div { display: flex; gap: 0.4rem; align-items: baseline; min-width: 0; }
+  .ticker-indicators dt { color: var(--muted); font-size: 0.74rem; margin: 0; white-space: nowrap; }
+  .ticker-indicators dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 500; color: var(--fg); }
+  .trend-bullish { color: #16a34a; }
+  .trend-bearish { color: #dc2626; }
+  .trend-neutral { color: var(--muted); }
+  .rsi-overbought { color: #d97706; }
+  .rsi-oversold { color: #2563eb; }
+
+  .ticker-signals {
+    margin-top: 0.65rem;
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .signal-pill {
+    font-size: 0.72rem;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .signal-pill.tone-bull { background: rgba(22,163,74,0.13); color: #166534; }
+  .signal-pill.tone-bear { background: rgba(220,38,38,0.13); color: #991b1b; }
+  .signal-pill.tone-caution { background: rgba(217,119,6,0.15); color: #92400e; }
+  @media (prefers-color-scheme: dark) {
+    .signal-pill.tone-bull { color: #4ade80; }
+    .signal-pill.tone-bear { color: #fca5a5; }
+    .signal-pill.tone-caution { color: #fcd34d; }
+    .trend-bullish, .positive, .ticker-pct.positive { color: #4ade80; }
+    .trend-bearish, .negative, .ticker-pct.negative { color: #fca5a5; }
+    .rsi-overbought { color: #fcd34d; }
+    .rsi-oversold { color: #93c5fd; }
+    .trading-pick.stance-bull { border-left-color: #4ade80; }
+    .trading-pick.stance-bear { border-left-color: #fca5a5; }
+    .pick-stance-bull { background: rgba(74,222,128,0.15); color: #4ade80; }
+    .pick-stance-bear { background: rgba(252,165,165,0.15); color: #fca5a5; }
+  }
+  .signal-age { opacity: 0.7; font-weight: 400; }
+
+  .trading-risk {
+    margin: 1.5rem 0 0;
+    padding: 0.9rem 1.2rem;
+    background: var(--card);
+    border-radius: 0.45rem;
+    border-left: 3px solid #d97706;
+  }
+  .trading-risk .eyebrow { display: block; margin-bottom: 0.35rem; }
+  .trading-risk p { margin: 0; font-size: 0.82rem; line-height: 1.65; color: var(--fg-soft); }
+
+  footer {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.1rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="report-header">
+    <span class="eyebrow">Daily Brief</span>
+    <h1 class="report-title">2026-11-06</h1>
+    <a class="archive-link" href="../archive.html">← Archive</a>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="tech">Tech<span class="count">63</span></button>
+    <button class="tab" data-tab="trading">Markets<span class="count">21</span></button>
+    <button class="tab" data-tab="politics">World<span class="count">15</span></button>
+    <button class="tab" data-tab="finance">Finance<span class="count">12</span></button>
+    <button class="tab" data-tab="community">Community<span class="count">55</span></button>
+  </nav>
+
+  <section class="panel active" data-panel="tech">
+    <nav class="sub-tabs"><button class="sub-tab active" data-sub="github-trending" data-cat="tech">GitHub Trending<span class="count">18</span></button><button class="sub-tab" data-sub="trending-papers" data-cat="tech">Trending Papers<span class="count">20</span></button><button class="sub-tab" data-sub="x-viral" data-cat="tech">X Viral<span class="count">10</span></button><button class="sub-tab" data-sub="ai-news" data-cat="tech">AI Media<span class="count">15</span></button></nav>
+<div class="sub-contents"><div class="sub-content active" data-sub-content="github-trending" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="github-trending" data-sub="github-trending" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://github.com/zed-industries/zed" target="_blank" rel="noopener noreferrer">zed-industries/zed</a></h3>
+  <p class="article-stats">Rust · ★ 93,012 · 🍴 11,458 · 📈 292 stars today</p>
+  
+  <p class="article-excerpt">Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Zed is a native, GPU-accelerated code editor written in Rust by the creators of Atom and Tree-sitter. It targets low input latency and high frame rates on large files, and treats collaboration as a core feature: shared workspaces, multi-cursor editing across participants, and multiplayer sessions backed by CRDT-based buffers. Language server support, tree-sitter syntax highlighting, and an extension system cover typical editing needs. Developers who find Electron-based editors slow use it as a daily driver on macOS and Linux, and increasingly as a collaborative pairing environment.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/NVIDIA/auto-ontology" target="_blank" rel="noopener noreferrer">NVIDIA/auto-ontology</a></h3>
+  <p class="article-stats">Python · ★ 8,323 · 🍴 668 · 📈 2,005 stars today</p>
+  
+  <p class="article-excerpt">Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. Rather than letting a language model improvise queries, it maps data into an ontology so queries can be generated deterministically, improving context retrieval and making AI answers traceable back to defined entities and relationships. It targets teams deploying LLM applications — retrieval, analytics, agents — where explainability and repeatable results matter. The project is released by NVIDIA.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/rails/rails" target="_blank" rel="noopener noreferrer">rails/rails</a></h3>
+  <p class="article-stats">Ruby · ★ 58,896 · 🍴 23,823 · 📈 44 stars today</p>
+  
+  <p class="article-excerpt">Ruby on Rails</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Ruby on Rails is a full-stack web application framework built on the model-view-controller pattern, with convention-over-configuration defaults that generate working scaffolding for database-backed apps. It bundles an ORM (Active Record), routing, background jobs, mailers, and a testing setup, plus a CLI for migrations and code generation. Long used by startups and established product teams to ship CRUD-heavy web services quickly, it remains a common choice for Ruby-based SaaS platforms and internal tooling.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/mpv-player/mpv" target="_blank" rel="noopener noreferrer">mpv-player/mpv</a></h3>
+  <p class="article-stats">C · ★ 37,760 · 🍴 3,628 · 📈 36 stars today</p>
+  
+  <p class="article-excerpt">🎥 Command line media player</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> mpv is a command-line video and audio player built on FFmpeg libraries, supporting essentially any container and codec those libraries decode, including hardware-accelerated playback. It ships a minimal on-screen controller but is designed for keyboard-driven, scriptable use: Lua and JavaScript scripting APIs, configuration files, IPC for external control, and options for precise seeking, subtitles, and video output tuning. It is widely used on Linux and by people who want a lightweight frontend — also available as libmpv — for embedded players, home theater setups, and automation.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/rust-lang/rust" target="_blank" rel="noopener noreferrer">rust-lang/rust</a></h3>
+  <p class="article-stats">Rust · ★ 121,171 · 🍴 17,357 · 📈 186 stars today</p>
+  
+  <p class="article-excerpt">Empowering everyone to build reliable and efficient software.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Rust is a systems programming language designed for performance and memory safety without a garbage collector. Its ownership and borrow-checking model catches data races and use-after-free bugs at compile time, while zero-cost abstractions keep runtime overhead close to C and C++. Cargo, the bundled build tool and package registry, handles dependencies, testing, and publishing. It is used for operating system components, embedded firmware, web services, and CLI tools, and increasingly for performance-critical code inside Python, JavaScript, and other ecosystems via FFI.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/react/react" target="_blank" rel="noopener noreferrer">react/react</a></h3>
+  <p class="article-stats">JavaScript · ★ 252,047 · 🍴 51,782 · 📈 244 stars today</p>
+  
+  <p class="article-excerpt">The library for web and native user interfaces.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> React is a JavaScript library for building user interfaces from declarative, composable components. It keeps a virtual representation of the UI and reconciles changes efficiently, so developers describe state-to-view mappings instead of mutating the DOM directly. Hooks provide state and side-effect handling inside function components. The same component model extends to native mobile apps through React Native. It is the base layer for a large share of web front ends and design systems, typically paired with a framework such as Next.js for routing and server rendering.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/angular/angular" target="_blank" rel="noopener noreferrer">angular/angular</a></h3>
+  <p class="article-stats">TypeScript · ★ 101,146 · 🍴 28,905 · 📈 128 stars today</p>
+  
+  <p class="article-excerpt">Deliver web apps with confidence 🚀</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Angular is a TypeScript-first web framework for building large single-page applications. It provides dependency injection, a component and template system, reactive state via RxJS observables, routing, forms with validation, and a CLI handling scaffolding, builds, and testing. Opinionated structure and strong typing suit teams maintaining long-lived codebases, where consistency across many developers matters more than minimal setup. Common deployments include enterprise dashboards, internal tools, and progressive web apps; server-side rendering and hydration are supported through Angular&#39;s own primitives.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/symfony/symfony" target="_blank" rel="noopener noreferrer">symfony/symfony</a></h3>
+  <p class="article-stats">PHP · ★ 31,253 · 🍴 9,938 · 📈 89 stars today</p>
+  
+  <p class="article-excerpt">The Symfony PHP framework</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Symfony is a PHP framework and a set of decoupled, reusable components — HTTP handling, routing, dependency injection, forms, console, and more — that underpin many other PHP projects, including Drupal and Laravel. Applications are organized into bundles with configuration in YAML, XML, or PHP, and the framework ships a debugging toolbar and profiler for development. It is used for mid-size to large web applications and APIs where maintainability, long-term support releases, and PSR standards compliance matter, often in enterprise or agency settings.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/prometheus/prometheus" target="_blank" rel="noopener noreferrer">prometheus/prometheus</a></h3>
+  <p class="article-stats">Go · ★ 66,994 · 🍴 10,980 · 📈 140 stars today</p>
+  
+  <p class="article-excerpt">The Prometheus monitoring system and time series database.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Prometheus is a monitoring system and time-series database for metrics. It scrapes HTTP endpoints exposing counters, gauges, and histograms, stores samples locally in its own TSDB, and queries them through PromQL. Alerting rules feed the bundled Alertmanager, which handles grouping, silencing, and routing to email, PagerDuty, or webhooks. A pull-based model plus service discovery fits dynamic environments; it is the default metrics stack for Kubernetes and is widely used by SRE and platform teams to instrument services, build Grafana dashboards, and trigger on-call alerts.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/google/skills" target="_blank" rel="noopener noreferrer">google/skills</a></h3>
+  <p class="article-stats">Python · ★ 22,628 · 🍴 1,904 · 📈 532 stars today</p>
+  
+  <p class="article-excerpt">Agent Skills for Google products and technologies</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> A collection of agent skills for Google products and technologies, published by Google. Skills are packaged instruction and reference files that an AI coding agent loads on demand, giving it product-specific setup steps, API usage patterns, and conventions it would otherwise guess at. The repository targets developers using assistant-driven workflows — Claude Code, Gemini CLI, or similar agents — who want generated code for Google platforms to follow official guidance. Coverage depends on the skills included; consult the repository for the specific products supported.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/microsoft/vscode" target="_blank" rel="noopener noreferrer">microsoft/vscode</a></h3>
+  <p class="article-stats">TypeScript · ★ 194,795 · 🍴 44,404 · 📈 295 stars today</p>
+  
+  <p class="article-excerpt">Visual Studio Code</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Visual Studio Code is a cross-platform source code editor built on Electron and TypeScript, combining a fast editor core with an extension marketplace covering language support, debuggers, linters, and remote development. It offers IntelliSense, integrated Git, a terminal, debugging, and tasks, configured through JSON settings and a command palette. An extension API and Language Server Protocol support make it a common target for tooling authors. It is used broadly by individual developers and enterprises, and its core (Code-OSS) is the base for forks and embedded editors.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/lz4/lz4" target="_blank" rel="noopener noreferrer">lz4/lz4</a></h3>
+  <p class="article-stats">C · ★ 12,535 · 🍴 1,640 · 📈 313 stars today</p>
+  
+  <p class="article-excerpt">Extremely Fast Compression algorithm</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> LZ4 is a lossless compression algorithm implemented in C, optimized for speed over maximum ratio. Decompression runs at multiple gigabytes per second per core, and compression is tunable from a fast mode to higher-ratio variants (LZ4 HC), making it suitable for latency-sensitive paths. It is used inline: filesystem and database block compression, network protocols, log and telemetry pipelines, in-memory caches, and game asset streaming. The project ships the reference library plus command-line tools, with bindings for most languages and a frame format for interoperable streams.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/nushell/nushell" target="_blank" rel="noopener noreferrer">nushell/nushell</a></h3>
+  <p class="article-stats">Rust · ★ 40,805 · 🍴 2,331 · 📈 88 stars today</p>
+  
+  <p class="article-excerpt">A new type of shell</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Nushell is a shell written in Rust that treats command output as structured tables rather than raw text. Pipelines pass typed data — records, lists, tables — between commands, so filtering, sorting, and grouping use built-in commands instead of awk, sed, and cut. It parses formats such as JSON, YAML, CSV, and TOML natively, provides syntax highlighting and completions, and can call external programs while converting their output into tables. It targets developers and data-oriented users who want a more predictable, cross-platform interactive shell for scripting and exploration.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/etcd-io/etcd" target="_blank" rel="noopener noreferrer">etcd-io/etcd</a></h3>
+  <p class="article-stats">Go · ★ 52,488 · 🍴 10,573 · 📈 123 stars today</p>
+  
+  <p class="article-excerpt">Distributed reliable key-value store for the most critical data of a distributed system</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> etcd is a distributed, strongly consistent key-value store used to hold the configuration and coordination state of distributed systems. It implements the Raft consensus protocol, so a cluster survives node failures while providing linearizable reads and writes, plus watches for change notification and leases for TTL-based keys. Kubernetes uses it as the backing store for all cluster state. Beyond Kubernetes, it is deployed for service discovery, distributed locking, leader election, and feature flags — typically by platform and infrastructure engineers running systems that cannot tolerate split-brain or data loss.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/openssl/openssl" target="_blank" rel="noopener noreferrer">openssl/openssl</a></h3>
+  <p class="article-stats">C · ★ 31,203 · 🍴 11,579 · 📈 24 stars today</p>
+  
+  <p class="article-excerpt">General purpose TLS and crypto library</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> OpenSSL is a general-purpose cryptography and TLS library written in C, providing implementations of TLS/DTLS, X.509 certificate handling, and a wide range of cryptographic primitives and protocols. It ships the libssl and libcrypto libraries plus a command-line tool used for generating keys, inspecting certificates, testing connections, and encrypting files. It is the transport security layer under much of the internet&#39;s HTTPS traffic and is embedded in servers, operating systems, and network appliances. Service maintainers, packagers, and embedded teams use it for certificate and secure-channel work.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener noreferrer">mattpocock/skills</a></h3>
+  <p class="article-stats">Shell · ★ 316,136 · 🍴 26,448 · 📈 2,058 stars today</p>
+  
+  <p class="article-excerpt">Skills for Real Engineers. Straight from my .agents directory.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> A set of agent skills maintained by Matt Pocock, published straight from his personal .agents directory. Each skill is a markdown instruction file that an AI coding agent loads to follow a specific workflow — the kind of practical, opinionated guidance a working engineer would write for themselves. The repository is aimed at developers using agentic coding tools who want reusable prompts and procedures rather than ad-hoc chat instructions, with a focus on everyday TypeScript and software engineering tasks. Content reflects one engineer&#39;s setup; check the repository for the individual skills included.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer">cloudflare/security-audit-skill</a></h3>
+  <p class="article-stats">JavaScript · ★ 62,786 · 🍴 4,072 · 📈 2,524 stars today</p>
+  
+  <p class="article-excerpt">A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> A coding-agent skill from Cloudflare that structures security audits into multiple phases. Instead of a single prompt asking a model to review code, it defines staged instructions — reconnaissance, analysis, and verification — so findings are independently checked before being reported. Output is machine-readable, letting results feed into CI, triage tooling, or issue trackers rather than sitting in free-form chat text. It targets security engineers and developers using agentic coding assistants who need repeatable, auditable review results across repositories, with fewer false positives.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/astral-sh/ruff" target="_blank" rel="noopener noreferrer">astral-sh/ruff</a></h3>
+  <p class="article-stats">Rust · ★ 50,491 · 🍴 2,597 · 📈 107 stars today</p>
+  
+  <p class="article-excerpt">An extremely fast Python linter and code formatter, written in Rust.</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Ruff is a Python linter and code formatter written in Rust, designed to be orders of magnitude faster than earlier Python tooling. It reimplements hundreds of rules from Flake8 and its plugin ecosystem, isort, pyupgrade, and others in a single binary, with built-in caching and automatic fixes. The bundled formatter is a drop-in alternative to Black. Because it runs so quickly, it works well in pre-commit hooks, editors, and CI. Python teams use it to replace several overlapping tools with one dependency; configuration lives in pyproject.toml.</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="trending-papers" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="huggingface-papers" data-sub="trending-papers" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.06728" target="_blank" rel="noopener noreferrer">Turns Matter: Advancing Streaming Video RL via Turn-Level Credit</a></h3>
+  <p class="article-stats">👍 126</p>
+  <p class="article-meta">03/11, 19:00</p>
+  <p class="article-excerpt">Streaming video understanding requires models to repeatedly decide whether to respond or continue observing. Recently, Group Relative Policy Optimization (GRPO) has been applied to this setting, with existing approaches emphasizing reward design while retaining a single trajectory-level advantage ac</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Streaming video understanding requires models to repeatedly decide whether to respond or keep observing, yet GRPO-based approaches in this setting assign a single trajectory-level advantage across all turns. The authors introduce turn-level credit assignment for streaming video RL, redistributing advantage to the individual decision turns where it originates rather than treating the whole interaction as one unit. The method is evaluated on streaming video benchmarks against trajectory-level GRPO baselines, and the analysis shows that turn granularity matters for credit assignment in multi-turn streaming settings.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.02075" target="_blank" rel="noopener noreferrer">Decoupled Predictive Decision Making: A Shared Conditional Predictor for Agents</a></h3>
+  <p class="article-stats">👍 113</p>
+  <p class="article-meta">31/10, 20:00</p>
+  <p class="article-excerpt">Agent decisions depend on empirical relationships that deployment observations reveal and task descriptions alone may leave unresolved. We introduce Decoupled Predictive Decision Making (DPDM), an architecture that formulates heterogeneous agent decisions as conditional prediction with a shared pret</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Agent decisions often depend on empirical relationships that deployment observations reveal but task descriptions leave unresolved. The authors propose Decoupled Predictive Decision Making (DPDM), an architecture that casts heterogeneous agent decisions as conditional prediction over a shared pretrained predictor, decoupling the prediction backbone from task-specific decision heads. This lets diverse decision types reuse one learned model of environment regularities instead of separate task-specific policies. The contribution is an architectural formulation plus evidence that a shared conditional predictor supports heterogeneous agent decisions.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.08449" target="_blank" rel="noopener noreferrer">VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding</a></h3>
+  <p class="article-stats">👍 62</p>
+  <p class="article-meta">04/11, 19:00</p>
+  <p class="article-excerpt">Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one co</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Physical AI tasks such as robotics and autonomous driving can plan visually, using points, bounding boxes, and trajectories to express spatial goals and anticipated motion. Autoregressive vision-language models generate such plans one coordinate at a time, which is slow. VFlash introduces flash primitive decoding, generating whole visual primitives in parallel rather than token-by-token. The approach targets both speed and accuracy of visual planning for embodied models, aiming to make primitive-level visual plan generation practical for latency-sensitive physical AI pipelines.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.06910" target="_blank" rel="noopener noreferrer">FrontierPhysics: Evaluating Agents for End-to-End Physics Research</a></h3>
+  <p class="article-stats">👍 50</p>
+  <p class="article-meta">03/11, 19:00</p>
+  <p class="article-excerpt">AI agents are playing an increasingly important role in physics research. However, existing physics benchmarks only evaluate fixed questions, isolated sub-tasks, or paper reproduction with given solutions, and rarely check research quality alongside correctness. We introduce FrontierPhysics, an end-</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Existing physics benchmarks evaluate fixed questions, isolated sub-tasks, or paper reproduction with given solutions, and rarely check research quality alongside correctness. The authors introduce FrontierPhysics, an end-to-end benchmark that tasks AI agents with open-ended physics research rather than answering preset questions. Evaluation covers both the correctness of results and the quality of the research process, providing a more realistic test of agent capability in scientific discovery settings. The benchmark is positioned as a step toward measuring agents on genuine research workflows instead of narrow, checkable sub-problems.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.04277" target="_blank" rel="noopener noreferrer">Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</a></h3>
+  <p class="article-stats">👍 46</p>
+  <p class="article-meta">02/11, 19:00</p>
+  <p class="article-excerpt">Harness evolution from a common base exhibits Locality, Complementarity, and Nonstationarity: variants repair different failures, and their utility changes as the policy learns. Rather than seeking a universally superior harness, we introduce Harness-S to selectively rescue failures of a base execut</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Harness evolution from a common base shows locality, complementarity, and nonstationarity: variants repair different failures, and their usefulness shifts as the policy learns. Rather than seeking one universally superior harness, Harness-S learns from sibling harnesses to selectively rescue failures of a base execution harness during agent training. The method exploits the complementary strengths of multiple harness variants to improve generalization of the trained agent, targeting more robust agent training than committing to a single fixed harness configuration.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.00883" target="_blank" rel="noopener noreferrer">Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand</a></h3>
+  <p class="article-stats">👍 40</p>
+  <p class="article-meta">30/10, 20:00</p>
+  <p class="article-excerpt">Benchmark compression reduces the often prohibitive time and cost of model evaluation by evaluating models on a small benchmark subset that closely matches full-benchmark results. To quantify estimation error, we derive an accurate analytical approximation to the error distribution when estimating f</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Benchmark compression cuts the cost of model evaluation by scoring models on a small subset that closely matches full-benchmark results. The authors derive an accurate analytical approximation of the estimation-error distribution for subset selection, then propose BestRand, a compression method designed for stable and low-cost subset construction. The work clarifies when near-random selection is already competitive and where selection strategy actually matters, yielding compressed benchmarks with predictable error and reduced evaluation time and expense relative to full evaluation.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.04408" target="_blank" rel="noopener noreferrer">Halley: A Predictive Control Plane for Optical AI Data Center Networks</a></h3>
+  <p class="article-stats">👍 37</p>
+  <p class="article-meta">03/11, 01:45</p>
+  <p class="article-excerpt">A frontier AI model is trained in an AI data center, on tens of thousands of accelerators joined by a dedicated network, and every training step ends with all of them exchanging data at once. Between racks, that network is optical, and each of its four layers, from lasers to switches, runs a fixed o</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Frontier AI training runs on tens of thousands of accelerators whose every step ends in an all-at-once data exchange; between racks this network is optical, and each of its four layers, from lasers to switches, runs a fixed operating policy. Halley is a predictive control plane that forecasts traffic demand and reconfigures optical network layers accordingly, replacing static per-layer policies with coordinated, prediction-driven control. The system targets improved utilization and reduced transfer stalls for large-scale AI training clusters.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.06483" target="_blank" rel="noopener noreferrer">What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</a></h3>
+  <p class="article-stats">👍 35</p>
+  <p class="article-meta">04/11, 08:24</p>
+  <p class="article-excerpt">While multi-turn agentic reinforcement learning (RL) excels on long-horizon tasks, its performance gains remain highly sensitive to interaction constraints. Evaluating across sampling breadth K and interaction depth T via Pass@(K,T), we show that trajectory-level RL advantages depend on sufficient t</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Multi-turn agentic RL excels on long-horizon tasks, but its gains are highly sensitive to interaction constraints. The authors analyze this by evaluating with Pass@(K,T) across sampling breadth K and interaction depth T, showing that trajectory-level RL advantages require sufficient test-time sampling and interaction depth to materialize. The study dissects which agent capabilities multi-turn RL actually improves versus which apparent gains stem from relaxed interaction budgets, offering a more precise accounting of where the method helps and where reported improvements may be confounded.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.07392" target="_blank" rel="noopener noreferrer">WeLM-Image: A Unified Image Generation Model towards Visual Intelligence</a></h3>
+  <p class="article-stats">👍 33</p>
+  <p class="article-meta">04/11, 19:00</p>
+  <p class="article-excerpt">We present WeLM-Image, a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis. Designed for single-GPU deployment in WeChat&#39;s large-scale consumer applications, the model processes text, refer</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> WeLM-Image is a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis within a single model. Designed for single-GPU deployment in WeChat&#39;s large-scale consumer applications, it processes text and reference images to support these tasks under tight serving constraints. The contribution is a unified architecture that folds understanding capability into generation, aiming at practical visual intelligence deployment rather than a task-specialized pipeline, with efficiency suitable for production-scale consumer traffic.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.08373" target="_blank" rel="noopener noreferrer">SLA: Scaling Spatial-Language-Action Model via Continual Pre-training</a></h3>
+  <p class="article-stats">👍 24</p>
+  <p class="article-meta">04/11, 19:00</p>
+  <p class="article-excerpt">Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often introduced only during </p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Reliable robotic manipulation needs both semantic understanding and precise 3D spatial control, but vision-language-action foundations largely inherit 2D visual representations from vision-language pre-training, with spatial supervision added only later. SLA scales a Spatial-Language-Action model through continual pre-training that injects 3D spatial knowledge into the backbone before action training. This shifts spatial grounding earlier in the pipeline rather than confining it to downstream fine-tuning, targeting improved spatial precision for manipulation while retaining the semantic priors of large-scale vision-language pre-training.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.06518" target="_blank" rel="noopener noreferrer">EmoReward: Self-Evolving Reward Calibration for Emotional Video Generation RL</a></h3>
+  <p class="article-stats">👍 23</p>
+  <p class="article-meta">03/11, 19:00</p>
+  <p class="article-excerpt">Group Relative Policy Optimization (GRPO) has advanced generative model post-training in verifiable domains such as code and mathematics, but evaluating video quality, especially emotional expression, often depends on subjective aesthetics and has no uniquely correct target. Existing approaches typi</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> GRPO has advanced post-training for verifiable domains such as code and math, but video quality, especially emotional expression, is subjective and has no uniquely correct target. EmoReward proposes self-evolving reward calibration for reinforcement learning of emotional video generation, iteratively refining the reward signal instead of fixing a static aesthetic proxy. The method aims to give GRPO-style post-training a usable, improving objective for subjective video attributes, addressing the mismatch between verifiable-reward assumptions and open-ended emotional expressiveness in generated video.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2610.41104" target="_blank" rel="noopener noreferrer">MUON-RT Reusing the Teacher&#39;s Trajectory for Momentum-Free Muon for LLM Self-Distillation</a></h3>
+  <p class="article-stats">👍 20</p>
+  <p class="article-meta">29/10, 20:00</p>
+  <p class="article-excerpt">Self-distillation methods for large language models with an exponential moving average (EMA) teacher already retain a history of student updates. Muon nevertheless stores a separate momentum buffer, increasing persistent training memory. We propose Muon with Reused Teacher (Muon-RT), which reuses th</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Self-distillation with an EMA teacher already keeps a history of student updates, yet Muon additionally stores a separate momentum buffer, raising persistent training memory. Muon-RT reuses the teacher&#39;s parameter trajectory in place of Muon&#39;s momentum, removing the extra buffer while preserving the optimization behavior Muon provides. The change reduces memory overhead for LLM self-distillation without altering the distillation objective, making the optimizer cheaper to run at scale for large language model training pipelines that combine EMA-teacher self-distillation with Muon.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.05609" target="_blank" rel="noopener noreferrer">On the Generalization Limitation of On-Policy Distillation for Post-RL Consolidation</a></h3>
+  <p class="article-stats">👍 19</p>
+  <p class="article-meta">02/11, 19:00</p>
+  <p class="article-excerpt">Multi-teacher on-policy distillation (MOPD) extends on-policy distillation (OPD) to consolidate capabilities from multiple teachers. Although prior work reports near-perfect in-distribution (IND) distillation performance, we find that this can mask incomplete capability consolidation beyond the supe</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Multi-teacher on-policy distillation (MOPD) extends on-policy distillation to consolidate capabilities from several teachers, and prior work reports near-perfect in-distribution performance. The authors show this can mask incomplete consolidation beyond the supervision distribution. They analyze the generalization limitation of OPD/MOPD when used for post-RL consolidation, identifying where distilled students fail to retain teacher capabilities out of distribution. The paper contributes a diagnosis of the gap between in-distribution distillation fidelity and true capability consolidation, cautioning against judging post-RL distillation success by in-distribution numbers alone.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.03743" target="_blank" rel="noopener noreferrer">EvoMemState: Evolving Memory State for Personal Agents</a></h3>
+  <p class="article-stats">👍 17</p>
+  <p class="article-meta">01/11, 19:00</p>
+  <p class="article-excerpt">Long-term memory enables large language model (LLM) agents to provide continuous personalized assistance by retaining user information across interactions. Existing systems support this process through fact extraction, organization, updating, and retrieval, but largely maintain memories as independe</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Long-term memory lets LLM agents provide continuous personalized assistance by retaining user information across interactions. Existing systems extract, organize, update, and retrieve facts but largely keep memories as independent entries. EvoMemState instead maintains an evolving memory state for personal agents, so stored user information is continuously restructured rather than accumulated as disconnected facts. The approach targets more coherent personalization over long interaction histories, where relationships among memories matter as much as the individual facts themselves.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.06425" target="_blank" rel="noopener noreferrer">D3D: Decoupled Diffusion Drafting for Asynchronous Speculative Decoding</a></h3>
+  <p class="article-stats">👍 17</p>
+  <p class="article-meta">03/11, 19:00</p>
+  <p class="article-excerpt">Target-conditioned diffusion drafters predict candidate tokens in parallel, yet each new block must wait for updated target-model hidden states. This forces drafting and verification to run sequentially, limiting speedup even though each block is generated in one pass. We introduce D3D, a standalone</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Target-conditioned diffusion drafters predict candidate tokens in parallel, but each new block must wait for updated target-model hidden states, forcing drafting and verification to run sequentially and capping speedup. D3D introduces a standalone decoupled diffusion drafter that drafts asynchronously without waiting on the target model, enabling overlap between drafting and verification. The approach targets higher speculative decoding speedups than target-conditioned diffusion drafting allows, while retaining parallel block generation.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.04894" target="_blank" rel="noopener noreferrer">VisSearch-Bench: Evaluating Long Horizon Visual Search in Multimodal Agents</a></h3>
+  <p class="article-stats">👍 14</p>
+  <p class="article-meta">02/11, 19:00</p>
+  <p class="article-excerpt">Multimodal agents use web and image tools to answer questions beyond their internal knowledge. Some search tasks use images mainly to identify an initial entity, then rely on text retrieval. These tasks offer limited insight into how agents connect information across images, objects, and search step</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Multimodal agents use web and image tools to answer questions beyond internal knowledge, but many existing search tasks use images mainly to identify an initial entity and then fall back to text retrieval, offering limited insight into cross-image reasoning. VisSearch-Bench evaluates long-horizon visual search in multimodal agents, requiring agents to connect information across images, objects, and successive search steps. The benchmark is designed to expose where agents fail when visual evidence, not text lookup, must be tracked and composed over extended search trajectories.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.07854" target="_blank" rel="noopener noreferrer">Towards Foundation Decision Models: Drex</a></h3>
+  <p class="article-stats">👍 14</p>
+  <p class="article-meta">04/11, 19:00</p>
+  <p class="article-excerpt">Autoregressive approaches with large language models, such as long chain-of-thought reasoning, have become the default for new AI applications because they reach higher accuracy on a wide range of tasks. In production, however, they give inconsistent answers, require parsing of outputs, and add cost</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Autoregressive LLM approaches with long chain-of-thought have become the default for new AI applications because they reach higher accuracy on many tasks, but in production they give inconsistent answers, require output parsing, and add cost. Drex is presented as a step toward foundation decision models, learning decision-making directly rather than routing every task through generated text. The work argues for decision-level foundation models that deliver reliable, parse-free, lower-cost behavior in production settings where autoregressive reasoning pipelines are fragile and expensive.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.01926" target="_blank" rel="noopener noreferrer">TAC-CoT: Tool-Empowered Implicit Chain-of-Thought via Interleaving Explicit Tokens</a></h3>
+  <p class="article-stats">👍 14</p>
+  <p class="article-meta">01/11, 09:05</p>
+  <p class="article-excerpt">LLM-based agentic systems are increasingly combined with CoT reasoning to solve tasks that require accurate reasoning, external knowledge, and multi-step deliberation. Yet, explicit CoT incurs substantial generation overhead, while implicit CoT, which replaces textual rationales with compact continu</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> LLM agentic systems increasingly combine CoT reasoning with external tools for tasks needing accurate reasoning, external knowledge, and multi-step deliberation, but explicit CoT adds substantial generation overhead while implicit CoT replaces textual rationales with compact continuous representations at some accuracy cost. TAC-CoT interleaves explicit tokens into implicit CoT and empowers reasoning with tools, aiming to recover the accuracy of explicit reasoning while keeping the token efficiency of implicit CoT. The method targets a better accuracy-efficiency tradeoff for agentic reasoning with tool use.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2610.41432" target="_blank" rel="noopener noreferrer">Hybrid Computer Use: A Unified Programmatic, Semantic, and Visual Interface for General Agents</a></h3>
+  <p class="article-stats">👍 14</p>
+  <p class="article-meta">30/10, 04:38</p>
+  <p class="article-excerpt">Computer-use agents increasingly tackle tasks ranging from everyday desktop activities to long-horizon professional workflows. Yet interfaces centered on screenshots and mouse-and-keyboard actions can impose a human-interaction prior, requiring repeated screen interpretation while leaving the comput</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Computer-use agents handle tasks from everyday desktop activity to long-horizon professional workflows, yet screenshot-and-mouse interfaces impose a human-interaction prior: repeated screen interpretation while leaving the computer&#39;s programmatic affordances unused. Hybrid Computer Use proposes a unified interface combining programmatic, semantic, and visual control so general agents can choose the appropriate modality per step. The approach aims to reduce reliance on pixel-level screen parsing and enable more efficient, reliable execution of long-horizon computer tasks.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/papers/2611.06768" target="_blank" rel="noopener noreferrer">PyRUA-REAL: Robot Exploration and Adaptive Learning through RSI in the Real World</a></h3>
+  <p class="article-stats">👍 11</p>
+  <p class="article-meta">04/11, 11:46</p>
+  <p class="article-excerpt">Coding agents powered by models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting improvements in robot capabilities from physical interaction. In this work, we study embodied recursive self-improvement (RSI) thr</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Coding agents built on models such as GPT-6-Astra connect spatial reasoning with executable robot behavior, raising the question of how such agents can produce lasting robot capability gains from physical interaction. PyRUA-REAL studies embodied recursive self-improvement in the real world, having agents explore, write and execute robot code, and adaptively learn from physical feedback. The work investigates whether real-world interaction loops can compound into durable improvements in robot capabilities, rather than only succeeding on isolated scripted tasks.</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="x-viral" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="attentionvc-ai" data-sub="x-viral" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://x.com/AgentBullLab/status/2117682224896397529" target="_blank" rel="noopener noreferrer">Building a Real Agent OS for Teams: Lessons from Ankole</a></h3>
+  <p class="article-stats">@AgentBullLab · 20 粉丝 · 1.4M 阅 · 501 赞 · 19 转</p>
+  <p class="article-meta">03/11, 13:16</p>
+  <p class="article-excerpt">1. From Single-User Harnesses to Collective Cognition On a solo developer&#39;s laptop, tools like Claude Code, Codex, and OpenClaw can already work autonomously for hours. Drop that same single-user</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Argues that single-user agent harnesses such as Claude Code, Codex and OpenClaw, which can run autonomously for hours on one developer&#39;s laptop, do not transfer to teams. The post frames the gap as a shift from individual harnesses to &#39;collective cognition&#39; and draws on lessons from building Ankole, an agent OS for teams. The angle is architectural: coordination, shared state and governance across agents, rather than raw model capability.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/RohOnChain/status/2117625737792585969" target="_blank" rel="noopener noreferrer">How to Use Grok Bot to Build a Team of AI Trading Agents</a></h3>
+  <p class="article-stats">@RohOnChain · 84.8K 粉丝 · 405.8K 阅 · 525 赞 · 72 转</p>
+  <p class="article-meta">03/11, 09:31</p>
+  <p class="article-excerpt">I will break down the EXACT framework to build a 24/7 AI trading team with Grok Bot that researches the market, finds strategies, backtests &amp; trades on its own. Let&#39;s get straight to it. Bookmark This</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Thread promising a step-by-step framework for assembling a 24/7 AI trading team on Grok Bot, with agents that research markets, surface strategies, backtest them and place trades without manual input. Positions the setup as a repeatable blueprint rather than a single tool review, and asks readers to bookmark it. Concrete numbers are absent from the opening; value depends on how much implementation detail the thread delivers beyond the pitch.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/XPENG_Global/status/2117924611514069366" target="_blank" rel="noopener noreferrer">XPENG and Academic Partners Release GroundingPI, a Pretrained Model for Embodied Perception</a></h3>
+  <p class="article-stats">@XPENG_Global · 432.1K 粉丝 · 349.3K 阅 · 501 赞 · 30 转</p>
+  <p class="article-meta">04/11, 05:19</p>
+  <p class="article-excerpt">XPENG and Academic Partners Release GroundingPI, a Pretrained Model for Embodied Perception, Outperforming GPT-6 Astra in Overall Perception Benchmarks XPENG, in collaboration with research teams from</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> XPENG, with academic research partners, released GroundingPI, a pretrained model aimed at embodied perception — the grounding layer robots and vehicles need to interpret scenes. The announcement claims it outperforms GPT-6 Astra on overall perception benchmarks. Framed as a corporate research milestone rather than a tutorial; no architecture details, dataset sizes or evaluation breakdowns appear in the opening text, so the comparison rests on XPENG&#39;s own claim.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/Teamily_AI/status/2117609375569457533" target="_blank" rel="noopener noreferrer">The Future Is the Agentic Internet: Moving Beyond Personal Agents to Team Agents</a></h3>
+  <p class="article-stats">@Teamily_AI · 9.4K 粉丝 · 257.8K 阅 · 534 赞 · 53 转</p>
+  <p class="article-meta">03/11, 08:26</p>
+  <p class="article-excerpt">Dear Teamily AI Customers, Ecosystem Partners, and Investors, Over the past few months, Teamily AI has grown rapidly, and we&#39;re grateful to everyone who has joined us on this journey. In this letter,</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> An open letter from Teamily AI to customers, ecosystem partners and investors, sketching a shift from personal agents to &#39;team agents&#39; on what it calls the agentic internet. The framing is strategic and positioning-oriented: rapid recent growth, thanks to early users, and a thesis that multi-agent collaboration across organizations is the next layer. No benchmarks, pricing or product specifics in the opening; treat it as a roadmap and vision statement rather than a technical writeup.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/HeyElsaAI/status/2117630890990072026" target="_blank" rel="noopener noreferrer">Rented Brains </a></h3>
+  <p class="article-stats">@HeyElsaAI · 80.6K 粉丝 · 107.7K 阅 · 500 赞 · 39 转</p>
+  <p class="article-meta">03/11, 09:52</p>
+  <p class="article-excerpt">Three companies own how the world thinks. Here is the way out. A HeyElsa report introducing Infero · October 2026 Part one: how we got here AI, in plain words Forget the jargon. An AI model is a very</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> &#39;Rented Brains&#39;, a HeyElsa report introducing Infero (dated October 2026), opens on a concentration argument: three companies own how the world thinks, and the report claims to outline a way out. Part one is a plain-language explainer of what an AI model actually is, stripping the jargon before building to the thesis. The angle is sovereignty over inference — who owns the compute and the weights — rather than a hands-on tutorial.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/getpeid/status/2117991714879410204" target="_blank" rel="noopener noreferrer">Toolmakers</a></h3>
+  <p class="article-stats">@getpeid · 835.7K 粉丝 · 50.0K 阅 · 539 赞 · 74 转</p>
+  <p class="article-meta">04/11, 09:45</p>
+  <p class="article-excerpt">Every few generations, a technology arrives that changes how everyone lives and works. Fire. The printing press. Electricity. The internet. Now, intelligence. It&#39;s the most important technology of our</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> A short essay in the &#39;every few generations&#39; genre: fire, the printing press, electricity, the internet, and now intelligence as the most important technology of our time. The &#39;Toolmakers&#39; framing positions the audience — people who build with these models — as the pivotal group in that transition. Vision-level commentary, not a tutorial: no tools, benchmarks or workflows appear in the opening, so the value is rhetorical framing for builders.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/JoshARosen/status/2117687393213932003" target="_blank" rel="noopener noreferrer">Agent State Machines: Building Deterministic Scaffolding for Agents</a></h3>
+  <p class="article-stats">@JoshARosen · 3.6K 粉丝 · 32.1K 阅 · 522 赞 · 39 转</p>
+  <p class="article-meta">03/11, 13:36</p>
+  <p class="article-excerpt">If you&#39;re not using some type of agent state machine, you&#39;re completely at the mercy of the nondeterministic nature of models. Are you really okay with models deciding what actions to take and when</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> An argument for wrapping agents in explicit state machines instead of letting the model choose actions freely. The claim: without deterministic scaffolding you are &#39;completely at the mercy&#39; of model nondeterminism, with no control over which actions run or when. The post pushes a hybrid pattern — LLM for judgment, code-driven states for control flow — a position that is fairly established in production agent engineering rather than a novel finding.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/sleepagotchi/status/2118342584749981786" target="_blank" rel="noopener noreferrer">Gotchi Labs and Vana Announce Plans to Integrate User-Owned Data Infrastructure Into Sleepagotchi</a></h3>
+  <p class="article-stats">@sleepagotchi · 163.2K 粉丝 · 6.1K 阅 · 512 赞 · 35 转</p>
+  <p class="article-meta">05/11, 09:00</p>
+  <p class="article-excerpt">Planned integration will explore how user-controlled health and wellness data can power more personalized Consumer AI experiences Gotchi Labs and Vana today announced plans to integrate Vana’s</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Gotchi Labs and Vana announced plans to integrate Vana&#39;s user-owned data infrastructure into Sleepagotchi, the sleep-tracking consumer app. The stated aim is to let user-controlled health and wellness data power more personalized consumer AI experiences. It is a partnership announcement, not a technical deep dive: no timeline, data volumes or model details appear in the opening, and the framing hinges on consent and user ownership of personal health data.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/ActionModelAI/status/2117904908846317922" target="_blank" rel="noopener noreferrer">Anthropic&#39;s $2 Trillion IPO: Who Gets Rich From the AI We Helped Build?</a></h3>
+  <p class="article-stats">@ActionModelAI · 56.1K 粉丝 · 5.3K 阅 · 503 赞 · 412 转</p>
+  <p class="article-meta">04/11, 04:00</p>
+  <p class="article-excerpt">Anthropic could be heading toward one of the biggest IPOs in history. Founders, employees and investors could make billions. But what about the people whose knowledge helped make AI valuable in the</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Commentary on a hypothetical Anthropic IPO, priced in the piece at a $2 trillion valuation, and the distribution of that wealth — founders, employees and investors making billions. The post asks who gets paid for the knowledge that made the models valuable: the people whose writing, code and expertise were used in training. The angle is economic and redistributive, not technical; the valuation and IPO framing are speculative rather than reported figures.</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://x.com/Louisfabulous2/status/2117842541273842003" target="_blank" rel="noopener noreferrer">How Primus zkTLS Makes Web Data Verifiable for AI Agents</a></h3>
+  <p class="article-stats">@Louisfabulous2 · 2.5K 粉丝 · 4.1K 阅 · 584 赞 · 38 转</p>
+  <p class="article-meta">03/11, 23:53</p>
+  <p class="article-excerpt">AI agents are becoming more capable, but intelligence alone isn&#39;t enough to make them trustworthy, especially when money is involved. Imagine an AI agent checking Binance for an asset&#39;s current price</p>
+  <p class="article-summary"><span class="summary-label">Summary</span> Explains how Primus zkTLS makes web data verifiable for AI agents, using an agent that checks Binance for an asset&#39;s current price as the motivating example. The point: intelligence alone is not enough when money is involved, because an agent can be fed a fabricated API response. Zero-knowledge TLS proofs let an agent prove a value came from the real source without exposing credentials. A concept-level explainer built around a concrete threat model.</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="ai-news" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="ai-news" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/" target="_blank" rel="noopener noreferrer">[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark</a></h3>
+  
+  <p class="article-meta">Latent Space · 06/11, 05:35</p>
+  <p class="article-excerpt">November 5, 2026 — Inside Inkling 2 Small’s training run and METR’s study of AI research at Anthropic.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/" target="_blank" rel="noopener noreferrer">I watched a humanoid robot clean my apartment. It felt like a taste of the future.</a></h3>
+  
+  <p class="article-meta">MIT Tech Review AI · 06/11, 05:00</p>
+  <p class="article-excerpt">I’m not the sort of person who typically pays for a house cleaner. I’m too frugal, and I kind of enjoy putting on a podcast and going to town on my tub with a Magic Eraser. But when I saw an X post about a new humanoid-robot cleaning service in San Francisco, I immediately signed…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/blog/open-asr-leaderboard-liva" target="_blank" rel="noopener noreferrer">Egyptian and Nigerian English join the Open ASR Leaderboard</a></h3>
+  
+  <p class="article-meta">Hugging Face Blog · 05/11, 19:00</p>
+  
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/cultfit-builds-with-codex" target="_blank" rel="noopener noreferrer">Cult.fit builds operational muscle with Codex</a></h3>
+  
+  <p class="article-meta">OpenAI News · 05/11, 15:00</p>
+  <p class="article-excerpt">Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation" target="_blank" rel="noopener noreferrer">New NVIDIA Cosmos 3 Open Models for Interactive World Simulation</a></h3>
+  
+  <p class="article-meta">Hugging Face Blog · 05/11, 14:35</p>
+  
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/australian-universities-ai-native-graduates" target="_blank" rel="noopener noreferrer">Australian universities are creating AI-native graduates</a></h3>
+  
+  <p class="article-meta">OpenAI News · 05/11, 12:00</p>
+  <p class="article-excerpt">Australian universities are expanding access to ChatGPT and bringing AI into teaching and learning to prepare students for an AI-enabled workforce.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/introducing-gpt-6-cyber" target="_blank" rel="noopener noreferrer">GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents</a></h3>
+  
+  <p class="article-meta">OpenAI News · 05/11, 04:00</p>
+  <p class="article-excerpt">Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/merge-builds-with-openai" target="_blank" rel="noopener noreferrer">Merge builds product and business tools with OpenAI technology</a></h3>
+  
+  <p class="article-meta">OpenAI News · 05/11, 03:00</p>
+  <p class="article-excerpt">Merge uses GPT-6 Astra, ChatGPT, and Codex to review product code and support marketing. Its teams also use AI to plan executive dinners and prepare sales updates.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://latent.space/p/ainews-it-s-swapping-season/" target="_blank" rel="noopener noreferrer">[AINews] It&#39;s Swapping Season</a></h3>
+  
+  <p class="article-meta">Latent Space · 05/11, 01:24</p>
+  <p class="article-excerpt">November 4, 2026 — OpenAI’s Linux kernel security work, Kimi K3.1 Pro’s open weights, and Ricursive’s Ripple-65B.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/setting-new-standard-responsible-ai-infrastructure" target="_blank" rel="noopener noreferrer">Setting a new standard for responsible AI infrastructure</a></h3>
+  
+  <p class="article-meta">OpenAI News · 04/11, 21:00</p>
+  <p class="article-excerpt">OpenAI introduces its National Community Compact and Compute Campus Policy Blueprint to protect local resources, create jobs, and guide responsible AI infrastructure development.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/ads/customers/flipsnack" target="_blank" rel="noopener noreferrer">Flipsnack grows product signups with conversion optimization</a></h3>
+  
+  <p class="article-meta">OpenAI News · 04/11, 19:45</p>
+  <p class="article-excerpt">Flipsnack focused its ChatGPT Ads campaigns on getting people to try its product, growing registrations while lowering the cost per signup.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://openai.com/index/franklin-templeton" target="_blank" rel="noopener noreferrer">Franklin Templeton uses OpenAI to support investment research</a></h3>
+  
+  <p class="article-meta">OpenAI News · 04/11, 19:00</p>
+  <p class="article-excerpt">Starting with equity research, Franklin Templeton is developing AI workflows to help portfolio managers compare research views and examine investment risks.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://huggingface.co/blog/phonon-tts" target="_blank" rel="noopener noreferrer">A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.</a></h3>
+  
+  <p class="article-meta">Hugging Face Blog · 04/11, 19:00</p>
+  
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tldr.tech/ai/2026-11-05" target="_blank" rel="noopener noreferrer">GPT-Image-2.6 🖼️, Meta buys Conductor 💻, Cognition SWE-2 Flash ⚡</a></h3>
+  
+  <p class="article-meta">TLDR AI · 04/11, 19:00</p>
+  
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/" target="_blank" rel="noopener noreferrer">[AINews] Behind Latent Space: Kill My SaaS, Jev &amp; AI in 2026 | AIEi Shanghai</a></h3>
+  
+  <p class="article-meta">Latent Space · 04/11, 14:17</p>
+  <p class="article-excerpt">November 3, 2026 — A quiet day lets us share some behind the senes.</p>
+  
+</article>
+  </div>
+    </div>
+  </div></div>
+  </section>
+  <section class="panel" data-panel="trading"><section class="trading-overview-card">
+    <span class="eyebrow">Market Overview</span>
+    <p class="overview-text trading-overview-text">The cross-asset tape is defined by an equity risk-off impulse against a firm dollar and a defensive bid. US equity: SPY at 733.00 fell -4.41% on the day and -4.73% over five sessions, sliding below its SMA20 (765.53) and SMA50 (766.40) while clinging just above the SMA200 (730.15); RSI14 at 33.5 is weak but not oversold, and MACD at -4.5303 versus signal -1.7962 carries a negative histogram. QQQ is the more stressed index: 647.05, -6.49% daily, -9.55% weekly, -15.18% from its 52-week high, RSI14 at 26.9 in oversold territory and MACD at -14.5519 against signal -8.3324. Within the leaders, NVDA (-9.26%, RSI 25.4) and TSLA (-10.77%) carried the heaviest damage, while AAPL and MSFT retain bullish moving-average stacks and neutral RSI (53.0 and 54.4), so dispersion is wide. Crypto: total market cap is 2.55T USD, down 8.17% in 24 hours, with BTC dominance at 59.8% and ETH at 10.7%, and the Fear &amp; Greed Index at 28 (Fear). BTC at 76,162.39 is roughly flat on the day (+0.29%) but below its SMA20 (79,664.65) and SMA50 (81,983.19) with RSI 39.3, while ETH (2,244.25, RSI 40.4) has printed a MACD golden cross below its short-term averages. China-HK equity is the clear outlier to the upside: JD +11.74% over five days with RSI 69.4 and MACD golden cross, PDD +5.89% (RSI 61.5), BABA +8.57% (RSI 55.3), though Tencent eased -2.46% on the day despite a +9.44% weekly gain and remains beneath its SMA200 (474.26). Commodities-FX: gold at 4,077.50 is -0.88% daily yet +4.58% weekly, still below its SMA50 (4,230.47) and SMA200 (4,501.51) with RSI 47.4; WTI at 90.97 is -12.63% over five sessions with a MACD death cross; USD/CNY at 6.66 sits near its 52-week low with RSI 34.8, while DXY at 101.98 holds a bullish alignment 0.94% from its 52-week high. Macro overlays: VIX at 26.92 is +38.62% on the week with RSI 66.3 above its SMA20 (18.89), and the 10Y yield at 4.84% is -3.05% weekly with RSI 34.6.</p>
+  </section>
+
+  <section class="trading-watchlist">
+    <h2 class="category-title trading-section-title">Today's Focus</h2>
+    <div class="trading-picks">
+      <article class="trading-pick stance-bull">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">DXY</span>
+        <span class="pick-name">US Dollar Index</span>
+      </div>
+      <span class="pick-stance pick-stance-bull">Bullish</span>
+    </header>
+    <p class="pick-rationale">DXY trades at 101.98, up 0.42% on the day and only 0.94% below its 52-week high, holding a bullish moving-average stack with price above the SMA20 (101.96), SMA50 (101.09) and SMA200 (99.70). RSI14 at 54.8 sits in neutral-positive territory with no overbought pressure, while the 5-day change of +0.10% shows consolidation rather than exhaustion. The one internal caveat is momentum: MACD at 0.1270 sits below its signal line at 0.2204, producing a slightly negative histogram (-0.093), so the trend structure is stronger than the short-term momentum reading. Net reading of the current setup: bullish alignment near 52-week highs, with a mild MACD divergence to monitor.</p>
+  </article>
+<article class="trading-pick stance-bull">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">JD</span>
+        <span class="pick-name">JD.com (JD)</span>
+      </div>
+      <span class="pick-stance pick-stance-bull">Bullish</span>
+    </header>
+    <p class="pick-rationale">JD prints 28.64 after a +3.28% one-day and +11.74% five-day advance, the strongest short-term thrust among the large-cap China names. Price has reclaimed the SMA20 (26.46), SMA50 (26.87) and SMA200 (28.56), and MACD at 0.0562 has crossed above its signal at -0.2592, a confirmed golden-cross configuration. RSI14 at 69.4 is the highest in the candidate set and is approaching the overbought threshold, indicating momentum is extended rather than early-stage. The name remains -16.5% below its 52-week high, so the move is a recovery within a larger range. Current technical state: bullish trend and momentum, with overbought risk rising as RSI nears 70.</p>
+  </article>
+<article class="trading-pick stance-bear">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">GOOGL</span>
+        <span class="pick-name">Alphabet</span>
+      </div>
+      <span class="pick-stance pick-stance-bear">Bearish</span>
+    </header>
+    <p class="pick-rationale">GOOGL at 282.57 shows the clearest bearish structure in the set: a death cross with SMA50 at 334.05 below SMA200 at 339.74, bearish moving-average alignment (price beneath SMA20 320.79, SMA50 334.05 and SMA200 339.74), and a -30.85% distance from its 52-week high. RSI14 at 28.0 is in oversold territory, and MACD at -16.5467 is well below its signal at -11.8384, with a widening negative histogram implying downside momentum is still accelerating. The stock slipped a further -2.20% on the day and -0.44% over five sessions, so there is no visible basing pattern yet. Technical state: bearish on trend, alignment and momentum, with oversold RSI flagging rebound risk rather than a trend reversal.</p>
+  </article>
+<article class="trading-pick stance-bear">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">NVDA</span>
+        <span class="pick-name">Nvidia</span>
+      </div>
+      <span class="pick-stance pick-stance-bear">Bearish</span>
+    </header>
+    <p class="pick-rationale">NVDA at 181.60 recorded a -9.26% one-day and -15.01% five-day decline, the sharpest five-day drawdown in the candidate list. Price is far below the SMA20 (213.68), SMA50 (220.64) and SMA200 (204.66), a fully bearish alignment, and sits -25.38% under its 52-week high. RSI14 at 25.4 is deeply oversold, and MACD at -7.2216 versus its signal at -4.2415 shows a strongly negative histogram, confirming that downside momentum dominates. Notably, the 52-week low distance remains +10.55%, so the longer-term base is intact even as the intermediate trend breaks down. Current technical state: bearish across trend, momentum and moving-average structure, with oversold conditions raising the probability of sharp counter-trend volatility.</p>
+  </article>
+<article class="trading-pick stance-neutral">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">ETH-USD</span>
+        <span class="pick-name">Ethereum</span>
+      </div>
+      <span class="pick-stance pick-stance-neutral">Neutral</span>
+    </header>
+    <p class="pick-rationale">Ethereum trades at 2,244.25, up 0.44% on the day and down only -1.27% over five sessions, a flat short-term profile. The signal set is genuinely mixed: MACD at -58.3193 has crossed above its signal at -60.7867, a golden cross, yet price remains below the SMA20 (2,332.44) and SMA50 (2,498.86) while holding above the SMA200 (2,156.29). RSI14 at 40.4 is weak-neutral, neither oversold nor trending. The token is -38.62% below its 52-week high but +48.97% above its 52-week low, framing a wide consolidation range. Current technical state: neutral, with a nascent momentum improvement inside an unresolved sideways structure, pending a reclaim of the SMA20.</p>
+  </article>
+    </div>
+  </section>
+
+  <section class="trading-tickers">
+    <h2 class="category-title trading-section-title">All Assets</h2>
+    <nav class="trading-group-tabs"><button class="trading-group-tab active" data-group="macro">Macro<span class="count">3</span></button><button class="trading-group-tab" data-group="us-equity">US Stocks / ETF<span class="count">8</span></button><button class="trading-group-tab" data-group="crypto">Crypto<span class="count">3</span></button><button class="trading-group-tab" data-group="china-equity">China / HK<span class="count">4</span></button><button class="trading-group-tab" data-group="commodity-fx">Commodities / FX<span class="count">3</span></button></nav>
+    <div class="trading-group-contents"><div class="trading-group-content active" data-group="macro">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^VIX</h3>
+        <p class="ticker-name">VIX (Volatility)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$26.92</span>
+        <span class="ticker-pct negative">-4.47%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+38.62%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-23.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">66.3</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>18.89 / 16.95 / 18.40</dd></div>
+      <div><dt>MACD / Signal</dt><dd>1.955 / 1.094</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^TNX</h3>
+        <p class="ticker-name">10Y Treasury Yield (%)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$4.84</span>
+        <span class="ticker-pct negative">-1.16%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-3.05%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-9.8%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">34.6</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>5.05 / 5.03 / 4.56</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-0.053 / -0.024</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">接近 52 周低</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">DX-Y.NYB</h3>
+        <p class="ticker-name">DXY (US Dollar Index)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$101.98</span>
+        <span class="ticker-pct positive">+0.42%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+0.10%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-0.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">54.8</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bullish">Bullish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>101.96 / 101.09 / 99.70</dd></div>
+      <div><dt>MACD / Signal</dt><dd>0.127 / 0.220</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">接近 52 周高</span><span class="signal-pill tone-bull">多头排列</span></div>
+  </article>
+    </div><div class="trading-group-content" data-group="us-equity">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">SPY</h3>
+        <p class="ticker-name">S&amp;P 500 ETF</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$733.00</span>
+        <span class="ticker-pct negative">-4.41%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-4.73%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-6.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">33.5</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>765.53 / 766.40 / 730.15</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-4.530 / -1.796</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">QQQ</h3>
+        <p class="ticker-name">Nasdaq 100 ETF</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$647.05</span>
+        <span class="ticker-pct negative">-6.49%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-9.55%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-15.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">26.9</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>712.40 / 722.27 / 680.71</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-14.552 / -8.332</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超卖</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">AAPL</h3>
+        <p class="ticker-name">Apple</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$344.17</span>
+        <span class="ticker-pct negative">-1.53%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-1.36%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-3.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">53.0</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bullish">Bullish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>343.10 / 335.46 / 298.34</dd></div>
+      <div><dt>MACD / Signal</dt><dd>2.292 / 3.027</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">多头排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">MSFT</h3>
+        <p class="ticker-name">Microsoft</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$535.93</span>
+        <span class="ticker-pct negative">-3.58%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+1.09%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-4.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">54.4</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bullish">Bullish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>531.63 / 516.13 / 439.45</dd></div>
+      <div><dt>MACD / Signal</dt><dd>4.702 / 5.104</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">多头排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">NVDA</h3>
+        <p class="ticker-name">Nvidia</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$181.60</span>
+        <span class="ticker-pct negative">-9.26%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-15.01%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-25.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">25.4</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>213.68 / 220.64 / 204.66</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-7.222 / -4.242</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超卖</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">GOOGL</h3>
+        <p class="ticker-name">Alphabet</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$282.57</span>
+        <span class="ticker-pct negative">-2.20%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-0.44%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-30.8%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">28.0</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bearish">Bearish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>320.79 / 334.05 / 339.74</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-16.547 / -11.838</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">死叉(SMA50↓SMA200) <span class="signal-age">(5 d ago)</span></span><span class="signal-pill tone-caution">RSI 超卖</span><span class="signal-pill tone-bear">空头排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">TSLA</h3>
+        <p class="ticker-name">Tesla</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$343.69</span>
+        <span class="ticker-pct negative">-10.77%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-14.78%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-31.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">35.8</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bearish">Bearish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>381.65 / 372.07 / 384.32</dd></div>
+      <div><dt>MACD / Signal</dt><dd>3.794 / 6.745</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死叉 <span class="signal-age">(today)</span></span><span class="signal-pill tone-bear">空头排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">META</h3>
+        <p class="ticker-name">Meta</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$605.08</span>
+        <span class="ticker-pct negative">-3.96%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-3.11%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-22.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">34.9</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>668.10 / 674.14 / 632.13</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-23.454 / -16.343</dd></div>
+    </dl>
+    
+  </article>
+    </div><div class="trading-group-content" data-group="crypto">
+      <div class="crypto-widgets"><div class="crypto-widget fg-fear">
+      <div class="widget-label">Crypto Fear/Greed</div>
+      <div class="widget-value">28</div>
+      <div class="widget-sub">恐慌</div>
+    </div><div class="crypto-widget">
+      <div class="widget-label">Crypto Market Cap</div>
+      <div class="widget-value">$2.55 T</div>
+      <div class="widget-sub negative">-8.17% / 24h</div>
+    </div><div class="crypto-widget">
+      <div class="widget-label">BTC Dominance</div>
+      <div class="widget-value">59.8%</div>
+      <div class="widget-sub">ETH 10.7%</div>
+    </div><div class="crypto-widget">
+      <div class="widget-label">24h Volume</div>
+      <div class="widget-value">$106.4 B</div>
+      <div class="widget-sub">Active coins 22,841</div>
+    </div></div>
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">BTC-USD</h3>
+        <p class="ticker-name">Bitcoin</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$76,162.39</span>
+        <span class="ticker-pct positive">+0.29%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-2.67%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-29.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">39.3</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>79,664.65 / 81,983.19 / 73,192.88</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-1,364.177 / -1,071.659</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">ETH-USD</h3>
+        <p class="ticker-name">Ethereum</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$2,244.25</span>
+        <span class="ticker-pct positive">+0.44%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-1.27%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-38.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">40.4</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>2,332.44 / 2,498.86 / 2,156.29</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-58.319 / -60.787</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 金叉 <span class="signal-age">(2 d ago)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">SOL-USD</h3>
+        <p class="ticker-name">Solana</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$90.69</span>
+        <span class="ticker-pct positive">+1.73%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-3.99%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-47.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">32.6</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>98.89 / 108.17 / 88.98</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-4.456 / -3.820</dd></div>
+    </dl>
+    
+  </article>
+    </div><div class="trading-group-content" data-group="china-equity">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">BABA</h3>
+        <p class="ticker-name">Alibaba (BABA)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$108.07</span>
+        <span class="ticker-pct positive">+2.64%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+8.57%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-40.3%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">55.3</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bearish">Bearish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>105.09 / 108.43 / 124.98</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-1.884 / -2.475</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 金叉 <span class="signal-age">(1 d ago)</span></span><span class="signal-pill tone-bear">空头排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">PDD</h3>
+        <p class="ticker-name">Pinduoduo (PDD)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$83.95</span>
+        <span class="ticker-pct positive">+2.19%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+5.89%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-39.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">61.5</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>80.44 / 79.86 / 90.58</dd></div>
+      <div><dt>MACD / Signal</dt><dd>0.390 / -0.078</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 金叉 <span class="signal-age">(3 d ago)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">JD</h3>
+        <p class="ticker-name">JD.com (JD)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$28.64</span>
+        <span class="ticker-pct positive">+3.28%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+11.74%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-16.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">69.4</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>26.46 / 26.87 / 28.56</dd></div>
+      <div><dt>MACD / Signal</dt><dd>0.056 / -0.259</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 金叉 <span class="signal-age">(3 d ago)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">0700.HK</h3>
+        <p class="ticker-name">Tencent (0700.HK)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">HK$419.80</span>
+        <span class="ticker-pct negative">-2.46%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+9.44%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-36.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">55.5</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bearish">Bearish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>403.45 / 421.90 / 474.26</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-4.646 / -9.262</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 金叉 <span class="signal-age">(3 d ago)</span></span><span class="signal-pill tone-bear">空头排列</span></div>
+  </article>
+    </div><div class="trading-group-content" data-group="commodity-fx">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">GC=F</h3>
+        <p class="ticker-name">Gold Futures</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$4,077.50</span>
+        <span class="ticker-pct negative">-0.88%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="positive">+4.58%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-27.0%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">47.4</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bearish">Bearish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>4,080.84 / 4,230.47 / 4,501.51</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-53.223 / -65.255</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 金叉 <span class="signal-age">(1 d ago)</span></span><span class="signal-pill tone-bear">空头排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">CL=F</h3>
+        <p class="ticker-name">WTI Crude Futures</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$90.97</span>
+        <span class="ticker-pct positive">+0.50%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-12.63%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-23.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">42.5</dd></div>
+      <div><dt>Trend</dt><dd class="trend-neutral">Neutral</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>98.02 / 95.47 / 87.16</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-0.386 / 1.118</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死叉 <span class="signal-age">(4 d ago)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">USDCNY=X</h3>
+        <p class="ticker-name">USD / CNY</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">¥6.66</span>
+        <span class="ticker-pct negative">-0.19%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5d</dt><dd class="negative">-0.01%</dd></div>
+      <div><dt>vs 52w High</dt><dd>-7.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">34.8</dd></div>
+      <div><dt>Trend</dt><dd class="trend-bearish">Bearish</dd></div>
+      <div><dt>SMA 20 / 50 / 200</dt><dd>6.68 / 6.70 / 6.79</dd></div>
+      <div><dt>MACD / Signal</dt><dd>-0.011 / -0.011</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">接近 52 周低</span><span class="signal-pill tone-bear">空头排列</span></div>
+  </article>
+    </div></div>
+  </section>
+
+  <section class="trading-risk">
+    <span class="eyebrow">Risk Disclaimer</span>
+    <p>This document is a technical-indicator interpretation only, describing computed readings such as moving averages, RSI14, MACD and recent percentage moves; it is not investment advice, not a recommendation, and not a forecast of price direction. Stance labels (Bullish/Bearish/Neutral) describe the current indicator configuration, not expected returns. Indicator signals can whipsaw, lag price, and fail in fast markets. Past performance does not guarantee future results. Readers should conduct independent verification and consider their own objectives and risk tolerance before any decision.</p>
+  </section></section>
+  <section class="panel" data-panel="politics">
+    <div class="sub-content active" data-sub-content="world" data-cat="politics">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="world" data-cat="politics">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cmly00l4p3lwo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Two dead after bus crashes in France, officials say</a></h3>
+  
+  <p class="article-meta">BBC World · 06/11, 07:27</p>
+  <p class="article-excerpt">One child and one young adult were killed in the crash, local authorities say, with more injured.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cm5yne5984l0o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Kenyan doomsday cult leader given life sentence for murdering 191 people</a></h3>
+  
+  <p class="article-meta">BBC World · 06/11, 07:19</p>
+  <p class="article-excerpt">Paul Mackenzie ordered his followers to starve their children to death in a forest so they could &quot;meet Jesus&quot;.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.theguardian.com/world/live/2026/nov/06/high-alert-hoax-bomb-threats-france-air-lingus-belgium-pope-leo-europe-live" target="_blank" rel="noopener noreferrer">European skies on high alert as more airlines receive bomb threats – Europe live</a></h3>
+  
+  <p class="article-meta">The Guardian · 06/11, 07:17</p>
+  <p class="article-excerpt">Hoax bomb threats targeted commercial flights this week leaving at least 35 planes searched or diverted before Friday A Romanian airline Tarom flight from Prague to Bucharest is the latest believed to be affected by today’s bomb threats. The aircraft, operating flight number ROT226M, sent a squawk c</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/opinions/2026/11/6/born-to-be-torn-a-generation-raised-under-houthi-rule-in-yemen?traffic_source=rss" target="_blank" rel="noopener noreferrer">Born to be torn: A generation raised under Houthi rule in Yemen</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 07:16</p>
+  <p class="article-excerpt">As children are recruited to fight, the cost of failing to confront the Houthis is being felt far beyond Yemen.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/sports/2026/11/6/we-are-here-kurdish-club-amedspor-shakes-up-turkish-football?traffic_source=rss" target="_blank" rel="noopener noreferrer">‘We are here’: Kurdish club Amedspor shakes up Turkish football</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:59</p>
+  <p class="article-excerpt">The Diyarbakir-based club have risen from the third tier to a top-of-the-table clash in the Turkish Super Lig.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/6/tanzania-court-jails-opposition-leader-for-incitement-lifts-treason-charge?traffic_source=rss" target="_blank" rel="noopener noreferrer">Tanzania court jails opposition leader for incitement, lifts treason charge</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:56</p>
+  <p class="article-excerpt">Dismissal of treason charge means Tundu Lissu avoids threat of death penalty.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/05/world/europe/bomb-threats-europe-flights-airlines.html" target="_blank" rel="noopener noreferrer">What to Know About the Bomb Threats Disrupting Flights in Europe</a></h3>
+  
+  <p class="article-meta">NYT World · 06/11, 06:46</p>
+  <p class="article-excerpt">More threats were reported Friday after dozens of planes were targeted earlier this week. Officials have not reported finding any explosives, but the hoaxes have added to airspace anxiety.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Tanzanian opposition leader found guilty of inciting unrest but acquitted of treason</a></h3>
+  
+  <p class="article-meta">BBC World · 06/11, 06:36</p>
+  <p class="article-excerpt">The 58-year-old, who has been detained since April last year, says the charges are politically motivated.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/economy/2026/11/6/tanzanias-smallholder-farmers-struggle-to-benefit-from-digital-agriculture?traffic_source=rss" target="_blank" rel="noopener noreferrer">Tanzania’s smallholder farmers struggle to benefit from digital agriculture</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:35</p>
+  <p class="article-excerpt">Poor training and delayed responses leave farmers struggling to access useful market information.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/6/rocket-launcher-deal-illustrates-deepening-russia-iran-relations?traffic_source=rss" target="_blank" rel="noopener noreferrer">Rocket launcher deal illustrates deepening Russia-Iran relations</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:28</p>
+  <p class="article-excerpt">Report of deal comes as top Iranian security official Mohsen Rezaei discusses developing cooperation treaty with Putin.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/6/hoax-or-bomb-threats-what-we-know-about-flight-disruptions-across-europe?traffic_source=rss" target="_blank" rel="noopener noreferrer">Hoax or bomb threats? What we know about flight disruptions across Europe</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:18</p>
+  <p class="article-excerpt">Security inspections reveal no explosives as fighter jets escort planes amid Europe&#39;s major wave of bomb threats.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/6/nobody-can-stop-them-who-are-europes-black-bloc-protesters?traffic_source=rss" target="_blank" rel="noopener noreferrer">‘Nobody can stop them’: Who are Europe’s Black Bloc protesters?</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:09</p>
+  <p class="article-excerpt">Anarchistic activists who dress in black and clash with police are a regular feature of protests from France to Albania.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/6/macao-sentences-pro-democracy-ex-politician-to-12-5-years-in-jail?traffic_source=rss" target="_blank" rel="noopener noreferrer">Macao court sentences pro-democracy ex-politician to 12.5 years in jail</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 06/11, 06:08</p>
+  <p class="article-excerpt">Court finds Au Kam-san guilty of spreading false information and subversion in bid to disrupt Macao’s 2024 elections.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/06/world/middleeast/saudi-arabia-bombing-yemen-civilians-houthi-war.html" target="_blank" rel="noopener noreferrer">Saudi-Led Forces Bombed Yemeni Home, Killing Nine Family Members, Relatives Say</a></h3>
+  
+  <p class="article-meta">NYT World · 06/11, 05:54</p>
+  <p class="article-excerpt">The attack in October cast a spotlight on civilian casualties in the Saudi-led and U.S.-assisted bombing campaign against the Houthis.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/06/world/europe/russia-ukraine-trump-midterms.html" target="_blank" rel="noopener noreferrer">Guarded Optimism, and Some Jokes, in Ukraine Over Trump’s Midterm Wipeout</a></h3>
+  
+  <p class="article-meta">NYT World · 06/11, 05:22</p>
+  <p class="article-excerpt">Victory for Democrats could alter the course of peace negotiations and a war nearing its fifth year.</p>
+  
+</article>
+  </div>
+    </div>
+  </div>
+  </section>
+  <section class="panel" data-panel="finance">
+    <div class="sub-content active" data-sub-content="news" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="news" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/f7167042-33d7-423a-89dd-4f379a437c15?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">New wave of bomb threats targets Irish media and EU flights</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/11, 07:04</p>
+  <p class="article-excerpt">Incidents come a week before two major summits in Dublin to be attended by 50 European leaders</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/db1c70c2-d17e-41ac-aff3-1d824e7dc9e8?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Trump’s midterm setback won’t save the planet</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/11, 07:01</p>
+  <p class="article-excerpt">But it’s still a boost for US clean energy hopes</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/605c7eb8-41a9-47c4-84c7-12b6dfb77261?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Ikea sales fall as furniture group cuts prices to revive growth</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/11, 07:00</p>
+  <p class="article-excerpt">Brand owner Inter Ikea says consumer weakness and geopolitical turmoil will weigh on sales and profits</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/71295123-1211-4088-a77d-8140a8175788" target="_blank" rel="noopener noreferrer">Bangkok’s prime property market is poised for change</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/11, 07:00</p>
+  <p class="article-excerpt">A new residential skyscraper opening on the Park Lane of the Thai capital has not been without difficulty. But its unveiling marks a moment for a city ready for a new chapter</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-06/ai-deal-windfalls-help-shield-european-credit-from-selloff" target="_blank" rel="noopener noreferrer">AI Deal Windfalls Help Shield European Credit From Selloff</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/11, 06:55</p>
+  <p class="article-excerpt">The global technology rout has so far spared European corporate bonds, with windfalls on debt deals from Meta Platforms Inc. and Alphabet Inc. helping the market avoid the hammering taken by equities and US credit.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/05ce7a1d-0d7e-434a-bcea-e8239dcde17a?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Moderna swings to profit as momentum for cancer vaccine builds</a></h3>
+  
+  <p class="article-meta">Financial Times · 06/11, 06:45</p>
+  <p class="article-excerpt">Biotech company remains strongest performer in S&amp;P 500 over past year</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-06/coinbase-bear-morgan-stanley-says-earnings-recovery-less-certain" target="_blank" rel="noopener noreferrer">Coinbase Bear Morgan Stanley Says Earnings Recovery Less Certain</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/11, 06:42</p>
+  <p class="article-excerpt">Coinbase Global Inc.’s list of bears is growing long. Morgan Stanley came out swinging against the cryptocurrency exchange this week, slashing revenue estimates and saying confidence in the earnings recovery has deteriorated.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-06/fed-should-gather-data-to-judge-price-risks-williams-video" target="_blank" rel="noopener noreferrer">Fed Should Gather Data to Judge Price Risks, Williams Says</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/11, 06:28</p>
+  <p class="article-excerpt">Federal Reserve Bank of New York President John Williams said, &quot;This is the appropriate time to accumulate more information to help us determine what the appropriate stance of policy is, to make sure we achieve a timely return to our 2% [inflation] target.&quot; He made the comments at an event at the Eu</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-06/us-stock-futures-rise-as-dip-buyers-emerge-after-ai-selloff" target="_blank" rel="noopener noreferrer">US Stock Futures Rise as Dip Buyers Emerge After AI Selloff</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/11, 06:25</p>
+  <p class="article-excerpt">US stock futures rebounded in a volatile session following a day of heavy selling in the underlying gauges, after the Democratic sweep of Congress in the midterm elections.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/newsletters/2026-11-06/wall-street-s-script-gets-flipped-by-post-election-rout" target="_blank" rel="noopener noreferrer">Wall Street’s Script Gets Flipped by Post-Election Rout</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/11, 06:22</p>
+  <p class="article-excerpt">India, Europe are bright spots for stock investors.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Global stocks plunge as fears over US AI slowdown spread to Asia and Europe</a></h3>
+  
+  <p class="article-meta">BBC Business · 06/11, 06:20</p>
+  <p class="article-excerpt">Investors have reacted to possible tougher scrutiny of data centre construction and the AI industry.</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-06/brasilia-em-off-video" target="_blank" rel="noopener noreferrer">Brasília em Off</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 06/11, 06:19</p>
+  <p class="article-excerpt">Martha Beck fala sobre o vilão que o quarto mandato do presidente Lula quer vencer. Com produção e edição de Rafaela Duarte (Source: Bloomberg)</p>
+  
+</article>
+  </div>
+    </div>
+  </div>
+  </section>
+  <section class="panel" data-panel="community">
+    <div class="sub-content active" data-sub-content="overseas-community" data-cat="tech">
+    <nav class="source-tabs"><button class="source-tab active" data-source="hackernews" data-sub="overseas-community" data-cat="tech">Hacker News<span class="count">30</span></button><button class="source-tab" data-source="reddit-stocks" data-sub="overseas-community" data-cat="tech">r/stocks<span class="count">25</span></button></nav>
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="hackernews" data-sub="overseas-community" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.ycombinator.com/companies/mbodi-ai/jobs" target="_blank" rel="noopener noreferrer">Mbodi AI (YC P25) Is Hiring Research and Robotic Engineers</a></h3>
+  
+  <p class="article-meta">06/11, 07:00</p>
+  <p class="article-excerpt">1 points · 0 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/Unleash/unleash" target="_blank" rel="noopener noreferrer">We&#39;ve built an open-source feature flag server for 11 years</a></h3>
+  
+  <p class="article-meta">06/11, 06:40</p>
+  <p class="article-excerpt">11 points · 2 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://jhr.pensoft.net/articles.php?id=9096" target="_blank" rel="noopener noreferrer">Living beyond the limits of survival: wood ants trapped in a gigantic pitfall (2016)</a></h3>
+  
+  <p class="article-meta">06/11, 05:21</p>
+  <p class="article-excerpt">54 points · 16 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105" target="_blank" rel="noopener noreferrer">Dutch &#39;idealist&#39; bank ASN blocks non-Google Android, including GrapheneOS</a></h3>
+  
+  <p class="article-meta">06/11, 04:27</p>
+  <p class="article-excerpt">181 points · 122 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://obelisk.club/research/app-store-2026" target="_blank" rel="noopener noreferrer">App Store 2026 in numbers: AI, pricing, abandoned apps</a></h3>
+  
+  <p class="article-meta">06/11, 02:59</p>
+  <p class="article-excerpt">53 points · 46 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://worldstrike.fun/" target="_blank" rel="noopener noreferrer">Multiplayer tanks that demolish real buildings from OpenStreetMap</a></h3>
+  
+  <p class="article-meta">06/11, 02:55</p>
+  <p class="article-excerpt">74 points · 51 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://apps.metaebene.me/en/kugelblitz" target="_blank" rel="noopener noreferrer">Kugelblitz – Mac-Native Google Earth Alternative</a></h3>
+  
+  <p class="article-meta">06/11, 02:47</p>
+  <p class="article-excerpt">117 points · 33 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/ppmpreetham/BUI" target="_blank" rel="noopener noreferrer">Blender&#39;s UI and Runtime: Much Faster Than GPUI</a></h3>
+  
+  <p class="article-meta">06/11, 02:40</p>
+  <p class="article-excerpt">294 points · 124 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&amp;VLCODE=CIVN-2026-0537" target="_blank" rel="noopener noreferrer">Hardcoded credentials and other issues in Tata Motors App</a></h3>
+  
+  <p class="article-meta">06/11, 02:28</p>
+  <p class="article-excerpt">45 points · 8 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reuters.com/business/world-at-work/britain-make-salary-disclosure-job-ads-mandatory-2026-11-05/" target="_blank" rel="noopener noreferrer">Britain to make salary disclosure in job ads mandatory</a></h3>
+  
+  <p class="article-meta">06/11, 02:22</p>
+  <p class="article-excerpt">268 points · 253 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.lesswrong.com/posts/DALNiKBjMGMF8grme/arjun-panickssery-s-shortform?commentId=fJtaHHHfx45tD7BSL" target="_blank" rel="noopener noreferrer">I struggle to believe that AI R&amp;D is ingenious</a></h3>
+  
+  <p class="article-meta">06/11, 00:19</p>
+  <p class="article-excerpt">135 points · 112 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/" target="_blank" rel="noopener noreferrer">From Linux to Wikipedia: How Volunteers Build the Internet</a></h3>
+  
+  <p class="article-meta">05/11, 23:17</p>
+  <p class="article-excerpt">130 points · 42 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://pwn.college/" target="_blank" rel="noopener noreferrer">Pwn.college</a></h3>
+  
+  <p class="article-meta">05/11, 22:27</p>
+  <p class="article-excerpt">183 points · 27 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/dsx-ai-factory/nvke" target="_blank" rel="noopener noreferrer">Nvidia Kubernetes Engine (NVKE)</a></h3>
+  
+  <p class="article-meta">05/11, 22:16</p>
+  <p class="article-excerpt">92 points · 22 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/matthewmrichter/mooftcp" target="_blank" rel="noopener noreferrer">MoofTCP – A modern replacement for MacTCP on 68k Macs</a></h3>
+  
+  <p class="article-meta">05/11, 19:54</p>
+  <p class="article-excerpt">54 points · 20 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener noreferrer">Inkling 2 Small</a></h3>
+  
+  <p class="article-meta">05/11, 19:00</p>
+  <p class="article-excerpt">219 points · 72 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html" target="_blank" rel="noopener noreferrer">Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue</a></h3>
+  
+  <p class="article-meta">05/11, 18:09</p>
+  <p class="article-excerpt">382 points · 181 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/anthropics/claude-code/issues/107757" target="_blank" rel="noopener noreferrer">Claude Code sends your email address to websites</a></h3>
+  
+  <p class="article-meta">05/11, 17:17</p>
+  <p class="article-excerpt">1240 points · 395 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cve.org/CVERecord?id=CVE-2026-83844" target="_blank" rel="noopener noreferrer">MS Paint Remote Code Execution Vulnerability</a></h3>
+  
+  <p class="article-meta">05/11, 15:43</p>
+  <p class="article-excerpt">574 points · 209 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.pangram.com/blog/introducing-pangram-image-1-0" target="_blank" rel="noopener noreferrer">Pangram Image 1.0</a></h3>
+  
+  <p class="article-meta">05/11, 14:27</p>
+  <p class="article-excerpt">118 points · 56 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/" target="_blank" rel="noopener noreferrer">The Hackintosh Reborn</a></h3>
+  
+  <p class="article-meta">05/11, 14:08</p>
+  <p class="article-excerpt">335 points · 187 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/rivet-dev/rivet" target="_blank" rel="noopener noreferrer">Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3</a></h3>
+  
+  <p class="article-meta">05/11, 12:17</p>
+  <p class="article-excerpt">Hey HN, this is Nathan and Nicholas from Rivet (https:&amp;#x2F;&amp;#x2F;rivet.dev) – a fast, high-density, and scalable orchestrator for agentic workloads using the actor model. Rather than running a heavyweight sandbox per agent, each agent gets a lightweight actor backed by S3.Actors provide a long-live</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://github.com/saragordic/window-sweaters" target="_blank" rel="noopener noreferrer">Window Sweaters</a></h3>
+  
+  <p class="article-meta">05/11, 11:50</p>
+  <p class="article-excerpt">375 points · 111 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://motorolanews.com/motorola-signature-27-2/" target="_blank" rel="noopener noreferrer">Motorola Signature 27 with GrapheneOS support</a></h3>
+  
+  <p class="article-meta">05/11, 11:01</p>
+  <p class="article-excerpt">507 points · 355 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://servo.org/blog/2026/11/05/september-in-servo/" target="_blank" rel="noopener noreferrer">September in Servo: &lt;progress&gt;, rounded rectangles, and more</a></h3>
+  
+  <p class="article-meta">05/11, 09:34</p>
+  <p class="article-excerpt">250 points · 63 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://rakhim.exotext.com/i-wish-tech-companies-knew-more-about-me" target="_blank" rel="noopener noreferrer">I wish tech companies knew more about me</a></h3>
+  
+  <p class="article-meta">05/11, 08:40</p>
+  <p class="article-excerpt">457 points · 373 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://firenook.dev/" target="_blank" rel="noopener noreferrer">Show HN: Firenook – Firebase emulators in Rust: 40× faster writes, 10× less RAM</a></h3>
+  
+  <p class="article-meta">05/11, 08:07</p>
+  <p class="article-excerpt">Hi HN, we have been developing with Firebase for a long time, and the only way Firebase developers can build apps without directly costing them is using the official Firebase Emulator Suite.However, the issue with this suite is, it&amp;#x27;s dependent and running on Java with a old Console UI (not upda</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://criminallyvulgar.dev/you-should-absolutely-download-your-favourite-youtube-videos/" target="_blank" rel="noopener noreferrer">Download your favourite YouTube videos</a></h3>
+  
+  <p class="article-meta">05/11, 08:00</p>
+  <p class="article-excerpt">362 points · 174 comments</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://sshhole.com" target="_blank" rel="noopener noreferrer">sshole</a></h3>
+  
+  <p class="article-meta">05/11, 07:19</p>
+  <p class="article-excerpt">Related:https:&amp;#x2F;&amp;#x2F;hachyderm.io&amp;#x2F;@damienmiller&amp;#x2F;117563026759098135 &amp;#x2F; https:&amp;#x2F;&amp;#x2F;news.ycombinator.com&amp;#x2F;item?id=50377221https:&amp;#x2F;&amp;#x2F;www.openssh.org&amp;#x2F;releasenotes.html#10.6p2https:&amp;#x2F;&amp;#x2F;alpinelinux.org&amp;#x2F;posts&amp;#x2F;2026-11-05-openssh-password-au...</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.linum.ai/field-notes/pjit-21k" target="_blank" rel="noopener noreferrer">Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)</a></h3>
+  
+  <p class="article-meta">04/11, 11:45</p>
+  <p class="article-excerpt">My brother and I run a 2-person lab that trains our own generative video models from scratch. The ultimate goal is a set of creative tools that make it easier for anyone to make animation.Video models today are too slow&amp;#x2F;expensive and lack sufficient controls. Creativity is an iterative process.</p>
+  
+</article>
+  </div>
+<div class="source-content" data-source-content="reddit-stocks" data-sub="overseas-community" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xpbg1b/forward_pe_vs_what_the_price_actually_needs_14/" target="_blank" rel="noopener noreferrer">Forward P/E vs. what the price actually needs: 14 chip stocks after yesterday&#39;s selloff</a></h3>
+  
+  <p class="article-meta">06/11, 07:21</p>
+  <p class="article-excerpt">A forward P/E chart of semis went around yesterday (ARM at 71x, all the way down to MU at 4x and SNDK at 3.5x). I wanted to flip the question. Take today&#39;s market cap and trailing free cash flow: how fast does FCF have to grow every year for the next 10 years to justify the price? Reverse DCF, 9% di</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xp9kqm/rstocks_daily_discussion_fundamentals_friday_nov/" target="_blank" rel="noopener noreferrer">r/Stocks Daily Discussion &amp; Fundamentals Friday Nov 06, 2026</a></h3>
+  
+  <p class="article-meta">06/11, 05:30</p>
+  <p class="article-excerpt">This is the daily discussion, so anything stocks related is fine, but the theme for today is on fundamentals, but if fundamentals aren&#39;t your thing then just ignore the theme. Some helpful day to day links, including news: Finviz for charts, fundamentals, and aggregated news on individual stocks Blo</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xp6kf0/this_overreaction_is_getting_ridiculous/" target="_blank" rel="noopener noreferrer">This overreaction is getting ridiculous</a></h3>
+  
+  <p class="article-meta">06/11, 02:12</p>
+  <p class="article-excerpt">This midterm was a huge sweep for the democrats. No doubt about that. But, is this a referendum against the AI trade? Definitely not. The Democrats did not sweep this election because of AI or Datacenters. It was because of the unnecessary war in Iran and how stubborn and clueless this administratio</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xp4qxa/uber_at_69_a_10b_free_cash_flow_machine_trading/" target="_blank" rel="noopener noreferrer">UBER at $69: A $10B free cash flow machine trading at 13.5x FCF because the market only sees robotaxis</a></h3>
+  
+  <p class="article-meta">06/11, 00:22</p>
+  <p class="article-excerpt">TL;DR Uber makes $10.1B a year in free cash flow, grows bookings above 20%, and trades at $68.78, near its 52 week low. P/FCF is 13.5x. My DCF puts it at $100. The pessimistic case puts it at $81. That is a 31% margin of safety to the central case and 15% to the worst case. The market is pricing the</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xp0f0p/buying_opportunity_in_tech_and_why/" target="_blank" rel="noopener noreferrer">Buying opportunity in tech and why</a></h3>
+  
+  <p class="article-meta">05/11, 20:37</p>
+  <p class="article-excerpt">Yes, semi&#39;s have been crushed because the thought is data centers will slow construction with Dems back in power. However 1.) - as an example, Micron and Sandisk forward valuations are at a laughable 4.8 now. Is there that much more room for these to crash even with slower ai build out? 2.) If data </p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xp0e2x/overblown_fears_of_ai_datacenter_bust_due_to_blue/" target="_blank" rel="noopener noreferrer">Overblown fears of AI Datacenter bust due to blue wave</a></h3>
+  
+  <p class="article-meta">05/11, 20:35</p>
+  <p class="article-excerpt">New Texas Governor-elect Gina Hinojosa outlined her stance on AI Datacentre policy in Texas a few days ago in a TV interview. Its all quite reasonable. She explicitly said that all currently permitted datacenters in Texas will be allowed to finish construction. This essentially covers all of the 202</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xoxm76/anthropic_may_need_to_delay_its_ipo_major/" target="_blank" rel="noopener noreferrer">Anthropic may need to delay its IPO, major investors speculate. Valuation drops closer to the one trillion mark.</a></h3>
+  
+  <p class="article-meta">05/11, 18:26</p>
+  <p class="article-excerpt">WSJ Major investors are increasingly skeptical Anthropic&#39;s blockbuster initial public offering can proceed at the expected valuation of $1.5 trillion after a deep market selloff tied to the unwinding of artificial-intelligence related bets, according to people familiar with the matter. Anthropic is </p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xowsv8/could_berkshire_be_the_guiding_light_in_this/" target="_blank" rel="noopener noreferrer">Could Berkshire be the guiding light in this market?</a></h3>
+  
+  <p class="article-meta">05/11, 17:50</p>
+  <p class="article-excerpt">I took a pretty big hit today/this month in NASDAQ. I&#39;m considering moving out of the position and with (what&#39;s left of) my cash in hand, I started thinking of Berkshire and how they (in)famously have been holding TONS of cash. They got rewarded this month, up 12.5% (~2% down in the last 2 days. May</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xosm0y/amazon_ditches_grubhub_taps_uber_eats_for_us/" target="_blank" rel="noopener noreferrer">Amazon ditches Grubhub, taps Uber Eats for US Prime members</a></h3>
+  
+  <p class="article-meta">05/11, 14:59</p>
+  <p class="article-excerpt">Amazon has made Uber Eats its official restaurant delivery partner for Prime members in the United States, effectively ending the e-commerce giant’s existing deal with Grubhub. Under the new partnership announced Thursday, Amazon Prime members will be able to order food from Uber Eats directly throu</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xos80r/dow_plunges_1728_points_as_tech_enters_a/" target="_blank" rel="noopener noreferrer">Dow Plunges 1,728 Points as Tech Enters a Correction</a></h3>
+  
+  <p class="article-meta">05/11, 14:43</p>
+  <p class="article-excerpt">The Dow plummeted 1,728 points (3.2%), while the Nasdaq fell a brutal 5.2%. Digesting a newly empowered Democratic majority that ran campaigns critical of AI data centers, amplified by Senator Bernie Sanders calling for a national data center moratorium over environmental and labor concerns. The pan</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xos0pm/fed_hikes_rate_odds_in_december_have_lowered_as/" target="_blank" rel="noopener noreferrer">Fed hikes rate odds in December have lowered as Stock Market sell off continues</a></h3>
+  
+  <p class="article-meta">05/11, 14:35</p>
+  <p class="article-excerpt">The equity market sell-off is easing pressure on the Federal Reserve to hike interest rates at its last meeting of the year, on Dec. 9. Odds that the Federal Reserve will raise interest rates a quarter percentage point from their current 3.75%-4.00% range have fallen to 70.1%, down from 82.7% on Wed</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xorznf/dear_reddit_the_stock_market_isnt_broken/" target="_blank" rel="noopener noreferrer">Dear Reddit - The stock market isn&#39;t broken</a></h3>
+  
+  <p class="article-meta">05/11, 14:34</p>
+  <p class="article-excerpt">I began trading in 1999, just before things got ugly. I was young and was told to invest using a Roth IRA so I started to put money into the S&amp;P500. I practiced disciplined DCA. And watched my money go down in value for a LONG LONG TIME. But I kept putting it in. Many people on Reddit who trade thin</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xoqtwl/couple_stats_of_nasdaq_composite_crashes_we_are/" target="_blank" rel="noopener noreferrer">Couple stats of nasdaq composite crashes. We are past a huge drop already!</a></h3>
+  
+  <p class="article-meta">05/11, 13:49</p>
+  <p class="article-excerpt">Food for thoughts on nasdaq composite crash history: 1) today&#39;s 5% dip on nasdaq composite is a huge compression, a rare event! Out of 14055 days of trading it has had only 57 days in +5% dip so such dip has been avoided on almost 14000 sessions since 1971! 2) out of the 57 days at +5% exactly 2/3 o</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xop7es/microsoft_tightens_oversight_of_neocloud_data/" target="_blank" rel="noopener noreferrer">Microsoft tightens oversight of neocloud data center projects with Nebius, IREN, and CoreWeave</a></h3>
+  
+  <p class="article-meta">05/11, 12:48</p>
+  <p class="article-excerpt">https://www.reuters.com/business/microsoft-tightens-oversight-neocloud-data-center-projects-bloomberg-news-2026-11-05/ Microsoft (MSFT.O), opens new tab tightens oversight of some data center projects from neocloud providers Nebius, IREN and Nscale, Bloomberg ​News reported on Thursday, citing peopl</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xoo6ex/chip_stocks_get_slaughtered_as_wall_street_heads/" target="_blank" rel="noopener noreferrer">Chip stocks get slaughtered as Wall Street heads for its worst post-midterm day since 1896</a></h3>
+  
+  <p class="article-meta">05/11, 12:10</p>
+  <p class="article-excerpt">We are making history bois! &quot;Wall Street&#39;s midterm celebration lasted one day. Chip stocks are getting taken to the woodshed Thursday, and the Dow Jones Industrial Average (^DJI) is heading for its worst second session after a midterm election in data going back to its start in 1896. It took the Nas</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xonpwu/what_happened_to_tech_semis_and_ai_stocks_and_why/" target="_blank" rel="noopener noreferrer">What Happened to Tech, Semis, and AI Stocks and Why Have They Been Crashing Lately?</a></h3>
+  
+  <p class="article-meta">05/11, 11:52</p>
+  <p class="article-excerpt">Confused, if the midterm elections are officially over, shouldn&#39;t the economy now stabilize? Why are tech, semis, ai, and memory stocks crashing today and lately in general? We have many stocks like NBIS, SanDisk, AMD, Micron, and most of the tech sector in general, once that were skyrocketing up mo</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xomuwg/v_shaped_recovery_incoming_within_30_days/" target="_blank" rel="noopener noreferrer">V shaped recovery incoming within 30 days.</a></h3>
+  
+  <p class="article-meta">05/11, 11:19</p>
+  <p class="article-excerpt">Why? Because the market is running crazy leverage up and down. Algos are pushing high beta stocks deeper and deeper until significant buys are triggered which in turn create upward algo momentum. On top of that over the last five years, total financial assets in money market funds have skyrocketed b</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xomj2e/everyone_is_talking_about_ai_but_everything_is/" target="_blank" rel="noopener noreferrer">Everyone is talking about AI, but EVERYTHING is over the cliff today. What&#39;s going on?</a></h3>
+  
+  <p class="article-meta">05/11, 11:07</p>
+  <p class="article-excerpt">I&#39;m not sure what to make of this situation to be honest. Every single sector that I keep an eye on. Automotive (mostly EV), New Energy, Semiconductors, IT, Software, Banking, and on and on and on are all down 5% to 20% suddenly and skipping along the bottom. What&#39;s going on? This isn&#39;t rotation or </p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xom4pn/ai_selloff_escalates_nasdaq_100_plummets_57/" target="_blank" rel="noopener noreferrer">AI selloff escalates: Nasdaq 100 plummets 5.7%, Nasdaq tumbles 5%, S&amp;P 500 falls 3.5%, and the Dow reverses earlier gains</a></h3>
+  
+  <p class="article-meta">05/11, 10:51</p>
+  <p class="article-excerpt">The Nasdaq Composite plummeted on Thursday, erasing the sharp gains from the previous session, as investors continued to rotate away from technology stocks and into more defensive areas of the market. The tech-heavy Nasdaq declined 5% and dipped into correction territory, while the S&amp;P 500 was down </p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xolp0d/anybody_buying_the_dip/" target="_blank" rel="noopener noreferrer">Anybody buying the dip</a></h3>
+  
+  <p class="article-meta">05/11, 10:34</p>
+  <p class="article-excerpt">All major AI stocks are down 10% or more over the belief that Democrats are going to want to clamp down on the very thing that&#39;s keeping economic growth going in the country. I&#39;m looking at Nvidia, MU and AMD. I feel all 3 are much more insulated from the debt fueled mania that CoreWeave and others </p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xoktnd/soxx_semis_are_crashing/" target="_blank" rel="noopener noreferrer">SOXX, Semis are CRASHING</a></h3>
+  
+  <p class="article-meta">05/11, 10:00</p>
+  <p class="article-excerpt">There’s no other word to describe the drop. I don’t think I’m being hyperbolic either. In the past month it has PLUNGED from 218 to now 138. If that’s not a crash then I don’t know what is. So now what? If you haven’t already sold then you have to hold. That’s my opinion and what I’m personally doin</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xoij4t/buy_semiconductor_buy_oil_do_not_get_fooled_by/" target="_blank" rel="noopener noreferrer">Buy Semiconductor. Buy Oil. Do not get fooled by these so called &quot;value stocks&quot;</a></h3>
+  
+  <p class="article-meta">05/11, 08:23</p>
+  <p class="article-excerpt">Do not chase value stocks - Check the margin and growth of the top line and bottom line of these so-called value companies. Most importantly check the amount of debt that they have (we are in a high interest environment). Inflation is not going away, at least not at this moment. Trading short term m</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xohbg4/shorting_value_and_buying_ai/" target="_blank" rel="noopener noreferrer">Shorting ‘Value’ and Buying AI</a></h3>
+  
+  <p class="article-meta">05/11, 07:23</p>
+  <p class="article-excerpt">It’s become too detached from fundamentals that ai hardware has gotten anyway from single digits to less than teen pe ratios. Data centers will be built regardless because Nancy Pelosi isn’t going to tank her #1 position in NVDA and cause a recession because of voter popularism. Data centers are a n</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1xnq2z6/dow_surges_over_1000_points_in_broad_market/" target="_blank" rel="noopener noreferrer">Dow Surges Over 1,000 Points in Broad Market Rebound</a></h3>
+  
+  <p class="article-meta">04/11, 09:48</p>
+  <p class="article-excerpt">The Dow Jones Industrial Average surged over 1,000 points today following news that Democrats have officially secured control of both chambers of Congress. This massive post-election rally comes as legislative uncertainty clears, signaling immediate investor speculation on upcoming policy shifts. Se</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.reddit.com/r/stocks/comments/1w46d05/rate_my_portfolio_rstocks_quarterly_thread/" target="_blank" rel="noopener noreferrer">Rate My Portfolio - r/Stocks Quarterly Thread September 2026</a></h3>
+  
+  <p class="article-meta">01/09, 05:00</p>
+  <p class="article-excerpt">Please use this thread to discuss your portfolio, learn of other stock tickers &amp; portfolios like Warren Buffet&#39;s, and help out users by giving constructive criticism. Why quarterly? Public companies report earnings quarterly; many investors take this as an opportunity to rebalance their portfolios. </p>
+  
+</article>
+  </div>
+    </div>
+  </div>
+  </section>
+
+  <footer>
+    Content sourced from original publishers; this site provides summary and backlinks only.
+  </footer>
+</main>
+<script>
+  document.querySelectorAll('.tabs > .tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = btn.dataset.tab;
+      document.querySelectorAll('.tabs > .tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      document.querySelectorAll('.panel').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.panel === target);
+      });
+    });
+  });
+  // Scope sub-tab / source-tab toggles to the parent .panel so two L1 panels
+  // can share the same data-cat (e.g. tech main + community both data-cat=tech)
+  // without stomping on each other's active state.
+  document.querySelectorAll('.sub-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = btn.closest('.panel');
+      if (!panel) return;
+      var sub = btn.dataset.sub;
+      panel.querySelectorAll('.sub-tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      panel.querySelectorAll('.sub-content').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.subContent === sub);
+      });
+    });
+  });
+  document.querySelectorAll('.source-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var subContent = btn.closest('.sub-content');
+      if (!subContent) return;
+      var src = btn.dataset.source;
+      subContent.querySelectorAll('.source-tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      subContent.querySelectorAll('.source-content').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.sourceContent === src);
+      });
+    });
+  });
+  // Trading panel: asset-group sub-tabs (US/crypto/china/commodity)
+  document.querySelectorAll('.trading-group-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var grp = btn.dataset.group;
+      document.querySelectorAll('.trading-group-tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      document.querySelectorAll('.trading-group-content').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.group === grp);
+      });
+    });
+  });
+</script>
+</body>
+</html>
